@@ -1,0 +1,200 @@
+[
+  {
+    "slug": "laser-profiling",
+    "name": "Laser Profiling",
+    "shortDescription": "Precision laser cutting for steel up to 20mm and stainless up to 16mm with +/- 0.1mm tolerances.",
+    "description": "Our Amada LC Alpha IV 4Kw CO2 laser provides precision laser cutting and profiling services for a wide range of materials. We cut mild steel up to 20mm thick and stainless steel up to 16mm, maintaining tolerances as tight as +/- 0.1mm. From simple flat profiles to complex nested components, our laser cutting service delivers clean, accurate parts ready for the next stage of manufacture.",
+    "capabilities": [
+      "Cuts mild steel up to 20mm thickness",
+      "Cuts stainless steel up to 16mm thickness",
+      "Aluminium, copper, and brass cutting",
+      "+/- 0.1mm cutting tolerances",
+      "Complex profile cutting and nesting",
+      "Prototypes through to production volumes",
+      "DXF and DWG file formats accepted"
+    ],
+    "materials": ["mild steel", "stainless steel", "aluminium", "copper", "brass"],
+    "equipment": ["Amada LC Alpha IV 4Kw CO2 Laser"],
+    "industries": ["automotive", "power generation", "architectural"],
+    "image": "/images/services/laser-profiling.png",
+    "metaTitle": "Laser Profiling & Cutting Services | Romark Engineering Essex",
+    "metaDescription": "Precision laser cutting and profiling services in Essex. Steel up to 20mm, stainless up to 16mm. +/- 0.1mm tolerances. ISO 9001 certified. Get a free quote.",
+    "order": 1
+  },
+  {
+    "slug": "folding-pressing",
+    "name": "Folding & Pressing",
+    "shortDescription": "CNC press brakes from 100 to 220 ton capacity with 3-4m folding lengths.",
+    "description": "Our CNC press brake department handles folding and pressing operations from simple single bends to complex multi-bend components. With press brakes ranging from 100 to 220 ton capacity and folding lengths up to 4 metres, we can process sheet metal from thin gauge through to heavy plate. All our press brakes feature CNC back gauge systems for consistent, repeatable accuracy.",
+    "capabilities": [
+      "CNC press brakes up to 220 ton capacity",
+      "Folding lengths up to 4 metres",
+      "Complex multi-bend components",
+      "Thin gauge through to heavy plate",
+      "CNC back gauge for repeatable accuracy",
+      "Air bending and bottoming",
+      "Prototype and production runs"
+    ],
+    "materials": ["mild steel", "stainless steel", "aluminium"],
+    "equipment": ["Amada HFE 220-3 CNC Press Brake", "Amada HFE 100-3 CNC Press Brake", "Amada SPH 30 Power Press"],
+    "industries": ["automotive", "power generation", "architectural"],
+    "image": "/images/services/folding-pressing.png",
+    "metaTitle": "Folding & Pressing Services | Romark Engineering Essex",
+    "metaDescription": "CNC press brake folding and pressing services in Essex. Up to 220 ton capacity, 4m folding lengths. ISO 9001 certified. Get a free quote.",
+    "order": 2
+  },
+  {
+    "slug": "fabrication-and-welding",
+    "name": "Fabrication & Welding",
+    "shortDescription": "Bespoke sheet metal fabrication with TIG and MIG welding for all metals.",
+    "description": "From bespoke one-off fabrications to repeat production assemblies, our fabrication and welding department delivers high-quality metalwork across all common materials. Our coded welders are experienced in TIG and MIG welding of mild steel, stainless steel, and aluminium. We fabricate everything from small brackets and enclosures to large structural assemblies, all under one roof.",
+    "capabilities": [
+      "TIG welding (AC/DC)",
+      "MIG/MAG welding",
+      "Spot welding",
+      "Mild steel, stainless steel, and aluminium",
+      "Bespoke fabrications and assemblies",
+      "Structural steelwork (BS EN 1090)",
+      "Prototype to production volumes"
+    ],
+    "materials": ["mild steel", "stainless steel", "aluminium"],
+    "equipment": ["TIG Welders (AC/DC)", "MIG Welders", "Spot Welders"],
+    "industries": ["automotive", "power generation", "architectural"],
+    "image": "/images/services/fabrication-and-welding.png",
+    "metaTitle": "Fabrication & Welding Services | Romark Engineering Essex",
+    "metaDescription": "Expert fabrication and welding services in Essex. TIG, MIG, and spot welding. Steel, stainless, aluminium. BS EN 1090 certified. Get a free quote.",
+    "order": 3
+  },
+  {
+    "slug": "cnc-machining",
+    "name": "CNC Machining",
+    "shortDescription": "Computer-controlled precision machining from prototype to full production runs.",
+    "description": "Our CNC machining department provides precision computer-controlled manufacturing for components requiring tight tolerances and excellent surface finishes. Using our Haas VF-2 vertical machining centre and Harrison Alpha CNC lathe, we machine components from a wide range of materials including steel, stainless steel, aluminium, brass, and engineering plastics. From single prototypes to production batches.",
+    "capabilities": [
+      "3-axis CNC milling",
+      "CNC turning",
+      "Tight tolerances to +/- 0.01mm",
+      "Complex 3D profiling",
+      "Thread cutting and tapping",
+      "Surface grinding",
+      "Prototype to production volumes"
+    ],
+    "materials": ["mild steel", "stainless steel", "aluminium", "brass", "engineering plastics"],
+    "equipment": ["Haas VF-2 CNC Vertical Machining Centre", "Harrison Alpha 400 CNC Lathe"],
+    "industries": ["automotive", "power generation", "architectural"],
+    "image": "/images/services/cnc-machining.png",
+    "metaTitle": "CNC Machining Services | Romark Engineering Essex",
+    "metaDescription": "Precision CNC machining services in Essex. 3-axis milling, CNC turning. Tight tolerances. Prototypes to production. ISO 9001 certified. Get a free quote.",
+    "order": 4
+  },
+  {
+    "slug": "milling",
+    "name": "Milling",
+    "shortDescription": "Precision milling services using Bridgeport mills with digital readout.",
+    "description": "Our milling department offers both CNC and manual milling capabilities. From the Haas VF-2 for complex CNC work to our Bridgeport turret mills with digital readout for versatile manual operations, we can handle a wide range of milling requirements. Our experienced machinists produce precision components for all industries, whether you need a single prototype or a production run.",
+    "capabilities": [
+      "CNC milling (3-axis)",
+      "Manual milling with digital readout",
+      "Face milling, slot milling, pocket milling",
+      "Drilling and boring",
+      "Keyway cutting",
+      "Surface finishing",
+      "Prototype and production runs"
+    ],
+    "materials": ["mild steel", "stainless steel", "aluminium", "brass", "engineering plastics"],
+    "equipment": ["Haas VF-2 CNC Vertical Machining Centre", "Bridgeport Series 1 Turret Mill"],
+    "industries": ["automotive", "power generation", "architectural"],
+    "image": "/images/services/milling.png",
+    "metaTitle": "Milling Services | Romark Engineering Essex",
+    "metaDescription": "Precision milling services in Essex. CNC and manual milling. Bridgeport and Haas machines. ISO 9001 certified. Get a free quote.",
+    "order": 5
+  },
+  {
+    "slug": "turning",
+    "name": "Turning",
+    "shortDescription": "CNC and manual turning on Harrison lathes for cylindrical components.",
+    "description": "Our turning department provides CNC and conventional lathe work for cylindrical components of all sizes. Using our Harrison Alpha CNC lathe and Colchester manual lathes, we produce shafts, bushes, spacers, and bespoke turned components to tight tolerances. Whether you need a single replacement part or a production batch, our experienced turners deliver precision results.",
+    "capabilities": [
+      "CNC turning",
+      "Manual/conventional turning",
+      "Internal and external threading",
+      "Boring and facing",
+      "Knurling and grooving",
+      "Tight tolerances to +/- 0.01mm",
+      "Prototype to production volumes"
+    ],
+    "materials": ["mild steel", "stainless steel", "aluminium", "brass", "bronze", "engineering plastics"],
+    "equipment": ["Harrison Alpha 400 CNC Lathe", "Colchester Triumph VS2500 Centre Lathe"],
+    "industries": ["automotive", "power generation", "architectural"],
+    "image": "/images/services/turning.png",
+    "metaTitle": "Turning Services | Romark Engineering Essex",
+    "metaDescription": "Precision CNC and manual turning services in Essex. Harrison and Colchester lathes. Tight tolerances. ISO 9001 certified. Get a free quote.",
+    "order": 6
+  },
+  {
+    "slug": "sheet-metal-welding",
+    "name": "Sheet Metal Welding",
+    "shortDescription": "Specialist welding for sheet metal assemblies in steel, stainless, and aluminium.",
+    "description": "Our specialist sheet metal welding service covers all common materials and thicknesses. From thin gauge stainless steel enclosures to heavy gauge mild steel structures, our welders have the skills and equipment to deliver clean, strong welds every time. We use TIG, MIG, and spot welding techniques depending on the material and application requirements.",
+    "capabilities": [
+      "TIG welding for thin gauge materials",
+      "MIG welding for heavier sections",
+      "Spot welding for sheet metal assemblies",
+      "Stainless steel, mild steel, and aluminium",
+      "Enclosures and housings",
+      "Brackets and mounting assemblies",
+      "Coded welders available"
+    ],
+    "materials": ["mild steel", "stainless steel", "aluminium"],
+    "equipment": ["TIG Welders (AC/DC)", "MIG Welders", "Spot Welders"],
+    "industries": ["automotive", "power generation", "architectural"],
+    "image": "/images/services/sheet-metal-welding.png",
+    "metaTitle": "Sheet Metal Welding Services | Romark Engineering Essex",
+    "metaDescription": "Specialist sheet metal welding services in Essex. TIG, MIG, and spot welding. Steel, stainless, aluminium. ISO 9001 certified. Get a free quote.",
+    "order": 7
+  },
+  {
+    "slug": "blank-development",
+    "name": "Blank Development",
+    "shortDescription": "Flat pattern development and blank cutting for complex formed parts.",
+    "description": "Our blank development service takes your 3D designs and develops accurate flat patterns for sheet metal components. Using our CAD systems, we calculate bend allowances and develop blanks that fold precisely to your finished dimensions. This ensures first-time accuracy and reduces material waste, saving both time and cost on your project.",
+    "capabilities": [
+      "Flat pattern development from 3D models",
+      "Bend allowance calculation",
+      "Material optimisation and nesting",
+      "DXF output for laser cutting",
+      "Complex multi-bend blank development",
+      "Sheet metal design for manufacture (DFM)",
+      "Prototype verification"
+    ],
+    "materials": ["mild steel", "stainless steel", "aluminium", "copper", "brass"],
+    "equipment": ["Solidworks", "AutoCAD"],
+    "industries": ["automotive", "power generation", "architectural"],
+    "image": "/images/services/blank-development.png",
+    "metaTitle": "Blank Development Services | Romark Engineering Essex",
+    "metaDescription": "Flat pattern and blank development services in Essex. 3D to flat pattern conversion. Bend allowance calculation. ISO 9001 certified. Get a free quote.",
+    "order": 8
+  },
+  {
+    "slug": "cad",
+    "name": "CAD Design",
+    "shortDescription": "Full CAD capabilities with Solidworks, AutoCAD, and Rhino3D for 2D and 3D design.",
+    "description": "Our in-house CAD department provides full design capabilities using Solidworks, AutoCAD, and Rhino3D. Whether you need a concept developed from a sketch, an existing design modified, or full production drawings created, our designers work closely with our workshop to ensure every design is optimised for manufacture. We can work from your files, sketches, or even sample components.",
+    "capabilities": [
+      "3D solid modelling (Solidworks)",
+      "2D drafting and detailing (AutoCAD)",
+      "Complex surface modelling (Rhino3D)",
+      "Design for manufacture (DFM)",
+      "Reverse engineering from samples",
+      "Assembly modelling and simulation",
+      "Production drawing packages"
+    ],
+    "materials": [],
+    "equipment": ["Solidworks", "AutoCAD", "Rhino3D"],
+    "industries": ["automotive", "power generation", "architectural"],
+    "image": "/images/services/cad.png",
+    "metaTitle": "CAD Design Services | Romark Engineering Essex",
+    "metaDescription": "In-house CAD design services in Essex. Solidworks, AutoCAD, Rhino3D. 2D and 3D design. Design for manufacture. Get a free quote.",
+    "order": 9
+  }
+]

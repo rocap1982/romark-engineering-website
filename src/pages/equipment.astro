@@ -1,0 +1,122 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import equipmentData from '../data/equipment.json';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: 'Romark Engineering Equipment',
+  description: 'Professional engineering equipment used at Romark Engineering for precision manufacturing and fabrication.',
+  numberOfItems: equipmentData.reduce((sum, cat) => sum + cat.items.length, 0),
+  itemListElement: (() => {
+    let pos = 0;
+    return equipmentData.flatMap((cat) =>
+      cat.items.map((item) => ({
+        '@type': 'ListItem',
+        position: ++pos,
+        name: item.name,
+        description: `${item.type} — ${item.specs}`,
+      }))
+    );
+  })(),
+};
+---
+
+<Layout
+  title="Our Equipment | Romark Engineering"
+  description="Explore Romark Engineering's professional equipment including Amada lasers, Haas CNC machining centres, press brakes, welding systems, and CAD software. Full in-house capability in Essex."
+  jsonLd={jsonLd}
+>
+  <Hero
+    title="Our Equipment"
+    subtitle="Advanced CNC machinery, laser cutting technology, and professional CAD software — everything we need to deliver precision results, all under one roof."
+    ctaText="Get a Quote"
+    ctaHref="/contact-us/"
+    secondaryCtaText="Our Services"
+    secondaryCtaHref="/#services"
+  />
+
+  <!-- Equipment Categories -->
+  <section class="py-(--spacing-section) bg-romark-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-14">
+        <div class="w-16 h-1 bg-romark-orange mx-auto mb-4"></div>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-romark-blue-dark mb-4">
+          Full In-House Capability
+        </h2>
+        <p class="text-romark-gray-500 max-w-2xl mx-auto text-lg">
+          Our facility is equipped with industry-leading machinery and software to handle every stage of your project.
+        </p>
+      </div>
+
+      <div class="space-y-12">
+        {equipmentData.map((category) => (
+          <div>
+            <h3 class="text-2xl font-heading font-bold text-romark-blue-dark mb-6 flex items-center gap-3">
+              <div class="w-10 h-10 bg-romark-orange/10 rounded-lg flex items-center justify-center shrink-0">
+                <svg class="w-5 h-5 text-romark-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                </svg>
+              </div>
+              {category.category}
+            </h3>
+
+            <!-- Desktop: Table view -->
+            <div class="hidden md:block overflow-x-auto">
+              <table class="w-full border-collapse">
+                <thead>
+                  <tr class="bg-romark-blue-dark text-white">
+                    <th class="text-left px-6 py-3 font-heading font-semibold text-sm">Equipment</th>
+                    <th class="text-left px-6 py-3 font-heading font-semibold text-sm">Type</th>
+                    <th class="text-left px-6 py-3 font-heading font-semibold text-sm">Specifications</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {category.items.map((item, idx) => (
+                    <tr class:list={[idx % 2 === 0 ? 'bg-romark-light' : 'bg-romark-white', 'border-b border-romark-gray-100']}>
+                      <td class="px-6 py-4 font-semibold text-romark-blue-dark">{item.name}</td>
+                      <td class="px-6 py-4 text-romark-gray-500">{item.type}</td>
+                      <td class="px-6 py-4 text-romark-gray-500">{item.specs}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Mobile: Card view -->
+            <div class="md:hidden space-y-4">
+              {category.items.map((item) => (
+                <div class="p-5 bg-romark-light rounded-lg border border-romark-gray-100">
+                  <h4 class="font-heading font-bold text-romark-blue-dark mb-1">{item.name}</h4>
+                  <p class="text-romark-orange text-sm font-semibold mb-2">{item.type}</p>
+                  <p class="text-romark-gray-500 text-sm">{item.specs}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-(--spacing-section) bg-romark-blue-dark text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="w-16 h-1 bg-romark-orange mx-auto mb-4"></div>
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+        Need a Specific Capability?
+      </h2>
+      <p class="text-romark-gray-300 text-lg mb-8 max-w-2xl mx-auto">
+        If you have a project that requires specific equipment or capabilities, get in touch. We are happy to discuss how our facility can meet your needs.
+      </p>
+      <a
+        href="/contact-us/"
+        class="inline-flex items-center justify-center px-8 py-3.5 bg-romark-orange text-white font-semibold rounded hover:bg-romark-orange-dark transition-colors text-lg"
+      >
+        Discuss Your Project
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+      </a>
+    </div>
+  </section>
+</Layout>

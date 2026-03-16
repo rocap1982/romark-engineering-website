@@ -1,0 +1,111 @@
+[
+  {
+    "category": "Laser & Cutting",
+    "items": [
+      {
+        "name": "Amada LC Alpha IV",
+        "type": "4Kw CO2 Laser",
+        "specs": "Cuts steel up to 20mm, stainless up to 16mm",
+        "relatedServices": ["laser-profiling"]
+      }
+    ]
+  },
+  {
+    "category": "Pressing & Folding",
+    "items": [
+      {
+        "name": "Amada HFE 220-3",
+        "type": "CNC Press Brake",
+        "specs": "220 ton, 3m folding length",
+        "relatedServices": ["folding-pressing"]
+      },
+      {
+        "name": "Amada HFE 100-3",
+        "type": "CNC Press Brake",
+        "specs": "100 ton, 3m folding length",
+        "relatedServices": ["folding-pressing"]
+      },
+      {
+        "name": "Amada SPH 30",
+        "type": "Power Press",
+        "specs": "30 ton capacity",
+        "relatedServices": ["folding-pressing"]
+      }
+    ]
+  },
+  {
+    "category": "CNC & Machining",
+    "items": [
+      {
+        "name": "Haas VF-2",
+        "type": "CNC Vertical Machining Centre",
+        "specs": "3-axis, 762 x 406 x 508mm travel",
+        "relatedServices": ["cnc-machining", "milling"]
+      },
+      {
+        "name": "Harrison Alpha 400",
+        "type": "CNC Lathe",
+        "specs": "400mm swing, 1000mm between centres",
+        "relatedServices": ["cnc-machining", "turning"]
+      },
+      {
+        "name": "Bridgeport Series 1",
+        "type": "Turret Mill",
+        "specs": "With digital readout",
+        "relatedServices": ["milling"]
+      },
+      {
+        "name": "Colchester Triumph VS2500",
+        "type": "Manual Lathe",
+        "specs": "Centre lathe with digital readout",
+        "relatedServices": ["turning"]
+      }
+    ]
+  },
+  {
+    "category": "Welding & Finishing",
+    "items": [
+      {
+        "name": "TIG Welders",
+        "type": "AC/DC TIG",
+        "specs": "For stainless steel, aluminium, and mild steel",
+        "relatedServices": ["fabrication-and-welding", "sheet-metal-welding"]
+      },
+      {
+        "name": "MIG Welders",
+        "type": "MIG/MAG",
+        "specs": "For mild steel and aluminium",
+        "relatedServices": ["fabrication-and-welding", "sheet-metal-welding"]
+      },
+      {
+        "name": "Spot Welders",
+        "type": "Resistance Spot",
+        "specs": "For sheet metal assemblies",
+        "relatedServices": ["sheet-metal-welding"]
+      }
+    ]
+  },
+  {
+    "category": "CAD & Design",
+    "items": [
+      {
+        "name": "Solidworks",
+        "type": "3D CAD Software",
+        "specs": "Full 3D modelling and simulation",
+        "relatedServices": ["cad"]
+      },
+      {
+        "name": "AutoCAD",
+        "type": "2D/3D CAD Software",
+        "specs": "2D drafting and 3D design",
+        "relatedServices": ["cad"]
+      },
+      {
+        "name": "Rhino3D",
+        "type": "3D Modelling Software",
+        "specs": "Complex surface modelling",
+        "relatedServices": ["cad"]
+      }
+    ]
+  }
+]

@@ -1,0 +1,92 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  ogImage?: string;
+  ogType?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
+
+const {
+  title,
+  description,
+  canonical,
+  ogImage = '/images/og-default.jpg',
+  ogType = 'website',
+  jsonLd,
+} = Astro.props;
+
+const site = Astro.site?.toString().replace(/\/$/, '') ?? 'https://romarkengineering.com';
+const canonicalUrl = canonical ?? `${site}${Astro.url.pathname}`;
+
+const localBusinessJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${site}/#business`,
+  name: 'Romark Engineering',
+  description: 'Precision engineering and sheet metal fabrication services in Essex. ISO 9001 and BS EN 1090 certified.',
+  url: site,
+  telephone: '+441375673447',
+  email: 'jobs@romarkengineering.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Stanford-Le-Hope',
+    addressRegion: 'Essex',
+    addressCountry: 'GB',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 51.5142,
+    longitude: 0.4213,
+  },
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '07:00',
+    closes: '17:00',
+  },
+  hasCredential: [
+    {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'certification',
+      name: 'ISO 9001',
+    },
+    {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'certification',
+      name: 'BS EN 1090',
+    },
+  ],
+  sameAs: [],
+};
+
+const jsonLdItems: Record<string, unknown>[] = jsonLd
+  ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd])
+  : [localBusinessJsonLd];
+---
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Open Graph -->
+<meta property="og:type" content={ogType} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={`${site}${ogImage}`} />
+<meta property="og:site_name" content="Romark Engineering" />
+<meta property="og:locale" content="en_GB" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={`${site}${ogImage}`} />
+
+<!-- JSON-LD Structured Data -->
+{jsonLdItems.map((item) => (
+  <script type="application/ld+json" set:html={JSON.stringify(item)} />
+))}

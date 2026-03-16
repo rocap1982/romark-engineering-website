@@ -1,0 +1,29 @@
+---
+interface Props {
+  size?: 'sm' | 'md' | 'lg';
+  layout?: 'row' | 'column';
+}
+
+const { size = 'md', layout = 'row' } = Astro.props;
+
+const sizeClasses = {
+  sm: 'px-3 py-1.5 text-xs',
+  md: 'px-4 py-2 text-sm',
+  lg: 'px-5 py-3 text-base',
+};
+---
+
+<div class:list={['flex gap-3', layout === 'column' ? 'flex-col' : 'flex-row flex-wrap']}>
+  <div class:list={['flex items-center gap-2 bg-romark-blue-dark text-white rounded font-semibold', sizeClasses[size]]}>
+    <svg class="w-4 h-4 text-romark-orange shrink-0" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+    </svg>
+    ISO 9001
+  </div>
+  <div class:list={['flex items-center gap-2 bg-romark-blue-dark text-white rounded font-semibold', sizeClasses[size]]}>
+    <svg class="w-4 h-4 text-romark-orange shrink-0" fill="currentColor" viewBox="0 0 20 20">
+      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+    </svg>
+    BS EN 1090
+  </div>
+</div>

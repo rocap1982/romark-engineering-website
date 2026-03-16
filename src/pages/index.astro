@@ -1,0 +1,220 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import CertBadges from '../components/CertBadges.astro';
+
+const services = [
+  {
+    name: 'Laser Profiling',
+    href: '/laser-profiling/',
+    description: 'Precision laser cutting for steel up to 20mm and stainless up to 16mm with +/- 0.1mm tolerances.',
+    icon: 'laser',
+  },
+  {
+    name: 'Folding & Pressing',
+    href: '/folding-pressing/',
+    description: 'CNC press brakes from 100 to 220 ton capacity with 3-4m folding lengths.',
+    icon: 'fold',
+  },
+  {
+    name: 'Fabrication & Welding',
+    href: '/fabrication-and-welding/',
+    description: 'Bespoke sheet metal fabrication with TIG and MIG welding for all metals.',
+    icon: 'weld',
+  },
+  {
+    name: 'CNC Machining',
+    href: '/cnc-machining/',
+    description: 'Computer-controlled precision machining from prototype to full production runs.',
+    icon: 'cnc',
+  },
+  {
+    name: 'Milling',
+    href: '/milling/',
+    description: 'Precision milling services using Bridgeport mills with digital readout.',
+    icon: 'mill',
+  },
+  {
+    name: 'Turning',
+    href: '/turning/',
+    description: 'CNC and manual turning on Harrison lathes for cylindrical components.',
+    icon: 'turn',
+  },
+  {
+    name: 'Sheet Metal Welding',
+    href: '/sheet-metal-welding/',
+    description: 'Specialist welding for sheet metal assemblies in steel, stainless, and aluminium.',
+    icon: 'sheet',
+  },
+  {
+    name: 'Blank Development',
+    href: '/blank-development/',
+    description: 'Flat pattern development and blank cutting for complex formed parts.',
+    icon: 'blank',
+  },
+  {
+    name: 'CAD Design',
+    href: '/cad/',
+    description: 'Full CAD capabilities with Solidworks, AutoCAD, and Rhino3D for 2D and 3D design.',
+    icon: 'cad',
+  },
+];
+
+const strengths = [
+  {
+    title: 'Precision Guaranteed',
+    description: 'Tolerances as tight as +/- 0.1mm with advanced CNC equipment and quality-controlled processes.',
+    icon: 'precision',
+  },
+  {
+    title: 'ISO 9001 Certified',
+    description: 'Quality management system ensuring consistent, reliable results on every project.',
+    icon: 'quality',
+  },
+  {
+    title: 'BS EN 1090 Certified',
+    description: 'Certified for structural steel and aluminium fabrication to European standards.',
+    icon: 'certified',
+  },
+  {
+    title: 'Prototype to Production',
+    description: 'From single one-off prototypes to full production volumes, all under one roof.',
+    icon: 'scale',
+  },
+  {
+    title: 'Full In-House Capability',
+    description: 'Laser cutting, CNC machining, welding, pressing, and finishing — no subcontracting delays.',
+    icon: 'inhouse',
+  },
+  {
+    title: 'Industry Expertise',
+    description: 'Decades of experience serving automotive, power generation, and architectural sectors.',
+    icon: 'expertise',
+  },
+];
+---
+
+<Layout
+  title="Romark Engineering | Precision Engineering & Sheet Metal Fabrication Essex"
+  description="Romark Engineering provides precision engineering and sheet metal fabrication services in Essex. ISO 9001 and BS EN 1090 certified. Laser cutting, CNC machining, welding, and more."
+>
+  <!-- Hero -->
+  <Hero
+    title="Precision Engineering & Sheet Metal Fabrication"
+    subtitle="From concept to completion — laser cutting, CNC machining, fabrication and welding. ISO 9001 and BS EN 1090 certified, serving automotive, power generation, and architectural industries from our Essex facility."
+    ctaText="Get a Quote"
+    ctaHref="/contact-us/"
+    secondaryCtaText="Our Services"
+    secondaryCtaHref="#services"
+    backgroundImage="/images/hero-welding.jpg"
+  />
+
+  <!-- Services Section -->
+  <section id="services" class="py-(--spacing-section) bg-romark-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-14">
+        <div class="w-16 h-1 bg-romark-orange mx-auto mb-4"></div>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-romark-blue-dark mb-4">
+          Our Services
+        </h2>
+        <p class="text-romark-gray-500 max-w-2xl mx-auto text-lg">
+          Comprehensive engineering and fabrication services, all under one roof.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((service) => (
+          <a
+            href={service.href}
+            class="group block p-6 bg-romark-light rounded-lg border border-romark-gray-100 hover:border-romark-orange/30 hover:shadow-lg transition-all duration-300"
+          >
+            <div class="w-12 h-12 bg-romark-blue/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-romark-orange/10 transition-colors">
+              <svg class="w-6 h-6 text-romark-blue group-hover:text-romark-orange transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-romark-blue-dark mb-2 group-hover:text-romark-orange transition-colors">
+              {service.name}
+            </h3>
+            <p class="text-romark-gray-500 text-sm leading-relaxed">
+              {service.description}
+            </p>
+            <span class="inline-flex items-center mt-4 text-sm font-semibold text-romark-orange group-hover:translate-x-1 transition-transform">
+              Learn more
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-(--spacing-section) bg-romark-blue-dark text-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-14">
+        <div class="w-16 h-1 bg-romark-orange mx-auto mb-4"></div>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+          Why Choose Romark Engineering
+        </h2>
+        <p class="text-romark-gray-300 max-w-2xl mx-auto text-lg">
+          Over decades of precision engineering excellence, backed by industry certifications and advanced equipment.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {strengths.map((item) => (
+          <div class="text-center">
+            <div class="w-14 h-14 bg-romark-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-7 h-7 text-romark-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="font-heading font-bold text-lg mb-2">{item.title}</h3>
+            <p class="text-romark-gray-300 text-sm leading-relaxed">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Bar -->
+  <section class="py-12 bg-romark-light">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+        <p class="text-romark-gray-700 font-heading font-semibold text-lg">Certified & Accredited:</p>
+        <CertBadges size="lg" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="py-(--spacing-section) bg-romark-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="w-16 h-1 bg-romark-orange mx-auto mb-4"></div>
+      <h2 class="text-3xl md:text-4xl font-heading font-bold text-romark-blue-dark mb-4">
+        Ready to Start Your Project?
+      </h2>
+      <p class="text-romark-gray-500 text-lg mb-8 max-w-2xl mx-auto">
+        Whether you need a single prototype or a full production run, our team is ready to help. Get in touch for a free, no-obligation quote.
+      </p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a
+          href="/contact-us/"
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-romark-orange text-white font-semibold rounded hover:bg-romark-orange-dark transition-colors text-lg"
+        >
+          Request a Quote
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </a>
+        <a
+          href="tel:01375673447"
+          class="inline-flex items-center justify-center px-8 py-3.5 border-2 border-romark-blue text-romark-blue font-semibold rounded hover:bg-romark-blue hover:text-white transition-colors text-lg"
+        >
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+          Call 01375 673 447
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

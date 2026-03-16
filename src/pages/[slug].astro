@@ -1,0 +1,147 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ServicePage from '../components/ServicePage.astro';
+import SeoLandingPage from '../components/SeoLandingPage.astro';
+import services from '../data/services.json';
+import seoPages from '../data/seo-pages.json';
+
+export function getStaticPaths() {
+  const servicePaths = services.map((service) => ({
+    params: { slug: service.slug },
+    props: { type: 'service' as const, service, seoPage: null },
+  }));
+
+  const seoPaths = seoPages.map((page) => ({
+    params: { slug: page.slug },
+    props: { type: 'seo' as const, service: null, seoPage: page },
+  }));
+
+  return [...servicePaths, ...seoPaths];
+}
+
+interface ServiceData {
+  slug: string;
+  name: string;
+  shortDescription: string;
+  description: string;
+  capabilities: string[];
+  materials: string[];
+  equipment: string[];
+  industries: string[];
+  image: string;
+  metaTitle: string;
+  metaDescription: string;
+  order: number;
+}
+
+interface SeoPageData {
+  slug: string;
+  title: string;
+  metaTitle: string;
+  metaDescription: string;
+  h1: string;
+  content: string;
+  targetKeywords: string[];
+  relatedServices: string[];
+  location: string;
+  faqs: { question: string; answer: string }[];
+}
+
+const { type, service, seoPage } = Astro.props as {
+  type: 'service' | 'seo';
+  service: ServiceData | null;
+  seoPage: SeoPageData | null;
+};
+
+const site = Astro.site?.toString().replace(/\/$/, '') ?? 'https://romarkengineering.com';
+
+// Build JSON-LD based on page type
+let jsonLd: Record<string, unknown> | Record<string, unknown>[];
+
+if (type === 'service' && service) {
+  jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: service.name,
+    description: service.metaDescription,
+    url: `${site}/${service.slug}/`,
+    provider: {
+      '@type': 'LocalBusiness',
+      '@id': `${site}/#business`,
+      name: 'Romark Engineering',
+    },
+    areaServed: {
+      '@type': 'Place',
+      name: 'Essex, United Kingdom',
+    },
+    serviceType: service.name,
+  };
+} else if (type === 'seo' && seoPage) {
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: seoPage.title,
+    description: seoPage.metaDescription,
+    url: `${site}/${seoPage.slug}/`,
+    provider: {
+      '@type': 'LocalBusiness',
+      '@id': `${site}/#business`,
+      name: 'Romark Engineering',
+    },
+    areaServed: seoPage.location
+      ? { '@type': 'Place', name: `${seoPage.location}, United Kingdom` }
+      : { '@type': 'Country', name: 'United Kingdom' },
+    serviceType: seoPage.title,
+  };
+
+  if (seoPage.faqs.length > 0) {
+    const faqSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: seoPage.faqs.map((faq) => ({
+        '@type': 'Question',
+        name: faq.question,
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: faq.answer,
+        },
+      })),
+    };
+    jsonLd = [serviceSchema, faqSchema];
+  } else {
+    jsonLd = serviceSchema;
+  }
+} else {
+  jsonLd = {};
+}
+
+const title = type === 'service' && service ? service.metaTitle : seoPage!.metaTitle;
+const description = type === 'service' && service ? service.metaDescription : seoPage!.metaDescription;
+---
+
+<Layout
+  title={title}
+  description={description}
+  ogType="website"
+  jsonLd={jsonLd}
+>
+  {type === 'service' && service ? (
+    <ServicePage
+      name={service.name}
+      description={service.description}
+      capabilities={service.capabilities}
+      materials={service.materials}
+      equipment={service.equipment}
+      image={service.image}
+      shortDescription={service.shortDescription}
+    />
+  ) : seoPage ? (
+    <SeoLandingPage
+      h1={seoPage.h1}
+      content={seoPage.content}
+      location={seoPage.location}
+      relatedServices={seoPage.relatedServices}
+      faqs={seoPage.faqs}
+    />
+  ) : null}
+</Layout>

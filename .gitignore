@@ -1,0 +1,33 @@
+# build output
+dist/
+
+# dependencies
+node_modules/
+
+# environment variables
+.env
+.env.production
+
+# astro
+.astro/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# debug
+npm-debug.log*
+
+# generated docs (not source code)
+Romark-Photography-Brief.docx
+
+# local/private files
+safetech documents/
+.claude/settings.local.json
+public/images/extracted/

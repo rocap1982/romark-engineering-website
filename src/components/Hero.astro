@@ -1,0 +1,80 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaHref?: string;
+  secondaryCtaText?: string;
+  secondaryCtaHref?: string;
+  overlay?: boolean;
+  backgroundImage?: string;
+}
+
+const {
+  title,
+  subtitle,
+  ctaText = 'Get a Quote',
+  ctaHref = '/contact-us/',
+  secondaryCtaText,
+  secondaryCtaHref,
+  overlay = true,
+  backgroundImage,
+} = Astro.props;
+---
+
+<section class="relative bg-romark-blue-dark overflow-hidden">
+  <!-- Background image or decorative fallback -->
+  <div class="absolute inset-0">
+    {backgroundImage ? (
+      <>
+        <img src={backgroundImage} alt="" class="absolute inset-0 w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-romark-blue-dark/70"></div>
+      </>
+    ) : (
+      <>
+        <div class="absolute -right-20 -top-20 w-96 h-96 bg-romark-orange/10 rounded-full blur-3xl"></div>
+        <div class="absolute -left-20 -bottom-20 w-80 h-80 bg-romark-blue-light/20 rounded-full blur-3xl"></div>
+        <div class="absolute inset-0 opacity-5" style="background-image: linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px); background-size: 40px 40px;"></div>
+      </>
+    )}
+  </div>
+
+  <div class="relative max-w-7xl mx-auto px-4 py-24 md:py-32 lg:py-40">
+    <div class="max-w-3xl">
+      <!-- Accent line -->
+      <div class="w-16 h-1 bg-romark-orange mb-6"></div>
+
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-white leading-tight mb-6">
+        {title}
+      </h1>
+
+      {subtitle && (
+        <p class="text-lg md:text-xl text-romark-gray-300 leading-relaxed mb-8 max-w-2xl">
+          {subtitle}
+        </p>
+      )}
+
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a
+          href={ctaHref}
+          class="inline-flex items-center justify-center px-8 py-3.5 bg-romark-orange text-white font-semibold rounded hover:bg-romark-orange-dark transition-colors text-lg"
+        >
+          {ctaText}
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </a>
+
+        {secondaryCtaText && secondaryCtaHref && (
+          <a
+            href={secondaryCtaHref}
+            class="inline-flex items-center justify-center px-8 py-3.5 border-2 border-white/30 text-white font-semibold rounded hover:border-romark-orange hover:text-romark-orange transition-colors text-lg"
+          >
+            {secondaryCtaText}
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom accent bar -->
+  <div class="h-1 bg-gradient-to-r from-romark-orange via-romark-blue-light to-romark-orange"></div>
+</section>
