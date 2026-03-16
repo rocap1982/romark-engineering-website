@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://romarkengineering.com',
+  site: 'https://romarkengineering.co.uk',
   output: 'static',
   adapter: node({ mode: 'standalone' }),
   integrations: [sitemap()],
