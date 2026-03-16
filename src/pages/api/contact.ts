@@ -22,6 +22,41 @@ const MAX_SERVICE_LENGTH = 100;
 const TO_EMAIL = 'jobs@romarkengineering.com';
 const FROM_EMAIL = 'Romark Engineering <noreply@romarkengineering.com>';
 
+// Rate limiting
+const RATE_LIMIT_WINDOW_MS = 3_600_000; // 1 hour
+const MAX_REQUESTS_PER_WINDOW = 5;
+const requestLog = new Map<string, number[]>();
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const cutoff = now - RATE_LIMIT_WINDOW_MS;
+  const timestamps = (requestLog.get(ip) || []).filter((t) => t > cutoff);
+
+  if (timestamps.length >= MAX_REQUESTS_PER_WINDOW) {
+    return true;
+  }
+
+  timestamps.push(now);
+  requestLog.set(ip, timestamps);
+
+  // Housekeeping: prune stale IPs every 100 entries
+  if (requestLog.size > 100) {
+    for (const [key, ts] of requestLog) {
+      if (ts.every((t) => t <= cutoff)) requestLog.delete(key);
+    }
+  }
+
+  return false;
+}
+
+function getClientIp(request: Request): string {
+  return (
+    request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+    request.headers.get('cf-connecting-ip') ||
+    'unknown'
+  );
+}
+
 function validate(body: unknown): { data?: ContactForm; error?: string } {
   if (!body || typeof body !== 'object') {
     return { error: 'Invalid request body' };
@@ -138,6 +173,15 @@ function escape(str: string): string {
 }
 
 export const POST: APIRoute = async ({ request, url }) => {
+  // Rate limiting
+  const clientIp = getClientIp(request);
+  if (isRateLimited(clientIp)) {
+    return new Response(
+      JSON.stringify({ error: 'Too many requests. Please try again later.' }),
+      { status: 429, headers: { 'Content-Type': 'application/json' } }
+    );
+  }
+
   // CSRF: verify request origin matches the site
   const origin = request.headers.get('origin');
   const expectedOrigin = url.origin;

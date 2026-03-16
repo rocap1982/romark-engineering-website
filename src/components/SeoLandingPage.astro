@@ -13,6 +13,50 @@ interface Props {
 
 const { h1, content, location, relatedServices, faqs } = Astro.props;
 
+// Sanitise HTML content — only allow safe tags and attributes
+const ALLOWED_TAGS = new Set(['h2', 'h3', 'h4', 'p', 'ul', 'ol', 'li', 'strong', 'em', 'a', 'br', 'span']);
+const ALLOWED_ATTRS: Record<string, Set<string>> = {
+  a: new Set(['href']),
+};
+
+function sanitiseHtml(html: string): string {
+  // Strip <script>, <iframe>, <object>, <embed>, <form>, event handlers
+  let clean = html
+    .replace(/<script[\s\S]*?<\/script>/gi, '')
+    .replace(/<iframe[\s\S]*?<\/iframe>/gi, '')
+    .replace(/<object[\s\S]*?<\/object>/gi, '')
+    .replace(/<embed[\s\S]*?\/?>/gi, '')
+    .replace(/<form[\s\S]*?<\/form>/gi, '')
+    .replace(/<style[\s\S]*?<\/style>/gi, '');
+
+  // Strip event handlers (on*="...") and javascript: hrefs
+  clean = clean.replace(/\s+on\w+\s*=\s*["'][^"']*["']/gi, '');
+  clean = clean.replace(/href\s*=\s*["']\s*javascript:[^"']*["']/gi, 'href="#"');
+
+  // Strip disallowed tags but keep content
+  clean = clean.replace(/<\/?([a-z][a-z0-9]*)\b[^>]*\/?>/gi, (match, tag: string) => {
+    const lower = tag.toLowerCase();
+    if (ALLOWED_TAGS.has(lower)) {
+      // For allowed tags, strip disallowed attributes
+      if (match.startsWith('</')) return match; // closing tag, keep as-is
+      const allowedSet = ALLOWED_ATTRS[lower];
+      if (!allowedSet) {
+        // No attributes allowed — strip all
+        return match.replace(/\s+[a-z-]+\s*=\s*["'][^"']*["']/gi, '');
+      }
+      // Keep only allowed attributes
+      return match.replace(/\s+([a-z-]+)\s*=\s*["'][^"']*["']/gi, (attrMatch, attrName: string) => {
+        return allowedSet.has(attrName.toLowerCase()) ? attrMatch : '';
+      });
+    }
+    return ''; // strip the tag entirely
+  });
+
+  return clean;
+}
+
+const safeContent = sanitiseHtml(content);
+
 const matchedServices = relatedServices
   .map((slug) => services.find((s) => s.slug === slug))
   .filter((s): s is (typeof services)[number] => s !== undefined);
@@ -31,7 +75,7 @@ const matchedServices = relatedServices
 <!-- Main Content -->
 <section class="py-(--spacing-section) bg-romark-white">
   <div class="max-w-7xl mx-auto px-4">
-    <div class="max-w-3xl mx-auto seo-content" set:html={content} />
+    <div class="max-w-3xl mx-auto seo-content" set:html={safeContent} />
   </div>
 </section>
 

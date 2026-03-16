@@ -281,15 +281,28 @@ const services = [
     }
 
     const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
-    const originalText = submitBtn.innerHTML;
+    const originalContent = Array.from(submitBtn.childNodes);
     submitBtn.disabled = true;
-    submitBtn.innerHTML = `
-      <svg class="w-5 h-5 mr-2 animate-spin" fill="none" viewBox="0 0 24 24">
-        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-      </svg>
-      Sending...
-    `;
+    submitBtn.textContent = '';
+    const spinner = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    spinner.setAttribute('class', 'w-5 h-5 mr-2 animate-spin');
+    spinner.setAttribute('fill', 'none');
+    spinner.setAttribute('viewBox', '0 0 24 24');
+    const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+    circle.setAttribute('class', 'opacity-25');
+    circle.setAttribute('cx', '12');
+    circle.setAttribute('cy', '12');
+    circle.setAttribute('r', '10');
+    circle.setAttribute('stroke', 'currentColor');
+    circle.setAttribute('stroke-width', '4');
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('class', 'opacity-75');
+    path.setAttribute('fill', 'currentColor');
+    path.setAttribute('d', 'M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z');
+    spinner.appendChild(circle);
+    spinner.appendChild(path);
+    submitBtn.appendChild(spinner);
+    submitBtn.appendChild(document.createTextNode('Sending...'));
 
     try {
       const formData = new FormData(form);
@@ -312,7 +325,8 @@ const services = [
       errorEl.classList.remove('hidden');
     } finally {
       submitBtn.disabled = false;
-      submitBtn.innerHTML = originalText;
+      submitBtn.textContent = '';
+      originalContent.forEach((node) => submitBtn.appendChild(node));
     }
   });
 </script>

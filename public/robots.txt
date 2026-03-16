@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /api/
 
-Sitemap: https://romarkengineering.com/sitemap-index.xml
+Sitemap: https://romarkengineering.co.uk/sitemap-index.xml
