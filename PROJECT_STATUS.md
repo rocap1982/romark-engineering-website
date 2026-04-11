@@ -5,8 +5,8 @@ last_updated: 2026-04-11
 
 # "Resume context" pointers (keep these current)
 sprint_current_status: docs/sprints/CURRENT_STATUS.md
-active_work: "All 3 sprints complete + new media integrated (banner video, workshop clip, 7 photos). Next: media optimisation, rate limiting, deployment"
-latest_session_log: ""
+active_work: "All 3 sprints complete + new media integrated + equipment specs corrected site-wide. Next: media optimisation, rate limiting, deployment"
+latest_session_log: docs/sessions/2026-04-11.md
 roadmap_next_phase: "Deployment sprint (Railway, domain migration, 301 redirects)"
 canonical_architecture_decision: ""
 active_audits_dir: docs/audits/active/
