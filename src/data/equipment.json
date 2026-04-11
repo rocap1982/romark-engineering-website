@@ -5,7 +5,7 @@
       {
         "name": "Amada LC Alpha IV",
         "type": "4Kw CO2 Laser",
-        "specs": "Cuts steel up to 20mm, stainless up to 16mm",
+        "specs": "Cuts up to 5000 x 1500mm: 12mm mild steel, 12mm stainless, 10mm aluminium",
         "relatedServices": ["laser-profiling"]
       }
     ]
@@ -14,9 +14,9 @@
     "category": "Pressing & Folding",
     "items": [
       {
-        "name": "Amada HFE 220-3",
+        "name": "Amada HFE 220-4",
         "type": "CNC Press Brake",
-        "specs": "220 ton, 3m folding length",
+        "specs": "220 ton, 4m folding length, 12mm plate capacity",
         "relatedServices": ["folding-pressing"]
       },
       {
@@ -26,9 +26,15 @@
         "relatedServices": ["folding-pressing"]
       },
       {
-        "name": "Amada SPH 30",
-        "type": "Power Press",
-        "specs": "30 ton capacity",
+        "name": "Barnes",
+        "type": "Hydraulic Press",
+        "specs": "100 ton capacity",
+        "relatedServices": ["folding-pressing"]
+      },
+      {
+        "name": "Ward Forsythe",
+        "type": "Hydraulic Press",
+        "specs": "50 ton capacity",
         "relatedServices": ["folding-pressing"]
       }
     ]
@@ -37,33 +43,39 @@
     "category": "CNC & Machining",
     "items": [
       {
-        "name": "Haas VF-2",
+        "name": "XYZ 710 VMC",
         "type": "CNC Vertical Machining Centre",
-        "specs": "3-axis, 762 x 406 x 508mm travel",
+        "specs": "3-axis CNC milling",
         "relatedServices": ["cnc-machining", "milling"]
       },
       {
-        "name": "Harrison Alpha 400",
-        "type": "CNC Lathe",
-        "specs": "400mm swing, 1000mm between centres",
-        "relatedServices": ["cnc-machining", "turning"]
+        "name": "XYZ 510 VMC",
+        "type": "CNC Vertical Machining Centre",
+        "specs": "3-axis CNC milling",
+        "relatedServices": ["cnc-machining", "milling"]
       },
       {
-        "name": "Bridgeport Series 1",
-        "type": "Turret Mill",
-        "specs": "With digital readout",
+        "name": "Bridgeport",
+        "type": "Manual Turret Mill",
+        "specs": "Conventional manual milling",
         "relatedServices": ["milling"]
       },
       {
-        "name": "Colchester Triumph VS2500",
-        "type": "Manual Lathe",
-        "specs": "Centre lathe with digital readout",
-        "relatedServices": ["turning"]
+        "name": "XYZ Manual Mill",
+        "type": "Manual Mill",
+        "specs": "Conventional manual milling",
+        "relatedServices": ["milling"]
+      },
+      {
+        "name": "Harrison Lathe",
+        "type": "Lathe",
+        "specs": "Precision turning",
+        "relatedServices": ["turning", "cnc-machining"]
       }
     ]
   },
   {
-    "category": "Welding & Finishing",
+    "category": "Welding",
     "items": [
       {
         "name": "TIG Welders",
@@ -82,6 +94,29 @@
         "type": "Resistance Spot",
         "specs": "For sheet metal assemblies",
         "relatedServices": ["sheet-metal-welding"]
+      }
+    ]
+  },
+  {
+    "category": "Metal Finishing",
+    "items": [
+      {
+        "name": "Grindmaster",
+        "type": "Linishing Machine",
+        "specs": "900mm wide belt grinder",
+        "relatedServices": ["fabrication-and-welding"]
+      },
+      {
+        "name": "Rosler Rumbler",
+        "type": "Vibratory Finisher",
+        "specs": "Mass finishing for deburring and edge smoothing",
+        "relatedServices": ["fabrication-and-welding"]
+      },
+      {
+        "name": "Polishing Machines",
+        "type": "Various",
+        "specs": "Hand and powered polishing for surface finishing",
+        "relatedServices": ["fabrication-and-welding"]
       }
     ]
   },

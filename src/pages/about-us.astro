@@ -15,6 +15,7 @@ import CertBadges from '../components/CertBadges.astro';
     ctaHref="/contact-us/"
     secondaryCtaText="Our Equipment"
     secondaryCtaHref="/equipment/"
+    backgroundImage="/images/warehouse-workshop.jpg"
   />
 
   <!-- Company Overview -->
@@ -57,6 +58,34 @@ import CertBadges from '../components/CertBadges.astro';
     </div>
   </section>
 
+  <!-- Workshop Video -->
+  <section class="py-(--spacing-section) bg-romark-blue-dark">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="text-center mb-10">
+        <div class="w-16 h-1 bg-romark-orange mx-auto mb-4"></div>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">
+          Inside Our Workshop
+        </h2>
+        <p class="text-romark-gray-300 max-w-2xl mx-auto text-lg">
+          A look at the machinery, craftsmanship, and people behind every precision component.
+        </p>
+      </div>
+      <div class="rounded-lg overflow-hidden border border-white/10 shadow-2xl">
+        <video
+          class="w-full h-auto block"
+          controls
+          muted
+          playsinline
+          preload="metadata"
+          poster="/images/warehouse-welder.jpg"
+        >
+          <source src="/videos/romark-workshop-clip.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </section>
+
   <!-- Our History -->
   <section class="py-(--spacing-section) bg-romark-light">
     <div class="max-w-7xl mx-auto px-4">
@@ -92,23 +121,27 @@ import CertBadges from '../components/CertBadges.astro';
         {[
           {
             title: 'Laser Cutting',
-            description: 'Amada 4Kw CO2 laser for precision profiling of steel up to 20mm and stainless up to 16mm.',
+            description: 'Amada LC Alpha IV 4Kw CO2 laser with 5000 x 1500mm bed, cutting up to 12mm steel, 12mm stainless and 10mm aluminium.',
           },
           {
             title: 'CNC Machining',
-            description: 'Haas VF-2 machining centre and Harrison Alpha CNC lathe for complex precision components.',
+            description: 'XYZ 710 and XYZ 510 vertical machining centres with Harrison lathe for complex precision components.',
           },
           {
-            title: 'Press Brakes',
-            description: 'Amada CNC press brakes from 100 to 220 ton capacity with up to 3m folding lengths.',
+            title: 'Press Brakes & Presses',
+            description: 'Amada HFE 220-4 (220 ton, 4m) and HFE 100-3 CNC press brakes, plus Barnes 100 ton and Ward Forsythe 50 ton hydraulic presses.',
           },
           {
             title: 'Welding Bay',
-            description: 'Full TIG and MIG welding capabilities for steel, stainless steel, and aluminium.',
+            description: 'Full TIG, MIG, and spot welding capabilities for steel, stainless steel, and aluminium.',
           },
           {
-            title: 'Milling & Turning',
-            description: 'Bridgeport mills and Colchester lathes with digital readout for manual precision work.',
+            title: 'Manual Milling',
+            description: 'Bridgeport and XYZ manual mills for versatile conventional milling operations.',
+          },
+          {
+            title: 'Metal Finishing',
+            description: 'Grindmaster 900mm linishing machine, Rosler vibratory rumbler, and polishing machines for clean finishes.',
           },
           {
             title: 'CAD Suite',

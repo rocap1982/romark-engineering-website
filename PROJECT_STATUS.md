@@ -1,11 +1,11 @@
 ---
 project: romark-engineering-website
 status: active
-last_updated: 2026-03-16
+last_updated: 2026-04-11
 
 # "Resume context" pointers (keep these current)
 sprint_current_status: docs/sprints/CURRENT_STATUS.md
-active_work: "All 3 sprints complete — 34 pages built. Next: service images, rate limiting, deployment"
+active_work: "All 3 sprints complete + new media integrated (banner video, workshop clip, 7 photos). Next: media optimisation, rate limiting, deployment"
 latest_session_log: ""
 roadmap_next_phase: "Deployment sprint (Railway, domain migration, 301 redirects)"
 canonical_architecture_decision: ""

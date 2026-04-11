@@ -8,6 +8,8 @@ interface Props {
   secondaryCtaHref?: string;
   overlay?: boolean;
   backgroundImage?: string;
+  backgroundVideo?: string;
+  posterImage?: string;
 }
 
 const {
@@ -19,13 +21,30 @@ const {
   secondaryCtaHref,
   overlay = true,
   backgroundImage,
+  backgroundVideo,
+  posterImage,
 } = Astro.props;
 ---
 
 <section class="relative bg-romark-blue-dark overflow-hidden">
-  <!-- Background image or decorative fallback -->
+  <!-- Background video, image, or decorative fallback -->
   <div class="absolute inset-0">
-    {backgroundImage ? (
+    {backgroundVideo ? (
+      <>
+        <video
+          class="absolute inset-0 w-full h-full object-cover"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          poster={posterImage}
+        >
+          <source src={backgroundVideo} type="video/mp4" />
+        </video>
+        <div class="absolute inset-0 bg-romark-blue-dark/70"></div>
+      </>
+    ) : backgroundImage ? (
       <>
         <img src={backgroundImage} alt="" class="absolute inset-0 w-full h-full object-cover" />
         <div class="absolute inset-0 bg-romark-blue-dark/70"></div>
