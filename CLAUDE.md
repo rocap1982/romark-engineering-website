@@ -50,6 +50,14 @@ This repository uses the **Fluid Build System (FBS)** — a governance framework
 4. `.claude/agents/` — specialized subagents (verifier, test-runner, debugger, + 6 reviewers for --deep mode)
 5. `docs/audits/active/` — unresolved P0/P1 drift findings
 
+## Cross-company & personal context (HQ hub)
+
+Rob's master context hub is **`rocap1982/hq`** — the map of all repos across Romark, Wallers, and personal projects, plus standing rules and identity files.
+
+- Need context beyond this repo? Add `rocap1982/hq` to the session and start at its `INDEX.md`.
+- Learned a durable cross-company or personal fact this session? Record it in `hq` (`companies/` or `personal/`) — not only in this repo's session logs.
+- Hub rule: pointers, not copies — never duplicate this repo's live state into `hq`.
+
 ## Governance (non-negotiable)
 
 - If a change impacts canonical contracts (schemas/API/DB/business rules), create a **plan** in `docs/plans/` and wait for explicit approval before implementing.
