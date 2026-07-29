@@ -1,4 +1,5 @@
 ---
+import { withBase } from '../lib/base';
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import equipmentData from '../data/equipment.json';
@@ -112,7 +113,7 @@ const jsonLd = {
         If you have a project that requires specific equipment or capabilities, get in touch. We are happy to discuss how our facility can meet your needs.
       </p>
       <a
-        href="/contact-us/"
+        href={withBase("/contact-us/")}
         class="inline-flex items-center justify-center px-8 py-3.5 bg-romark-orange text-white font-semibold rounded hover:bg-romark-orange-dark transition-colors text-lg"
       >
         Discuss Your Project
