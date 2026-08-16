@@ -47,6 +47,11 @@
         "hooks": [
           {
             "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/load-hq-context.sh",
+            "timeout": 30
+          },
+          {
+            "type": "command",
             "command": "echo 'Context was compacted. Re-read PROJECT_STATUS.md and docs/sprints/CURRENT_STATUS.md for current state.'"
           }
         ]
