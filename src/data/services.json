@@ -17,7 +17,7 @@
     "materials": ["mild steel", "stainless steel", "aluminium", "copper", "brass"],
     "equipment": ["Amada LC Alpha IV 4Kw CO2 Laser"],
     "industries": ["automotive", "power generation", "architectural"],
-    "image": "/images/services/laser-profiling.png",
+    "image": "/images/services/laser-profiling.jpg",
     "metaTitle": "Laser Profiling & Cutting Services | Romark Engineering Essex",
     "metaDescription": "Precision laser cutting in Essex. 5000x1500mm bed, 12mm steel, 12mm stainless, 10mm aluminium. +/- 0.1mm tolerances. ISO 9001 certified.",
     "order": 1
@@ -40,7 +40,7 @@
     "materials": ["mild steel", "stainless steel", "aluminium"],
     "equipment": ["Amada HFE 220-4 CNC Press Brake", "Amada HFE 100-3 CNC Press Brake", "Barnes 100 Ton Hydraulic Press", "Ward Forsythe 50 Ton Hydraulic Press"],
     "industries": ["automotive", "power generation", "architectural"],
-    "image": "/images/services/folding-pressing.png",
+    "image": "/images/services/folding-pressing.jpg",
     "metaTitle": "Folding & Pressing Services | Romark Engineering Essex",
     "metaDescription": "CNC press brake folding and pressing services in Essex. Up to 220 ton capacity, 4m folding lengths. ISO 9001 certified. Get a free quote.",
     "order": 2
@@ -62,7 +62,7 @@
     "materials": ["mild steel", "stainless steel", "aluminium"],
     "equipment": ["TIG Welders (AC/DC)", "MIG Welders", "Spot Welders"],
     "industries": ["automotive", "power generation", "architectural"],
-    "image": "/images/services/fabrication-and-welding.png",
+    "image": "/images/services/fabrication-and-welding.jpg",
     "metaTitle": "Fabrication & Welding Services | Romark Engineering Essex",
     "metaDescription": "Expert fabrication and welding services in Essex. TIG, MIG, and spot welding. Steel, stainless, aluminium. BS EN 1090 certified. Get a free quote.",
     "order": 3
@@ -83,7 +83,7 @@
     "materials": ["mild steel", "stainless steel", "aluminium", "brass", "engineering plastics"],
     "equipment": ["XYZ 710 CNC Vertical Machining Centre", "XYZ 510 CNC Vertical Machining Centre", "Harrison Lathe"],
     "industries": ["automotive", "power generation", "architectural"],
-    "image": "/images/services/cnc-machining.png",
+    "image": "/images/services/cnc-machining.jpg",
     "metaTitle": "CNC Machining Services | Romark Engineering Essex",
     "metaDescription": "Precision CNC machining services in Essex. 3-axis milling, CNC turning. Tight tolerances. Prototypes to production. ISO 9001 certified. Get a free quote.",
     "order": 4
@@ -104,7 +104,7 @@
     "materials": ["mild steel", "stainless steel", "aluminium", "brass", "engineering plastics"],
     "equipment": ["XYZ 710 CNC Vertical Machining Centre", "XYZ 510 CNC Vertical Machining Centre", "Bridgeport Manual Mill", "XYZ Manual Mill"],
     "industries": ["automotive", "power generation", "architectural"],
-    "image": "/images/services/milling.png",
+    "image": "/images/services/milling.jpg",
     "metaTitle": "Milling Services | Romark Engineering Essex",
     "metaDescription": "Precision milling services in Essex. CNC and manual milling on XYZ VMCs and Bridgeport mills. ISO 9001 certified. Get a free quote.",
     "order": 5
@@ -125,7 +125,7 @@
     "materials": ["mild steel", "stainless steel", "aluminium", "brass", "bronze", "engineering plastics"],
     "equipment": ["Harrison Lathe"],
     "industries": ["automotive", "power generation", "architectural"],
-    "image": "/images/services/turning.png",
+    "image": "/images/services/turning.jpg",
     "metaTitle": "Turning Services | Romark Engineering Essex",
     "metaDescription": "Precision turning services in Essex on our Harrison lathe. Tight tolerances. ISO 9001 certified. Get a free quote.",
     "order": 6
@@ -147,7 +147,7 @@
     "materials": ["mild steel", "stainless steel", "aluminium"],
     "equipment": ["TIG Welders (AC/DC)", "MIG Welders", "Spot Welders"],
     "industries": ["automotive", "power generation", "architectural"],
-    "image": "/images/services/sheet-metal-welding.png",
+    "image": "/images/services/sheet-metal-welding.jpg",
     "metaTitle": "Sheet Metal Welding Services | Romark Engineering Essex",
     "metaDescription": "Specialist sheet metal welding services in Essex. TIG, MIG, and spot welding. Steel, stainless, aluminium. ISO 9001 certified. Get a free quote.",
     "order": 7
@@ -169,7 +169,7 @@
     "materials": ["mild steel", "stainless steel", "aluminium", "copper", "brass"],
     "equipment": ["Solidworks", "AutoCAD"],
     "industries": ["automotive", "power generation", "architectural"],
-    "image": "/images/services/blank-development.png",
+    "image": "/images/services/blank-development.jpg",
     "metaTitle": "Blank Development Services | Romark Engineering Essex",
     "metaDescription": "Flat pattern and blank development services in Essex. 3D to flat pattern conversion. Bend allowance calculation. ISO 9001 certified. Get a free quote.",
     "order": 8
@@ -191,7 +191,7 @@
     "materials": [],
     "equipment": ["Solidworks", "AutoCAD", "Rhino3D"],
     "industries": ["automotive", "power generation", "architectural"],
-    "image": "/images/services/cad.png",
+    "image": "/images/services/cad.jpg",
     "metaTitle": "CAD Design Services | Romark Engineering Essex",
     "metaDescription": "In-house CAD design services in Essex. Solidworks, AutoCAD, Rhino3D. 2D and 3D design. Design for manufacture. Get a free quote.",
     "order": 9
