@@ -51,15 +51,22 @@ domain, Cloudflare serves the DNS.
 
 ---
 
-## 1. Domain — `romarkengineering.co.uk` into Romark's name and GoDaddy account
+## 1. Domain — `romarkengineering.co.uk` (already Romark's; nothing to ask Safetech)
 
-- [ ] ROB: Confirm you hold a GoDaddy account in Romark Engineering Ltd's name (not personal) at https://account.godaddy.com — create it if not. Same account should later hold `.com` if it is elsewhere.
-- [ ] ROB: Reply to Wayne's ticket in writing asking for **two things in this order**: (1) Nominet registrant on `romarkengineering.co.uk` set to **Romark Engineering Ltd, 07411656, Unit 8 & 9 Baryta Close, Stanford-le-Hope SS17 0JE**, contact rob@romarkengineering.com; (2) the IPS tag changed to GoDaddy's. [Likely] For .uk domains there is no auth code: the losing registrar changes the IPS tag (GoDaddy's is `GODADDY`), then you accept the transfer inside GoDaddy; GoDaddy's .uk transfer-in is normally free of charge.
-- [ ] Verify the registrant after (1) via Nominet's public RDAP (`https://rdap.nominet.uk/uk/domain/romarkengineering.co.uk`) — the earlier `engineeringessex.co.uk` lookup is recorded in hq; the same check works here.
+[Certain, rob@ mailbox 30/10/2026] The domain has been in **Rob's own Fasthosts account (no.
+1291216) since 15/03/2026**: Nominet confirmed the IPS tag change to `LIVEDOMAINS` at Rob's
+request that evening (the day of the Safetech cancellation email); Fasthosts "Domain Transfer
+£0.00" order 15/03/2026; renewed 25/04/2026 (£15.40 inc VAT), **expiry 25/05/2027**. Safetech
+invoiced its renewal as late as 05/05/2021, so Wayne's "we look after it" was true once and is
+seven months stale. It is NOT at GoDaddy (GoDaddy holds `roamsystems.co.uk` and the
+`engineeringessex.co/.uk/.cn/.com.cn` defensive variants).
+
+- [ ] ROB: Log in at https://admin.fasthosts.co.uk → Domains → `romarkengineering.co.uk` and note (a) the **registrant** shown (must read Romark Engineering Ltd, 07411656 — if it is a person or Safetech, change it there; Fasthosts handles the Nominet registrant update), (b) the current **nameservers** (if still `ns0/ns1.safetechhosting.co.uk`, they change in the same panel at cut-over).
+- [ ] Decision: keep the registrar at Fasthosts (nothing gained by a GoDaddy transfer; the ownership rule is satisfied once the registrant reads Romark Ltd). Nameservers move to Cloudflare at cut-over (§2) — set in the Fasthosts panel, not GoDaddy.
 - [ ] **`romarkengineering.com` is NOT with Safetech** — [Certain, Rob 30/10/2026] its registrar/DNS is held by Ryan Edkins (Workle's upstream author; admin collaborator on `Romark-workle`). It is the company EMAIL domain (M365 MX/SPF/DKIM), so it is the one domain where a DNS slip stops the business. Separate track, not part of the Safetech ticket: ROB: find out whether Romark Engineering Ltd is the registrant of record and which registrar holds it (ICANN lookup: https://lookup.icann.org/en/lookup — registrant is usually redacted, registrar is not); then plan a transfer into Romark's own GoDaddy account with every existing DNS record (MX, SPF, DKIM, DMARC, autodiscover, any verification TXTs) exported and re-created BEFORE nameservers move. Not before the `.co.uk` cut-over — one domain at a time.
   - [Certain, RDAP 30/10/2026] created 26/08/2008, expires 26/08/2027, updated 25/08/2026; nameservers `ns1-3.livedns.co.uk` ([Likely] Fasthosts); registrar via Tucows (tieredaccess.com gateway); **registrant kind = individual, Essex** — a person, not Romark Engineering Ltd.
-  - Order of work: (1) ROB: get the Fasthosts (or whichever reseller) account login into Romark's hands; (2) registrant → Romark Engineering Ltd (07411656), rob@ as contact; (3) export every DNS record and re-create in a Cloudflare zone; (4) switch nameservers to Cloudflare and verify mail flow (send/receive, DKIM pass) the same hour; (5) registrar transfer to GoDaddy later if wanted — [Likely] unlock + EPP code from the reseller panel, small fee, adds a year; not needed for ownership once (1)–(2) are done.
-- [ ] Do not let Safetech "point `romarkengineering.co.uk` at the site" on their DNS — the point of the move is that no Romark property depends on Safetech nameservers after March 2027.
+  - [Certain] Rob's own Fasthosts account carries a "Standard Email – romarkengineering.com" product (£26.53 + VAT/yr) but NO `.com` domain renewal invoice (the only `.com` renewed there is sheetmetallaser.com) — so the `.com` registration is [Likely] in a *different* Fasthosts account (Ryan's), while the email product is legacy from before M365. ROB: check the Fasthosts Domains list — if `romarkengineering.com` is NOT listed, the registration is Ryan's account; if the Standard Email product has no mailboxes in use, cancel it.
+  - Order of work: (1) ROB: get the registration into Romark's own Fasthosts account (Fasthosts can move a domain between accounts on both parties' say-so — [Likely]) or obtain the EPP code from Ryan; (2) registrant → Romark Engineering Ltd (07411656), rob@ as contact; (3) export every DNS record and re-create in a Cloudflare zone; (4) switch nameservers to Cloudflare and verify mail flow (send/receive, DKIM pass) the same hour.
 
 ## 2. DNS — Cloudflare zone for `romarkengineering.co.uk`
 
