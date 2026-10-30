@@ -81,7 +81,7 @@ seven months stale. It is NOT at GoDaddy (GoDaddy holds `roamsystems.co.uk` and 
 
 [Certain] Railway project "Romark Engineering Website" (`e17bd70c-90b4-4f7a-81db-5621dcdb39dc`) has one service with a placeholder deployment from 16/03/2026 and **no source repo connected**. Carry-overs from `docs/sessions/2026-04-11.md`: 5–8 MB JPGs, 7.4 MB hero poster, no contact-form rate limit, no GA.
 
-- [ ] Connect the service source to `rocap1982/romark-engineering-website` `main` (I can do this via the Railway tooling with your go-ahead; it is a config change on the website project, not on Workle).
+- [x] 30/10/2026 18:19 — service source connected to `rocap1982/romark-engineering-website` `main`; first deployment b3054cf1 (0670b40) SUCCESS in 68 s, listening on 8080; auto-deploys on push. Local smoke test first: all routes 200, 404 OK, empty contact POST → 400.
 - [ ] Media: run the warehouse/gallery JPGs and the hero poster through sharp → WebP + sized variants; keep originals out of `public/`. (Code change in this repo — small fix.)
 - [ ] Contact form: rate limit on `src/pages/api/contact` + `RESEND_API_KEY` set as a Railway variable (names only from here; value is yours).
 - [ ] Pull the five missing service images from the WordPress export's `wp-content/uploads` once it arrives (§5).
