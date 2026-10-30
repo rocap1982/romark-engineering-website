@@ -70,10 +70,10 @@ seven months stale. It is NOT at GoDaddy (GoDaddy holds `roamsystems.co.uk` and 
 
 ## 2. DNS — Cloudflare zone for `romarkengineering.co.uk`
 
-- [ ] ROB: In Cloudflare (https://dash.cloudflare.com) add the zone `romarkengineering.co.uk` (Free plan); accept the record import it offers (captures whatever Safetech's zone holds); copy the two assigned nameservers.
-- [ ] ROB: In Fasthosts → `romarkengineering.co.uk` → Manage nameservers, replace the two `safetechhosting` entries with the two Cloudflare nameservers. Propagation up to 24–48 h; nothing on this domain carries email, so there is no mail risk.
+- [x] ROB: In Cloudflare (https://dash.cloudflare.com) add the zone `romarkengineering.co.uk` (Free plan); accept the record import it offers (captures whatever Safetech's zone holds); copy the two assigned nameservers.
+- [x] ROB: In Fasthosts → `romarkengineering.co.uk` → Manage nameservers, replace the two `safetechhosting` entries with the two Cloudflare nameservers. Propagation up to 24–48 h; nothing on this domain carries email, so there is no mail risk.
 - [x] 30/10/2026: zone created, nameservers `elle` / `miles.ns.cloudflare.com` set at Fasthosts. Import showed Safetech's cPanel default zone (web A 185.26.150.45, mail A 185.26.150.41, MX, SPF naming blue.safetechhosting.co.uk, ftp/imap/smtp/webmail/ipv4). Rob confirmed **no one uses @romarkengineering.co.uk mail**.
-- [ ] Zone clean-down (Rob, 30/10): delete ipv4/mail/webmail A, ftp/imap/smtp CNAME, MX; SPF → `v=spf1 -all`; add `_dmarc TXT v=DMARC1; p=reject; adkim=s; aspf=s`; add `_railway-verify TXT railway-verify=312d7b8ecba7193e6de1d6d1f27174833addbcf2ba595ed8de20f7e8a62e0aaa`. KEEP root `A 185.26.150.45` + `www CNAME @` (both proxied) until the site is ready.
+- [x] Zone clean-down DONE 30/10/2026 (final: root A 185.26.150.45 proxied, www CNAME @ proxied, _dmarc, _railway-verify, SPF `v=spf1 -all`): delete ipv4/mail/webmail A, ftp/imap/smtp CNAME, MX; SPF → `v=spf1 -all`; add `_dmarc TXT v=DMARC1; p=reject; adkim=s; aspf=s`; add `_railway-verify TXT railway-verify=312d7b8ecba7193e6de1d6d1f27174833addbcf2ba595ed8de20f7e8a62e0aaa`. KEEP root `A 185.26.150.45` + `www CNAME @` (both proxied) until the site is ready.
 - [ ] At cut-over: replace root A with `CNAME @ → uv3px83f.up.railway.app` (proxied); SSL/TLS mode **Full** (not Full strict — Railway's doc is explicit); Universal SSL on; Bulk Redirect `https://www.romarkengineering.co.uk/*` → `https://romarkengineering.co.uk/$1` 301.
 - [ ] Railway custom-domain check shows green for `.co.uk` (today: CNAME `REQUIRES_UPDATE`, certificate `ISSUING` — [Certain]).
 
