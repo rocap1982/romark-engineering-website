@@ -198,14 +198,30 @@ export const POST: APIRoute = async ({ request, url }) => {
     );
   }
 
-  // CSRF: verify request origin matches the site
+  // CSRF: the browser's Origin must be this site. Compare HOSTS, not full
+  // origins — behind Railway's proxy the server sees itself as
+  // http://…:8080 while the browser sends https://<public host>, so an
+  // origin-to-origin comparison rejected every real submission with 403
+  // (01/11/2026). x-forwarded-host is what the proxy was asked for.
   const origin = request.headers.get('origin');
-  const expectedOrigin = url.origin;
-  if (origin && origin !== expectedOrigin) {
-    return new Response(JSON.stringify({ error: 'Unauthorized' }), {
-      status: 403,
-      headers: { 'Content-Type': 'application/json' },
-    });
+  const publicHost =
+    request.headers.get('x-forwarded-host')?.split(',')[0]?.trim() ||
+    request.headers.get('host') ||
+    url.host;
+  if (origin) {
+    let originHost: string | null = null;
+    try {
+      originHost = new URL(origin).host;
+    } catch {
+      originHost = null;
+    }
+    if (originHost !== publicHost) {
+      console.warn(`Contact form origin mismatch: origin=${origin} host=${publicHost}`);
+      return new Response(JSON.stringify({ error: 'Unauthorized' }), {
+        status: 403,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
   }
 
   // Validate Content-Type
