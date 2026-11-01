@@ -86,7 +86,8 @@ seven months stale. It is NOT at GoDaddy (GoDaddy holds `roamsystems.co.uk` and 
 - [x] 01/11/2026: contact route already had 5/hour/IP + origin check + injection guards (April status was stale). Hardened: `cf-connecting-ip` preferred over spoofable `x-forwarded-for`; honeypot `website` field — bots get a 200 and nothing is sent. Local proof: 6th POST → 429, spoofed XFF still 429, honeypot 200. `RESEND_API_KEY` is already set on the Railway service.
 - [ ] Pull the five missing service images from the WordPress export's `wp-content/uploads` once it arrives (§5).
 - [ ] Set `GA_MEASUREMENT_ID` only if you actually want GA4; otherwise leave it unset — the layout already tolerates absence.
-- [ ] Smoke test on `romark-engineering-website-production.up.railway.app` before DNS: home, one service page, one SEO page, contact form end to end, `sitemap-index.xml`, `robots.txt`.
+- [x] 01/11/2026 13:54 — contact form end to end on `romark-engineering-website-production.up.railway.app`: Resend `delivered`, arrived in jobs@ Inbox 13:54:13 from `noreply@romarkengineering.co.uk`. Needed on the way: Resend domain `romarkengineering.co.uk` (eu-west-1, four Cloudflare records, verified 12:59), sender switched off the failed `.com` domain (1c03543), origin check compared against `x-forwarded-host` (b1147d9 — every real POST was 403 behind the proxy), and a new API key `romark-website-contact-form` on the Railway service (deploy 04f70964). Rob's first retest was 18 s before that deploy went live — same old error, not a new one.
+- [ ] Rob to eyeball before DNS: home, one service page, one SEO page, `sitemap-index.xml`, `robots.txt` on the Railway domain (all returned 200 locally on 30/10; the session cannot fetch `*.railway.app`).
 - [ ] Cut over DNS (§2). Confirm `https://romarkengineering.co.uk/` serves the Astro site with a valid certificate.
 
 ## 4. 301 map — `engineeringessex.co.uk` → `romarkengineering.co.uk`
