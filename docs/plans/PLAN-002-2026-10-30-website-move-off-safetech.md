@@ -83,7 +83,7 @@ seven months stale. It is NOT at GoDaddy (GoDaddy holds `roamsystems.co.uk` and 
 
 - [x] 30/10/2026 18:19 — service source connected to `rocap1982/romark-engineering-website` `main`; first deployment b3054cf1 (0670b40) SUCCESS in 68 s, listening on 8080; auto-deploys on push. Local smoke test first: all routes 200, 404 OK, empty contact POST → 400.
 - [x] 30/10/2026 (53a74c3, deploy fe0448d1 SUCCESS 19:07): images 49 MB → 2.3 MB (1920 px, mozjpeg q80, EXIF stripped; seven service PNGs → JPEG, refs updated); videos were 4K HEVC → H.264 720p, 25 MB → 6.7 MB; missing `/images/og-default.jpg` created (SEO.astro pointed every og:image at it).
-- [ ] Contact form: rate limit on `src/pages/api/contact` + `RESEND_API_KEY` set as a Railway variable (names only from here; value is yours).
+- [x] 01/11/2026: contact route already had 5/hour/IP + origin check + injection guards (April status was stale). Hardened: `cf-connecting-ip` preferred over spoofable `x-forwarded-for`; honeypot `website` field — bots get a 200 and nothing is sent. Local proof: 6th POST → 429, spoofed XFF still 429, honeypot 200. `RESEND_API_KEY` is already set on the Railway service.
 - [ ] Pull the five missing service images from the WordPress export's `wp-content/uploads` once it arrives (§5).
 - [ ] Set `GA_MEASUREMENT_ID` only if you actually want GA4; otherwise leave it unset — the layout already tolerates absence.
 - [ ] Smoke test on `romark-engineering-website-production.up.railway.app` before DNS: home, one service page, one SEO page, contact form end to end, `sitemap-index.xml`, `robots.txt`.

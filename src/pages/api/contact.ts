@@ -49,12 +49,24 @@ function isRateLimited(ip: string): boolean {
   return false;
 }
 
+// Behind Cloudflare, cf-connecting-ip is set by the edge and cannot be forged
+// by the client; x-forwarded-for can carry a client-supplied first hop, so it
+// is only the fallback for when the site is reached without Cloudflare
+// (the bare Railway domain).
 function getClientIp(request: Request): string {
   return (
+    request.headers.get('cf-connecting-ip')?.trim() ||
     request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
-    request.headers.get('cf-connecting-ip') ||
     'unknown'
   );
+}
+
+// Honeypot: the form carries a visually hidden "website" field no person
+// fills in. A value there is a bot; answer as if it worked and send nothing.
+function isHoneypotTripped(body: unknown): boolean {
+  if (!body || typeof body !== 'object') return false;
+  const value = (body as Record<string, unknown>).website;
+  return typeof value === 'string' && value.trim().length > 0;
 }
 
 function validate(body: unknown): { data?: ContactForm; error?: string } {
@@ -207,6 +219,14 @@ export const POST: APIRoute = async ({ request, url }) => {
   } catch {
     return new Response(JSON.stringify({ error: 'Invalid JSON' }), {
       status: 400,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  }
+
+  if (isHoneypotTripped(body)) {
+    console.warn(`Contact form honeypot tripped from ${clientIp}`);
+    return new Response(JSON.stringify({ success: true }), {
+      status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
   }

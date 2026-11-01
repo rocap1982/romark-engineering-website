@@ -124,6 +124,13 @@ const services = [
               ></textarea>
             </div>
 
+            <!-- Honeypot: hidden from people, filled by bots. The API treats a
+                 non-empty value as spam and pretends to succeed. -->
+            <div class="absolute -left-[9999px] top-auto w-px h-px overflow-hidden" aria-hidden="true">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
             <!-- Status Messages -->
             <div id="form-success" class="hidden p-4 bg-green-50 border border-green-200 rounded text-green-800 text-sm">
               Thank you for your message. We will be in touch shortly.
