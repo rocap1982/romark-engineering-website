@@ -20,7 +20,11 @@ const MAX_PHONE_LENGTH = 30;
 const MAX_COMPANY_LENGTH = 100;
 const MAX_SERVICE_LENGTH = 100;
 const TO_EMAIL = 'jobs@romarkengineering.com';
-const FROM_EMAIL = 'Romark Engineering <noreply@romarkengineering.com>';
+// Sender is on the .co.uk, not the .com: Romark controls the .co.uk DNS
+// (Cloudflare) so Resend's DKIM/SPF records can actually be set; the .com's
+// DNS is held by a third party and its Resend verification sits at "failed".
+// Enquiries still land at jobs@romarkengineering.com with Reply-To = enquirer.
+const FROM_EMAIL = 'Romark Engineering <noreply@romarkengineering.co.uk>';
 
 // Rate limiting
 const RATE_LIMIT_WINDOW_MS = 3_600_000; // 1 hour
