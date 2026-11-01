@@ -17,7 +17,7 @@ const {
   jsonLd,
 } = Astro.props;
 
-const site = Astro.site?.toString().replace(/\/$/, '') ?? 'https://romarkengineering.com';
+const site = Astro.site?.toString().replace(/\/$/, '') ?? 'https://romarkengineering.co.uk';
 const canonicalUrl = canonical ?? `${site}${Astro.url.pathname}`;
 
 const localBusinessJsonLd = {
