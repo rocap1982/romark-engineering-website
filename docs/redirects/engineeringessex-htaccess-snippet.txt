@@ -1,0 +1,8 @@
+# engineeringessex.co.uk -> romarkengineering.co.uk
+# Every old path exists on the new site under the same slug (34 of 35; the old
+# /sitemap/ HTML page goes to the home page). So one host-wide rule is enough.
+# Place at the TOP of the WordPress .htaccess, before "# BEGIN WordPress".
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^(www\.)?engineeringessex\.co\.uk$ [NC]
+RewriteRule ^sitemap/?$ https://romarkengineering.co.uk/ [R=301,L]
+RewriteRule ^(.*)$ https://romarkengineering.co.uk/$1 [R=301,L]
