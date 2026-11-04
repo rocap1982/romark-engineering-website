@@ -22,7 +22,7 @@ idle
 - [ ] Source missing service images (5 of 9 services)
 - [ ] Rate limiting for contact form API
 - [ ] Deployment to Railway / Cloudflare Pages
-- [ ] Domain migration (engineeringessex.co.uk -> romarkengineering.co.uk) with 301 redirects — old URL list ready in `archive/engineeringessex-2026-11-04/redirect-map.csv`, new paths to be filled by Rob
+- [ ] Domain migration — Safetech confirmed 04/11/2026 they keep engineeringessex.co.uk and will run NO 301; old URL list in `archive/engineeringessex-2026-11-04/redirect-map.csv` is only usable if Rob's £150 domain offer is accepted
 
 ## Blockers
 
