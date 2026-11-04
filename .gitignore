@@ -31,3 +31,7 @@ Romark-Photography-Brief.docx
 safetech documents/
 .claude/settings.local.json
 public/images/extracted/
+
+# python bytecode (scripts/)
+__pycache__/
+*.pyc
