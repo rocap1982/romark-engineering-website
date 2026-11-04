@@ -843,6 +843,12 @@ def main(argv=None):
     ok = sum(1 for p in pages if p.status == 200)
     kept = sum(1 for r in a.image_records.values() if r.get("kept"))
     print(f"done: {ok}/{len(pages)} pages archived, {kept} images kept, {len(a.failed)} failures -> {out / 'report.md'}")
+    if ok == 0:
+        statuses = sorted({str(p.status) for p in pages})
+        print(f"WARNING: no page returned 200 (statuses seen: {', '.join(statuses) or 'none'}). "
+              "A 403 on every URL including robots.txt means the host's firewall refused this "
+              "machine or user agent — nothing was archived. Do not retry in a loop; report it.")
+        return 2
     return 0
 
 
