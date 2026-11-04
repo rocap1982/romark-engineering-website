@@ -6,7 +6,6 @@ export const onRequest = defineMiddleware(async (_context, next) => {
   // Security headers
   response.headers.set('X-Content-Type-Options', 'nosniff');
   response.headers.set('X-Frame-Options', 'SAMEORIGIN');
-  response.headers.set('X-XSS-Protection', '1; mode=block');
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');
   response.headers.set(
     'Permissions-Policy',
@@ -21,8 +20,8 @@ export const onRequest = defineMiddleware(async (_context, next) => {
     [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
-      "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-      "font-src 'self' https://fonts.gstatic.com",
+      "style-src 'self' 'unsafe-inline'",
+      "font-src 'self'",
       "img-src 'self' data: https:",
       "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://analytics.google.com",
       "frame-src https://www.google.com https://maps.google.com",
