@@ -90,6 +90,18 @@ seven months stale. It is NOT at GoDaddy (GoDaddy holds `roamsystems.co.uk` and 
 - [x] 04/11/2026 19:27 — contact form re-tested on the live domain `romarkengineering.co.uk`: delivered to jobs@ (origin guard passes behind Cloudflare). Still unchecked by eye: one SEO page, `sitemap-index.xml`, `robots.txt` on the live domain (all returned 200 locally on 30/10; the session cannot fetch `*.railway.app`).
 - [x] 04/11/2026 — DNS cut over; `https://romarkengineering.co.uk/` serves the Astro site, Railway certificate VALID, Cloudflare proxied (SSL mode Full, www→root redirect rule deployed 01/11). **Saga:** the Cloudflare side was finished on 01/11 (root CNAME, `_railway-verify` TXT, Full, Universal SSL) and Railway reported verified + propagated, yet its edge answered its own 404 (`x-railway-fallback: true`) for three days with the certificate stuck at ISSUING. Root cause [Likely]: the custom-domain entry created on 30/10 before any DNS existed never got a live route, and Railway has no refresh action. Fix: removed both custom domains (the never-pointed `.com` too) and re-added `.co.uk`; Railway issued a new target `526eonc8.up.railway.app` and no TXT; Rob swapped the Cloudflare CNAME target; verified + VALID within a minute. Lesson: add the Railway custom domain only once DNS is ready, and if the edge 404s after verification, re-add rather than wait.
 
+## 3b. Robustness pass — 04/11/2026 (after go-live)
+
+Rob asked what a professional would have in place. Done the same evening (commit ca52fb2 + Dependabot merges, Railway deploy SUCCESS):
+
+- [x] **Uptime alert** — `.github/workflows/uptime.yml` probes https://romarkengineering.co.uk/ every 10 min (3 tries, 20 s apart); opens/updates an issue labelled `uptime` titled "Site down: romarkengineering.co.uk" (GitHub emails Rob) and closes it on recovery. First manual run passed, no issue opened. No third-party account.
+- [x] **Region** — Railway service moved from us-east4 (Virginia) to europe-west4 (Amsterdam), single replica, via MCP; old region drained automatically.
+- [x] **Health check + restart policy** — `railway.json`: healthcheck `/` (120 s), ON_FAILURE with 10 retries.
+- [x] **CI + Dependabot** — `.github/workflows/ci.yml`: `astro check`, build, smoke-test 6 routes + 404 on every push/PR; never cancels an in-progress main run. Dependabot weekly (npm minors/patches grouped; actions monthly). Day one: merged the grouped minor/patch bump and the actions bumps; **closed the three majors (astro 7, @astrojs/node 11, typescript 7)** — astro 7 + node adapter 11 must be upgraded together as a deliberate job, and CI correctly failed them. Railway "Wait for CI" deliberately NOT enabled (it silently skips deploys on a red suite; a broken build already fails Railway's own build step).
+- [x] **Fonts self-hosted** — `@fontsource` Barlow / Barlow Condensed / Michroma bundled under `/_astro`; Google Fonts link and CSP allowances for fonts.googleapis/gstatic removed, so visitor IPs no longer go to Google. Obsolete `X-XSS-Protection` header dropped.
+- [ ] Still Rob-side, one screen at a time: Cloudflare "Always Use HTTPS" + Bot Fight Mode; 2FA on Cloudflare and Fasthosts; Fasthosts registrar lock + DNSSEC for romarkengineering.co.uk; check jobs@ spam volume after a month before deciding on a CAPTCHA.
+- [ ] Later, low priority: CSP nonces to drop `'unsafe-inline'` for scripts.
+
 ## 4. 301 map — `engineeringessex.co.uk` → `romarkengineering.co.uk`
 
 What Safetech must implement (it is their domain and their host): a **page-for-page 301** for
