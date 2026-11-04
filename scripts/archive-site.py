@@ -79,6 +79,9 @@ STOCK_NAME_RE = re.compile(
     r"pexels|unsplash|pixabay|123rf|bigstock|fotolia|canva|freepik|^\d{6,}[-_.]|^image\d*\.|^img_?\d+\.|^photo\d*\.)",
     re.I,
 )
+SHARED_BLOCK_MIN_PAGES = 3      # a text block on this many pages or more counts as site-wide template copy
+SHARED_BLOCK_MIN_WORDS = 10
+INJECTED_BLOCK_SELECTORS = ("#safetech_seo", ".safetech_seo_wrap")
 ROMARK_RE = re.compile(r"\bRomark\b", re.I)
 LOCAL_RE = re.compile(r"Stanford[- ]le[- ]Hope|Baryta|SS17|Essex", re.I)
 PHONE_RE = re.compile(r"01375\s?\d{3}\s?\d{3}")
@@ -150,6 +153,18 @@ def human_size(n: int) -> str:
     return f"{n:.1f} GB"
 
 
+MD_IMAGE_RE = re.compile(r"!\[[^\]]*\]\([^)]*\)")
+MD_LINK_RE = re.compile(r"\[([^\]]*)\]\([^)]*\)")
+
+
+def plain(block: str) -> str:
+    """Markdown block -> words only: images dropped, links reduced to their text, markup stripped."""
+    t = MD_IMAGE_RE.sub(" ", block)
+    t = MD_LINK_RE.sub(r"\1", t)
+    t = re.sub(r"[#*_`>|]+", " ", t)
+    return re.sub(r"\s+", " ", t).strip()
+
+
 def shingles(text: str, k: int = 8) -> set[str]:
     words = re.findall(r"[a-z0-9']+", text.lower())
     return {" ".join(words[i:i + k]) for i in range(max(0, len(words) - k + 1))}
@@ -185,6 +200,9 @@ class PageRecord:
     stock_named_images: int = 0
     max_similarity: float = 0.0
     most_similar_page: str = ""
+    injected_seo_block: str = ""     # text of a host/agency-injected block (e.g. #safetech_seo), kept out of the markdown
+    unique_words: int = 0            # words in blocks that appear on fewer than SHARED_BLOCK_MIN_PAGES pages
+    shared_blocks: int = 0           # blocks on this page that are repeated across the site
 
 
 class RateLimiter:
@@ -376,14 +394,118 @@ class Archiver:
             self.file_records[url]["pages"].add(page_url)
 
     def extract_main(self, soup: BeautifulSoup) -> BeautifulSoup:
-        for sel in ("#ajax-content-wrap", "main", "[role=main]", "#content", ".container-wrap", "article", "body"):
+        """The page's own content, without theme chrome. Salient (this site) puts it in
+        #ajax-content-wrap > .container-wrap > .container.main-content; the global
+        before-footer section, the injected SEO link block and the footer sit beside it."""
+        for sel in ("#ajax-content-wrap .container.main-content", ".container.main-content", "#ajax-content-wrap .main-content",
+                    "main", "[role=main]", "#content", "article", "#ajax-content-wrap", "body"):
             node = soup.select_one(sel)
             if node is not None:
                 main = BeautifulSoup(str(node), PARSER)
-                for junk in main.select("script, style, noscript, iframe, form, nav, header, footer, #header-outer, #footer-outer, .nectar-social, .sharing-default-minimal, #ajax-loading-screen, #slide-out-widget-area, .wpcf7"):
+                for junk in main.select("script, style, noscript, iframe, form, nav, header, footer, #header-outer, #footer-outer, "
+                                        ".nectar-global-section, .nectar-social, .sharing-default-minimal, #ajax-loading-screen, "
+                                        "#slide-out-widget-area, .wpcf7, " + ", ".join(INJECTED_BLOCK_SELECTORS)):
                     junk.decompose()
+                # Lazy-loaded images: promote the real source so the markdown points at the file, not a 1px gif.
+                for img in main.find_all("img"):
+                    real = img.get("data-src") or img.get("data-lazy-src") or img.get("data-original")
+                    if real:
+                        img["src"] = real
+                    if (img.get("src") or "").startswith("data:"):
+                        img.decompose()
                 return main
         return soup
+
+    def parse_html(self, rec: PageRecord, html: str, slug: str):
+        """Fill a PageRecord from saved HTML and write its .md/.json. Used by the live crawl and by --reprocess."""
+        soup = BeautifulSoup(html, PARSER)
+        rec.title = (soup.title.get_text(strip=True) if soup.title else "")
+        md_tag = soup.find("meta", attrs={"name": re.compile("^description$", re.I)})
+        rec.meta_description = (md_tag.get("content") or "").strip() if md_tag else ""
+        can = soup.find("link", attrs={"rel": lambda v: v and "canonical" in ([v] if isinstance(v, str) else v)})
+        rec.canonical = (can.get("href") or "").strip() if can else ""
+        rec.h1 = [h.get_text(" ", strip=True) for h in soup.find_all("h1")]
+        rec.h2 = [h.get_text(" ", strip=True) for h in soup.find_all("h2")]
+        rec.h3 = [h.get_text(" ", strip=True) for h in soup.find_all("h3")]
+        injected = [soup.select_one(sel) for sel in INJECTED_BLOCK_SELECTORS]
+        injected = [n for n in injected if n is not None]
+        rec.injected_seo_block = injected[0].get_text(" | ", strip=True) if injected else ""
+
+        # Images: <img src/srcset/data-src/data-lazy-src>, <source srcset>, inline background-image, og:image, icons
+        seen_imgs: "OrderedDict[str, str]" = OrderedDict()
+        for img in soup.find_all(["img", "source"]):
+            alt = img.get("alt") or ""
+            for attr in ("src", "data-src", "data-lazy-src", "data-original", "data-bg", "data-background"):
+                v = img.get(attr)
+                if v and not v.startswith("data:"):
+                    seen_imgs.setdefault(v, alt)
+            for attr in ("srcset", "data-srcset", "data-lazy-srcset"):
+                v = img.get(attr)
+                if v:
+                    for cand in v.split(","):
+                        u = cand.strip().split(" ")[0]
+                        if u and not u.startswith("data:"):
+                            seen_imgs.setdefault(u, alt)
+        for el in soup.find_all(style=re.compile(r"background(-image)?\s*:", re.I)):
+            for m in re.finditer(r"url\(\s*['\"]?([^'\")]+)['\"]?\s*\)", el["style"]):
+                seen_imgs.setdefault(m.group(1), "")
+        for el in soup.find_all(attrs={"data-bg-image": True}):
+            seen_imgs.setdefault(el["data-bg-image"], "")
+        for meta in soup.find_all("meta", attrs={"property": re.compile(r"^og:image", re.I)}):
+            if meta.get("content"):
+                seen_imgs.setdefault(meta["content"], "og:image")
+        for link in soup.find_all("link", attrs={"rel": True}):
+            rels = link["rel"] if isinstance(link["rel"], list) else [link["rel"]]
+            if any(x in ("icon", "apple-touch-icon", "shortcut") for x in rels) and link.get("href"):
+                seen_imgs.setdefault(link["href"], "icon")
+        rec.images = []
+        for src, alt in seen_imgs.items():
+            abs_url = normalise_url(urljoin(rec.final_url, src))
+            rec.images.append({"src": abs_url, "alt": alt})
+            self.note_image(abs_url, alt, rec.final_url)
+        rec.stock_named_images = sum(1 for i in rec.images if STOCK_NAME_RE.search(os.path.basename(urlparse(i["src"]).path)))
+
+        # Links
+        internal, outbound = OrderedDict(), OrderedDict()
+        for a in soup.find_all("a", href=True):
+            href = a["href"].strip()
+            if not href or href.startswith(("#", "mailto:", "tel:", "javascript:")):
+                continue
+            abs_url = normalise_url(urljoin(rec.final_url, href))
+            if self.is_internal(abs_url):
+                internal[abs_url] = True
+            else:
+                outbound[abs_url] = True
+        rec.internal_links = list(internal)
+        rec.outbound_links = list(outbound)
+
+        # Main content -> markdown
+        main = self.extract_main(soup)
+        text = main.get_text(" ", strip=True)
+        rec.word_count = len(re.findall(r"\b\w+\b", text))
+        rec.romark_mentions = len(ROMARK_RE.findall(text))
+        rec.local_mentions = len(LOCAL_RE.findall(text))
+        rec.phone_mentions = len(PHONE_RE.findall(text))
+        markdown = md(str(main), heading_style="ATX", strip=["script", "style"])
+        markdown = re.sub(r"\n{3,}", "\n\n", markdown).strip()
+        front = [
+            f"# {rec.title or rec.final_url}", "",
+            f"- source: {rec.final_url}",
+            f"- archived: {now_iso()}",
+            f"- canonical: {rec.canonical}",
+            f"- meta_description: {rec.meta_description}", "",
+            "---", "",
+        ]
+        rec.md_file = f"pages/{slug}.md"
+        (self.out / rec.md_file).write_text("\n".join(front) + markdown + "\n", encoding="utf-8")
+        rec.json_file = f"pages/{slug}.json"
+        setattr(rec, "_text", text)
+        setattr(rec, "_blocks", [b for b in (plain(x) for x in re.split(r"\n\s*\n", markdown)) if b])
+        self.write_page_json(rec)
+
+    def write_page_json(self, rec: PageRecord):
+        if rec.json_file:
+            (self.out / rec.json_file).write_text(json.dumps(asdict(rec), indent=2, ensure_ascii=False), encoding="utf-8")
 
     def process_page(self, url: str, via: str):
         rec = PageRecord(url=url, discovered_via=via)
@@ -418,86 +540,7 @@ class Archiver:
             rec.error = f"http {r.status_code}"
             self.failed.append({"kind": "page", "url": url, "reason": f"http {r.status_code}"})
             return
-
-        soup = BeautifulSoup(html, PARSER)
-        rec.title = (soup.title.get_text(strip=True) if soup.title else "")
-        md_tag = soup.find("meta", attrs={"name": re.compile("^description$", re.I)})
-        rec.meta_description = (md_tag.get("content") or "").strip() if md_tag else ""
-        can = soup.find("link", attrs={"rel": lambda v: v and "canonical" in ([v] if isinstance(v, str) else v)})
-        rec.canonical = (can.get("href") or "").strip() if can else ""
-        rec.h1 = [h.get_text(" ", strip=True) for h in soup.find_all("h1")]
-        rec.h2 = [h.get_text(" ", strip=True) for h in soup.find_all("h2")]
-        rec.h3 = [h.get_text(" ", strip=True) for h in soup.find_all("h3")]
-
-        # Images: <img src/srcset/data-src/data-lazy-src>, <source srcset>, inline background-image, og:image, icons
-        seen_imgs: "OrderedDict[str, str]" = OrderedDict()
-        for img in soup.find_all(["img", "source"]):
-            alt = img.get("alt") or ""
-            for attr in ("src", "data-src", "data-lazy-src", "data-original", "data-bg", "data-background"):
-                v = img.get(attr)
-                if v and not v.startswith("data:"):
-                    seen_imgs.setdefault(v, alt)
-            for attr in ("srcset", "data-srcset", "data-lazy-srcset"):
-                v = img.get(attr)
-                if v:
-                    for cand in v.split(","):
-                        u = cand.strip().split(" ")[0]
-                        if u and not u.startswith("data:"):
-                            seen_imgs.setdefault(u, alt)
-        for el in soup.find_all(style=re.compile(r"background(-image)?\s*:", re.I)):
-            for m in re.finditer(r"url\(\s*['\"]?([^'\")]+)['\"]?\s*\)", el["style"]):
-                seen_imgs.setdefault(m.group(1), "")
-        for el in soup.find_all(attrs={"data-bg-image": True}):
-            seen_imgs.setdefault(el["data-bg-image"], "")
-        for meta in soup.find_all("meta", attrs={"property": re.compile(r"^og:image", re.I)}):
-            if meta.get("content"):
-                seen_imgs.setdefault(meta["content"], "og:image")
-        for link in soup.find_all("link", attrs={"rel": True}):
-            rels = link["rel"] if isinstance(link["rel"], list) else [link["rel"]]
-            if any(x in ("icon", "apple-touch-icon", "shortcut") for x in rels) and link.get("href"):
-                seen_imgs.setdefault(link["href"], "icon")
-        for src, alt in seen_imgs.items():
-            abs_url = normalise_url(urljoin(rec.final_url, src))
-            rec.images.append({"src": abs_url, "alt": alt})
-            self.note_image(abs_url, alt, rec.final_url)
-        rec.stock_named_images = sum(1 for i in rec.images if STOCK_NAME_RE.search(os.path.basename(urlparse(i["src"]).path)))
-
-        # Links
-        internal, outbound = OrderedDict(), OrderedDict()
-        for a in soup.find_all("a", href=True):
-            href = a["href"].strip()
-            if not href or href.startswith(("#", "mailto:", "tel:", "javascript:")):
-                continue
-            abs_url = normalise_url(urljoin(rec.final_url, href))
-            if self.is_internal(abs_url):
-                internal[abs_url] = True
-            else:
-                outbound[abs_url] = True
-        rec.internal_links = list(internal)
-        rec.outbound_links = list(outbound)
-
-        # Main content → markdown
-        main = self.extract_main(soup)
-        text = main.get_text(" ", strip=True)
-        rec.word_count = len(re.findall(r"\b\w+\b", text))
-        rec.romark_mentions = len(ROMARK_RE.findall(text))
-        rec.local_mentions = len(LOCAL_RE.findall(text))
-        rec.phone_mentions = len(PHONE_RE.findall(text))
-        markdown = md(str(main), heading_style="ATX", strip=["script", "style"])
-        markdown = re.sub(r"\n{3,}", "\n\n", markdown).strip()
-        front = [
-            f"# {rec.title or rec.final_url}", "",
-            f"- source: {rec.final_url}",
-            f"- archived: {now_iso()}",
-            f"- canonical: {rec.canonical}",
-            f"- meta_description: {rec.meta_description}", "",
-            "---", "",
-        ]
-        rec.md_file = f"pages/{slug}.md"
-        (self.out / rec.md_file).write_text("\n".join(front) + markdown + "\n", encoding="utf-8")
-        rec.json_file = f"pages/{slug}.json"
-        (self.out / rec.json_file).write_text(json.dumps(asdict(rec), indent=2, ensure_ascii=False), encoding="utf-8")
-        setattr(rec, "_text", text)
+        self.parse_html(rec, html, slug)
 
     def crawl(self):
         self.load_robots()
@@ -647,14 +690,36 @@ class Archiver:
 
     # ---- outputs
 
+    def shared_blocks_pass(self):
+        """Count every >=10-word block across pages; blocks on >=3 pages are template copy."""
+        pages = [r for r in self.unique_pages() if r.status == 200]
+        counts: dict[str, set[str]] = {}
+        for r in pages:
+            for b in set(getattr(r, "_blocks", [])):
+                if len(b.split()) >= SHARED_BLOCK_MIN_WORDS:
+                    counts.setdefault(b.lower(), set()).add(r.final_url or r.url)
+        self.shared_blocks = {b: sorted(u) for b, u in counts.items() if len(u) >= SHARED_BLOCK_MIN_PAGES}
+        for r in pages:
+            blocks = getattr(r, "_blocks", [])
+            shared = [b for b in blocks if b.lower() in self.shared_blocks]
+            own = [b for b in blocks if b.lower() not in self.shared_blocks]
+            r.shared_blocks = len(shared)
+            r.unique_words = sum(len(re.findall(r"\b\w+\b", b)) for b in own)
+            setattr(r, "_own_text", " ".join(own))
+            self.write_page_json(r)
+
     def similarity_pass(self):
-        texts = {u: getattr(r, "_text", "") for u, r in self.pages.items() if r.status == 200 and u == (r.final_url or u)}
+        # Compare each page's OWN copy (shared template blocks removed) so a page made only of
+        # template does not make every other page look like its duplicate.
+        texts = {u: getattr(r, "_own_text", getattr(r, "_text", "")) for u, r in self.pages.items() if r.status == 200 and u == (r.final_url or u)}
         sh = {u: shingles(t) for u, t in texts.items()}
         urls = list(sh)
         for i, a in enumerate(urls):
             best, best_u = 0.0, ""
             for b in urls:
-                if a == b or not sh[a] or not sh[b]:
+                # Pages with under 50 words of their own copy (contact, gallery) are all "contained" in
+                # everything else; comparing them says nothing, so they score 0.
+                if a == b or not sh[a] or not sh[b] or len(texts[a].split()) < 50 or len(texts[b].split()) < 50:
                     continue
                 inter = len(sh[a] & sh[b])
                 j = inter / max(1, min(len(sh[a]), len(sh[b])))   # containment: how much of the smaller page is in the other
@@ -662,6 +727,7 @@ class Archiver:
                     best, best_u = j, b
             self.pages[a].max_similarity = round(best, 3)
             self.pages[a].most_similar_page = best_u
+            self.write_page_json(self.pages[a])
 
     def unique_pages(self) -> list[PageRecord]:
         seen, out = set(), []
@@ -775,13 +841,16 @@ class Archiver:
             "Heuristics only — the verdict column is a suggestion from the numbers in the same row, to be read against the page. ",
             "`similar` = share of this page's 8-word phrases that also appear on the most similar other page (1.0 = fully templated). ",
             "`stock-named` = images whose filename matches a stock-library or camera-default pattern. Alt text and filenames are in images.csv.", "",
-            "| Page | Words | Romark | Local | Phone | Imgs | Stock-named | Similar | Most similar page | Suggested |",
-            "|---|---|---|---|---|---|---|---|---|---|",
+            f"`unique words` = words in blocks that appear on fewer than {SHARED_BLOCK_MIN_PAGES} pages (the page's own copy); `shared` = repeated blocks on the page; `similar` is computed on the own copy only.", "",
+            "| Page | Words | Unique words | Shared blocks | Romark | Local | Phone | Imgs | Stock-named | Similar | Most similar page | Suggested |",
+            "|---|---|---|---|---|---|---|---|---|---|---|---|",
         ]
-        for p in sorted(ok_by_final, key=lambda x: (-x.max_similarity, x.url)):
+        for p in sorted(ok_by_final, key=lambda x: (x.unique_words, x.url)):
             verdict = []
-            if p.max_similarity >= 0.6:
-                verdict.append("templated copy")
+            if p.shared_blocks and p.word_count and p.unique_words / p.word_count < 0.5:
+                verdict.append("mostly template copy")
+            elif p.max_similarity >= 0.6:
+                verdict.append("near-duplicate of another page (own copy)")
             if p.romark_mentions == 0 and p.local_mentions == 0:
                 verdict.append("no Romark/local reference")
             if p.images and p.stock_named_images / max(1, len(p.images)) >= 0.5:
@@ -789,8 +858,18 @@ class Archiver:
             if not verdict:
                 verdict.append("looks like real content")
             sim_page = p.most_similar_page.replace(self.base_url, "") or "-"
-            lines.append(f"| {p.final_url.replace(self.base_url, '') or '/'} | {p.word_count} | {p.romark_mentions} | {p.local_mentions} | {p.phone_mentions} | "
+            lines.append(f"| {p.final_url.replace(self.base_url, '') or '/'} | {p.word_count} | {p.unique_words} | {p.shared_blocks} | {p.romark_mentions} | {p.local_mentions} | {p.phone_mentions} | "
                          f"{len(p.images)} | {p.stock_named_images} | {p.max_similarity:.2f} | {sim_page} | {'; '.join(verdict)} |")
+        shared = getattr(self, "shared_blocks", {})
+        lines += ["", f"## Text blocks repeated across {SHARED_BLOCK_MIN_PAGES}+ pages ({len(shared)})", "",
+                  "Template copy the host or theme repeats site-wide. Count = pages carrying the block.", ""]
+        for b, urls in sorted(shared.items(), key=lambda x: (-len(x[1]), x[0]))[:60]:
+            lines.append(f"- ({len(urls)} pages) {b[:160]}{'…' if len(b) > 160 else ''}")
+        injected = [(p.final_url.replace(self.base_url, '') or '/', p.injected_seo_block) for p in ok_by_final if p.injected_seo_block]
+        if injected:
+            lines += ["", f"## Injected host/agency block ({len(injected)} pages)", "",
+                      f"Selector(s) {', '.join(INJECTED_BLOCK_SELECTORS)} — excluded from the page markdown; full text in each page's JSON (`injected_seo_block`).", "",
+                      f"Example from {injected[0][0]}: {injected[0][1][:400]}"]
         lines += ["", "## Images with stock-library or camera-default filenames", ""]
         stock = [(u, r) for u, r in self.image_records.items() if STOCK_NAME_RE.search(os.path.basename(urlparse(u).path))]
         if stock:
@@ -816,11 +895,54 @@ class Archiver:
                   "- `images/`, `files/`, `raw/` (robots.txt, sitemaps), `crawl-log.jsonl` (every request)", ""]
         (self.out / "report.md").write_text("\n".join(lines), encoding="utf-8")
 
+    def reprocess(self):
+        """Rebuild markdown, JSON, index.csv, links.csv and report.md from the saved HTML. No network."""
+        self.log(kind="info", msg="reprocess from saved HTML (no requests)")
+        # images.csv / files.csv / skipped.csv / failed.csv are reloaded so the rewritten CSVs stay complete.
+        img_csv = self.out / "images.csv"
+        if img_csv.exists():
+            with open(img_csv, newline="", encoding="utf-8") as fh:
+                for row in csv.DictReader(fh):
+                    u = row["image_url"]
+                    self.image_records[u] = {"url": u, "internal": row["internal"] == "True", "kept": row["kept"] == "True",
+                                             "local_file": row["local_file"], "bytes": int(row["bytes"] or 0), "status": row["status"]}
+                    if row["alt_text"]:
+                        self.image_alts[u] = set(row["alt_text"].split(" | "))
+                    if row["used_on_pages"]:
+                        self.image_pages[u] = set(row["used_on_pages"].split(" | "))
+        for name, target in (("files.csv", "file"), ("skipped.csv", "skip"), ("failed.csv", "fail")):
+            fp = self.out / name
+            if not fp.exists():
+                continue
+            with open(fp, newline="", encoding="utf-8") as fh:
+                for row in csv.DictReader(fh):
+                    if target == "file":
+                        self.file_records[row["file_url"]] = {"url": row["file_url"], "local_file": row["local_file"], "bytes": int(row["bytes"] or 0),
+                                                              "status": row["status"], "pages": set(row["linked_from"].split(" | ")) if row["linked_from"] else set()}
+                    elif target == "skip":
+                        self.skipped.append({"url": row["url"], "reason": row["reason"], "via": row["found_via"]})
+                    else:
+                        self.failed.append({"kind": row["kind"], "url": row["url"], "reason": row["reason"]})
+        for jf in sorted(self.pages_dir.glob("*.json")):
+            d = json.loads(jf.read_text(encoding="utf-8"))
+            rec = PageRecord(**{k: v for k, v in d.items() if k in PageRecord.__dataclass_fields__})
+            self.pages[rec.url] = rec
+            if rec.final_url and rec.final_url != rec.url:
+                self.pages[rec.final_url] = rec
+            if rec.status == 200 and rec.html_file and (self.out / rec.html_file).exists():
+                html = (self.out / rec.html_file).read_text(encoding="utf-8")
+                self.parse_html(rec, html, jf.stem)
+        self.shared_blocks_pass()
+        self.similarity_pass()
+        self.write_outputs()
+        self.log_fh.close()
+
     def run(self):
         self.log(kind="info", msg=f"start base={self.base_url} out={self.out}")
         self.crawl()
         self.fetch_images()
         self.fetch_files()
+        self.shared_blocks_pass()
         self.similarity_pass()
         self.write_outputs()
         self.log_fh.close()
@@ -834,10 +956,16 @@ def main(argv=None):
     ap.add_argument("--max-pages", type=int, default=500)
     ap.add_argument("--max-images", type=int, default=3000)
     ap.add_argument("--user-agent", default=DEFAULT_UA)
+    ap.add_argument("--reprocess", action="store_true", help="rebuild markdown/CSVs/report from the saved HTML in --out; makes no requests")
     args = ap.parse_args(argv)
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     a = Archiver(args.base_url, out, args.delay, args.max_pages, args.max_images, args.user_agent)
+    if args.reprocess:
+        a.reprocess()
+        pages = a.unique_pages()
+        print(f"reprocessed {sum(1 for p in pages if p.status == 200)} pages -> {out / 'report.md'}")
+        return 0
     a.run()
     pages = a.unique_pages()
     ok = sum(1 for p in pages if p.status == 200)

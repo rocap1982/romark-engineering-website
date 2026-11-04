@@ -1,0 +1,121 @@
+{
+  "url": "https://engineeringessex.co.uk/",
+  "final_url": "https://engineeringessex.co.uk/",
+  "status": 200,
+  "content_type": "text/html; charset=UTF-8",
+  "title": "Home - Romark Engineering | 01375 673 447",
+  "meta_description": "Home | Romark offers a complete service for the design and manufacture of a large range of metal products",
+  "canonical": "https://engineeringessex.co.uk/",
+  "h1": [
+    "Romark Engineering Ltd."
+  ],
+  "h2": [
+    "Romark Engineering",
+    "The Services We Provide",
+    "Need a service & ready to book? Call us 01375 640 037",
+    "Get In Touch",
+    "Contact Info"
+  ],
+  "h3": [
+    "Cnc Machining & Milling",
+    "Sheet Metalwork",
+    "Fabrication & Welding",
+    "Equipment"
+  ],
+  "images": [
+    {
+      "src": "https://engineeringessex.co.uk/wp-content/uploads/2023/04/logo-bank-gothic.png",
+      "alt": "Romark Engineering "
+    },
+    {
+      "src": "https://engineeringessex.co.uk/wp-content/uploads/2023/04/welding.mp4",
+      "alt": ""
+    },
+    {
+      "src": "https://engineeringessex.co.uk/wp-content/uploads/2023/04/about_a.png",
+      "alt": "Romark Engineering"
+    },
+    {
+      "src": "https://engineeringessex.co.uk/wp-content/uploads/2023/04/about_a-280x300.png",
+      "alt": "Romark Engineering"
+    },
+    {
+      "src": "https://engineeringessex.co.uk/wp-content/uploads/2023/04/a.png",
+      "alt": "Romark Engineering"
+    },
+    {
+      "src": "https://engineeringessex.co.uk/wp-content/plugins/gdpr-cookie-compliance/dist/images/gdpr-logo.png",
+      "alt": "Romark Engineering "
+    },
+    {
+      "src": "https://engineeringessex.co.uk/wp-content/uploads/2023/04/cropped-cogs-1-32x32.png",
+      "alt": "icon"
+    },
+    {
+      "src": "https://engineeringessex.co.uk/wp-content/uploads/2023/04/cropped-cogs-1-192x192.png",
+      "alt": "icon"
+    },
+    {
+      "src": "https://engineeringessex.co.uk/wp-content/uploads/2023/04/cropped-cogs-1-180x180.png",
+      "alt": "icon"
+    }
+  ],
+  "internal_links": [
+    "https://engineeringessex.co.uk/",
+    "https://engineeringessex.co.uk/about-us/",
+    "https://engineeringessex.co.uk/cad/",
+    "https://engineeringessex.co.uk/cnc-machining/",
+    "https://engineeringessex.co.uk/milling/",
+    "https://engineeringessex.co.uk/turning/",
+    "https://engineeringessex.co.uk/sheetmetal-work/",
+    "https://engineeringessex.co.uk/blank-development/",
+    "https://engineeringessex.co.uk/laser-profiling/",
+    "https://engineeringessex.co.uk/folding-pressing/",
+    "https://engineeringessex.co.uk/sheet-metal-welding/",
+    "https://engineeringessex.co.uk/fabrication-and-welding/",
+    "https://engineeringessex.co.uk/equipment/",
+    "https://engineeringessex.co.uk/gallery/",
+    "https://engineeringessex.co.uk/contact-us/",
+    "https://engineeringessex.co.uk/sitemap/",
+    "https://engineeringessex.co.uk/sheet-metal-london/",
+    "https://engineeringessex.co.uk/aluminium-welding-london/",
+    "https://engineeringessex.co.uk/cnc-machining-kent/",
+    "https://engineeringessex.co.uk/stainless-steel-essex/",
+    "https://engineeringessex.co.uk/sheet-metal-essex/",
+    "https://engineeringessex.co.uk/laser-cutting-essex/",
+    "https://engineeringessex.co.uk/precision-engineering-london/",
+    "https://engineeringessex.co.uk/machining-essex/",
+    "https://engineeringessex.co.uk/laser-cutting-basildon/",
+    "https://engineeringessex.co.uk/cnc-milling-essex/",
+    "https://engineeringessex.co.uk/prototype-engineering-london/",
+    "https://engineeringessex.co.uk/prototype-engineering-services/",
+    "https://engineeringessex.co.uk/fabrication-contractors/",
+    "https://engineeringessex.co.uk/sheet-metal-fabrication-essex/",
+    "https://engineeringessex.co.uk/metal-fabrication-essex/",
+    "https://engineeringessex.co.uk/precision-engineering-essex/",
+    "https://engineeringessex.co.uk/precision-engineering-kent/",
+    "https://engineeringessex.co.uk/precision-engineering-basildon/",
+    "https://engineeringessex.co.uk/sheet-metal-fabrication-london/"
+  ],
+  "outbound_links": [
+    "https://iwantalocal.co.uk/",
+    "https://safetech.co.uk/",
+    "http://safetech.co.uk/",
+    "https://wordpress.org/plugins/gdpr-cookie-compliance/"
+  ],
+  "word_count": 187,
+  "html_file": "pages/index.html",
+  "md_file": "pages/index.md",
+  "json_file": "pages/index.json",
+  "discovered_via": "homepage",
+  "error": "",
+  "romark_mentions": 7,
+  "local_mentions": 8,
+  "phone_mentions": 3,
+  "stock_named_images": 0,
+  "max_similarity": 0.936,
+  "most_similar_page": "https://engineeringessex.co.uk/about-us/",
+  "injected_seo_block": "Sheet Metal London | Aluminium Welding London | Cnc Machining Kent | Stainless Steel Essex | Sheet Metal Essex | Laser Cutting Essex | Precision Engineering London | Machining Essex | Laser Cutting Basildon | CNC Milling Essex | Prototype Engineering London | Prototype Engineering Services | Fabrication Contractors | Sheet Metal Fabrication Essex | Metal Fabrication Essex | Precision Engineering Essex | Precision Engineering Kent | Precision Engineering Basildon | Sheet Metal Fabrication London | Sheet Metal London | I Want A Local | Safetech LTD",
+  "unique_words": 167,
+  "shared_blocks": 2
+}
