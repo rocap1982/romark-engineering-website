@@ -7,8 +7,9 @@ on:
 
 concurrency:
   group: ci-${{ github.ref }}
-  # Never cancel a run on main: Railway's "Wait for CI" skips a cancelled suite.
-  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+  # Never cancel: the conditional form cancelled run #10 on main (04/11/2026)
+  # and a cancelled suite is what Railway's "Wait for CI" would skip.
+  cancel-in-progress: false
 
 jobs:
   build:
