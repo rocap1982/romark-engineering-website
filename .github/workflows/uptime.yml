@@ -30,7 +30,7 @@ jobs:
           echo "ok=$ok" >> "$GITHUB_OUTPUT"
           echo "code=${code:-none}" >> "$GITHUB_OUTPUT"
       - name: Open or close the alert issue
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         env:
           OK: ${{ steps.probe.outputs.ok }}
           CODE: ${{ steps.probe.outputs.code }}
