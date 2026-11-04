@@ -56,7 +56,7 @@ except Exception:  # pragma: no cover
     PARSER = "html.parser"
 
 DEFAULT_BASE = "https://engineeringessex.co.uk"
-DEFAULT_UA = "RomarkSiteArchive/1.0 (archive of own site; python-requests)"
+DEFAULT_UA = "RomarkSiteArchive/1.0 (+https://romarkengineering.co.uk; site-owner archive of own website)"
 
 # Paths we never request, even if linked. Not an exhaustive security list — these are
 # the WordPress surfaces that are not content and/or could have side effects.
