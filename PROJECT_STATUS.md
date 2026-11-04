@@ -1,12 +1,12 @@
 ---
 project: romark-engineering-website
 status: active
-last_updated: 2026-04-11
+last_updated: 2026-11-04
 
 # "Resume context" pointers (keep these current)
 sprint_current_status: docs/sprints/CURRENT_STATUS.md
 active_work: "All 3 sprints complete + new media integrated + equipment specs corrected site-wide. Next: media optimisation, rate limiting, deployment"
-latest_session_log: docs/sessions/2026-04-11.md
+latest_session_log: docs/sessions/2026-11-04.md
 roadmap_next_phase: "Deployment sprint (Railway, domain migration, 301 redirects)"
 canonical_architecture_decision: ""
 active_audits_dir: docs/audits/active/
@@ -36,6 +36,7 @@ This file is the **fastest way to resume work** with minimal context.
 - **Core pages built** (Sprint 002): 9 data-driven service pages, About Us, Equipment, Gallery, Contact Us with Resend email form, JSON-LD schemas (Service + ItemList), security-hardened API endpoint
 - **SEO landing pages built** (Sprint 003): 20 location-targeted pages from seo-pages.json, FAQ accordion component, Service+areaServed JSON-LD, FAQPage JSON-LD, Footer "Areas We Serve" links
 - **Total pages**: 34 prerendered (14 core + 20 SEO landing)
+- **Old site archived 04/11/2026**: `archive/engineeringessex-2026-11-04/` (35 pages, 112 images, `report.md` findings, `redirect-map.csv` awaiting new paths); tool: `scripts/archive-site.py`
 - **Original WordPress site** (engineeringessex.co.uk): 35 pages (9 service, 6 core, ~20 SEO landing), good SEO rankings (#2 for several location-targeted keywords), Dec 2024: 12,212 impressions, 74 clicks, 215 sessions
 
 ### What's Next
