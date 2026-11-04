@@ -251,7 +251,7 @@ class Archiver:
             self.limiter.wait()
             t0 = time.monotonic()
             try:
-                r = self.session.get(url, timeout=(10, 60), allow_redirects=True, stream=stream)
+                r = self.session.get(url, timeout=(15, 300), allow_redirects=True, stream=stream)
                 elapsed = round(time.monotonic() - t0, 3)
                 self.log(kind=kind, url=url, final_url=r.url, status=r.status_code,
                          content_type=r.headers.get("Content-Type", ""), attempt=attempt, elapsed=elapsed)
