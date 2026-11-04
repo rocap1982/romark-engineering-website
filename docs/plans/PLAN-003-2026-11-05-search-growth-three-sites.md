@@ -139,8 +139,8 @@ While the new domain settles, a small Google Ads search campaign for "sheet meta
 **Me, without asking** (each as its own small PR, reported when live): schema and cross-links on Romark and ROAM; "Our group" page draft; Cloudflare analytics; location-page rewrites two a week; ROAM not-indexed investigation; installer and certification-body email drafts; Plan 168 Phase 2 plan document; monthly report once the API access exists.
 
 **ROB:** (one at a time, as usual)
-- ROB: Confirm you can sign in to the Romark Google Business Profile as the primary owner at https://business.google.com and tell me what it shows for ownership.
-- ROB: Copy the "Get more reviews" link from that profile and paste it to me so I can set the review-request variable.
+- [x] 04/11/2026 22:00 — Rob is primary owner of both Romark and RJ Waller profiles (personal Gmail; move to a company account later). Safetech removed as manager. Name changed from Safetech's stuffed "Romark Engineering | Metal Fabrication | Sheet Metalwork | Essex" to "Romark Engineering Ltd" (pending, no re-verify). Description rewritten (plant + certs + sister companies). Website field engineeringessex.co.uk → romarkengineering.co.uk. Categories already right.
+- ROB: Copy the "Ask for reviews" link from the Romark profile and paste it to me so I can set `ROMARK_GOOGLE_REVIEW_URL`.
 - ROB: Ask Chris for 30 minutes on rjwaller.co.uk: what it is built on, who hosts it, whether he wants it rebuilt on the Romark template.
 - ROB: Tell the shop floor the WEB photo rule (one line in the Monday meeting is enough).
 - ROB: Approve the "Our group" wording and the footer credit line when I send them.
