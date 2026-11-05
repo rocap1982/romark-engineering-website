@@ -1,0 +1,1591 @@
+<!doctype html>
+<html lang="en-GB" class="no-js">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>(()=>{class RocketLazyLoadScripts{constructor(){this.v="2.0.5",this.userEvents=["keydown","keyup","mousedown","mouseup","mousemove","mouseover","mouseout","touchmove","touchstart","touchend","touchcancel","wheel","click","dblclick","input"],this.attributeEvents=["onblur","onclick","oncontextmenu","ondblclick","onfocus","onmousedown","onmouseenter","onmouseleave","onmousemove","onmouseout","onmouseover","onmouseup","onmousewheel","onscroll","onsubmit"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem("rocketCSPIssue"),document.addEventListener("securitypolicyviolation",t=>{this.CSPIssue||"script-src-elem"!==t.violatedDirective||"data"!==t.blockedURI||(this.CSPIssue=!0,sessionStorage.setItem("rocketCSPIssue",!0))},{isRocket:!0})}o(){window.addEventListener("pageshow",t=>{this.persisted=t.persisted,this.realWindowLoadedFired=!0},{isRocket:!0}),window.addEventListener("pagehide",()=>{this.onFirstUserAction=null},{isRocket:!0})}h(){let t;function e(e){t=e}window.addEventListener("touchstart",e,{isRocket:!0}),window.addEventListener("touchend",function i(o){o.changedTouches[0]&&t.changedTouches[0]&&Math.abs(o.changedTouches[0].pageX-t.changedTouches[0].pageX)<10&&Math.abs(o.changedTouches[0].pageY-t.changedTouches[0].pageY)<10&&o.timeStamp-t.timeStamp<200&&(window.removeEventListener("touchstart",e,{isRocket:!0}),window.removeEventListener("touchend",i,{isRocket:!0}),"INPUT"===o.target.tagName&&"text"===o.target.type||(o.target.dispatchEvent(new TouchEvent("touchend",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new MouseEvent("mouseover",{target:o.target,bubbles:!0})),o.target.dispatchEvent(new PointerEvent("click",{target:o.target,bubbles:!0,cancelable:!0,detail:1,clientX:o.changedTouches[0].clientX,clientY:o.changedTouches[0].clientY})),event.preventDefault()))},{isRocket:!0})}q(t){this.userActionTriggered||("mousemove"!==t.type||this.firstMousemoveIgnored?"keyup"===t.type||"mouseover"===t.type||"mouseout"===t.type||(this.userActionTriggered=!0,this.onFirstUserAction&&this.onFirstUserAction()):this.firstMousemoveIgnored=!0),"click"===t.type&&t.preventDefault(),t.stopPropagation(),t.stopImmediatePropagation(),"touchstart"===this.lastEvent&&"touchend"===t.type&&(this.lastTouchEnd=Date.now()),"click"===t.type&&(this.lastTouchEnd=0),this.lastEvent=t.type,t.composedPath&&t.composedPath()[0].getRootNode()instanceof ShadowRoot&&(t.rocketTarget=t.composedPath()[0]),this.savedUserEvents.push(t)}u(){this.savedUserEvents=[],this.userEventHandler=this.q.bind(this),this.userEvents.forEach(t=>window.addEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.addEventListener("visibilitychange",this.userEventHandler,{isRocket:!0})}U(){this.userEvents.forEach(t=>window.removeEventListener(t,this.userEventHandler,{passive:!1,isRocket:!0})),document.removeEventListener("visibilitychange",this.userEventHandler,{isRocket:!0}),this.savedUserEvents.forEach(t=>{(t.rocketTarget||t.target).dispatchEvent(new window[t.constructor.name](t.type,t))})}m(){const t="return false",e=Array.from(this.attributeEvents,t=>"data-rocket-"+t),i="["+this.attributeEvents.join("],[")+"]",o="[data-rocket-"+this.attributeEvents.join("],[data-rocket-")+"]",s=(e,i,o)=>{o&&o!==t&&(e.setAttribute("data-rocket-"+i,o),e["rocket"+i]=new Function("event",o),e.setAttribute(i,t))};new MutationObserver(t=>{for(const n of t)"attributes"===n.type&&(n.attributeName.startsWith("data-rocket-")||this.everythingLoaded?n.attributeName.startsWith("data-rocket-")&&this.everythingLoaded&&this.N(n.target,n.attributeName.substring(12)):s(n.target,n.attributeName,n.target.getAttribute(n.attributeName))),"childList"===n.type&&n.addedNodes.forEach(t=>{if(t.nodeType===Node.ELEMENT_NODE)if(this.everythingLoaded)for(const i of[t,...t.querySelectorAll(o)])for(const t of i.getAttributeNames())e.includes(t)&&this.N(i,t.substring(12));else for(const e of[t,...t.querySelectorAll(i)])for(const t of e.getAttributeNames())this.attributeEvents.includes(t)&&s(e,t,e.getAttribute(t))})}).observe(document,{subtree:!0,childList:!0,attributeFilter:[...this.attributeEvents,...e]})}I(){this.attributeEvents.forEach(t=>{document.querySelectorAll("[data-rocket-"+t+"]").forEach(e=>{this.N(e,t)})})}N(t,e){const i=t.getAttribute("data-rocket-"+e);i&&(t.setAttribute(e,i),t.removeAttribute("data-rocket-"+e))}k(t){Object.defineProperty(HTMLElement.prototype,"onclick",{get(){return this.rocketonclick||null},set(e){this.rocketonclick=e,this.setAttribute(t.everythingLoaded?"onclick":"data-rocket-onclick","this.rocketonclick(event)")}})}S(t){function e(e,i){let o=e[i];e[i]=null,Object.defineProperty(e,i,{get:()=>o,set(s){t.everythingLoaded?o=s:e["rocket"+i]=o=s}})}e(document,"onreadystatechange"),e(window,"onload"),e(window,"onpageshow");try{Object.defineProperty(document,"readyState",{get:()=>t.rocketReadyState,set(e){t.rocketReadyState=e},configurable:!0}),document.readyState="loading"}catch(t){console.log("WPRocket DJE readyState conflict, bypassing")}}l(t){this.originalAddEventListener=EventTarget.prototype.addEventListener,this.originalRemoveEventListener=EventTarget.prototype.removeEventListener,this.savedEventListeners=[],EventTarget.prototype.addEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalAddEventListener.call(this,e,i,o):(t.savedEventListeners.push({target:this,remove:!1,type:e,func:i,options:o}),"mouseenter"!==e&&"mouseleave"!==e||t.originalAddEventListener.call(this,e,t.savedUserEvents.push,o))},EventTarget.prototype.removeEventListener=function(e,i,o){o&&o.isRocket||!t.B(e,this)&&!t.userEvents.includes(e)||t.B(e,this)&&!t.userActionTriggered||e.startsWith("rocket-")||t.everythingLoaded?t.originalRemoveEventListener.call(this,e,i,o):t.savedEventListeners.push({target:this,remove:!0,type:e,func:i,options:o})}}J(t,e){this.savedEventListeners=this.savedEventListeners.filter(i=>{let o=i.type,s=i.target||window;return e!==o||t!==s||(this.B(o,s)&&(i.type="rocket-"+o),this.$(i),!1)})}H(){EventTarget.prototype.addEventListener=this.originalAddEventListener,EventTarget.prototype.removeEventListener=this.originalRemoveEventListener,this.savedEventListeners.forEach(t=>this.$(t))}$(t){t.remove?this.originalRemoveEventListener.call(t.target,t.type,t.func,t.options):this.originalAddEventListener.call(t.target,t.type,t.func,t.options)}p(t){let e;function i(e){return t.everythingLoaded?e:e.split(" ").map(t=>"load"===t||t.startsWith("load.")?"rocket-jquery-load":t).join(" ")}function o(o){function s(e){const s=o.fn[e];o.fn[e]=o.fn.init.prototype[e]=function(){return this[0]===window&&t.userActionTriggered&&("string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=i(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach(t=>{const e=arguments[0][t];delete arguments[0][t],arguments[0][i(t)]=e})),s.apply(this,arguments),this}}if(o&&o.fn&&!t.allJQueries.includes(o)){const e={DOMContentLoaded:[],"rocket-DOMContentLoaded":[]};for(const t in e)document.addEventListener(t,()=>{e[t].forEach(t=>t())},{isRocket:!0});o.fn.ready=o.fn.init.prototype.ready=function(i){function s(){parseInt(o.fn.jquery)>2?setTimeout(()=>i.bind(document)(o)):i.bind(document)(o)}return"function"==typeof i&&(t.realDomReadyFired?!t.userActionTriggered||t.fauxDomReadyFired?s():e["rocket-DOMContentLoaded"].push(s):e.DOMContentLoaded.push(s)),this},s("on"),s("one"),s("off"),t.allJQueries.push(o)}e=o}t.allJQueries=[],o(window.jQuery),Object.defineProperty(window,"jQuery",{get:()=>e,set(t){o(t)}})}P(){const t=new Map;document.write=document.writeln=function(e){const i=document.currentScript,o=document.createRange(),s=i.parentElement;let n=t.get(i);void 0===n&&(n=i.nextSibling,t.set(i,n));const c=document.createDocumentFragment();o.setStart(c,0),c.appendChild(o.createContextualFragment(e)),s.insertBefore(c,n)}}async R(){return new Promise(t=>{this.userActionTriggered?t():this.onFirstUserAction=t})}async L(){return new Promise(t=>{document.addEventListener("DOMContentLoaded",()=>{this.realDomReadyFired=!0,t()},{isRocket:!0})})}async j(){return this.realWindowLoadedFired?Promise.resolve():new Promise(t=>{window.addEventListener("load",t,{isRocket:!0})})}M(){this.pendingScripts=[];this.scriptsMutationObserver=new MutationObserver(t=>{for(const e of t)e.addedNodes.forEach(t=>{"SCRIPT"!==t.tagName||!t.src||t.noModule||t.isWPRocket||this.pendingScripts.push({script:t,promise:new Promise(e=>{const i=()=>{const i=this.pendingScripts.findIndex(e=>e.script===t);i>=0&&this.pendingScripts.splice(i,1),e()};t.addEventListener("load",i,{isRocket:!0}),t.addEventListener("error",i,{isRocket:!0}),setTimeout(i,1e3)})})})}),this.scriptsMutationObserver.observe(document,{childList:!0,subtree:!0})}async F(){await this.X(),this.pendingScripts.length?(await this.pendingScripts[0].promise,await this.F()):this.scriptsMutationObserver.disconnect()}D(){this.delayedScripts={normal:[],async:[],defer:[]},document.querySelectorAll("script[type$=rocketlazyloadscript]").forEach(t=>{t.hasAttribute("data-rocket-src")?t.hasAttribute("async")&&!1!==t.async?this.delayedScripts.async.push(t):t.hasAttribute("defer")&&!1!==t.defer||"module"===t.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(t):this.delayedScripts.normal.push(t):this.delayedScripts.normal.push(t)})}async _(){await this.L();let t=[];document.querySelectorAll("script[type$=rocketlazyloadscript][data-rocket-src]").forEach(e=>{let i=e.getAttribute("data-rocket-src");if(i&&!i.startsWith("data:")){i.startsWith("//")&&(i=location.protocol+i);try{const o=new URL(i).origin;o!==location.origin&&t.push({src:o,crossOrigin:e.crossOrigin||"module"===e.getAttribute("data-rocket-type")})}catch(t){}}}),t=[...new Map(t.map(t=>[JSON.stringify(t),t])).values()],this.Y(t,"preconnect")}async G(t){if(await this.K(),!0!==t.noModule||!("noModule"in HTMLScriptElement.prototype))return new Promise(e=>{let i;function o(){(i||t).setAttribute("data-rocket-status","executed"),e()}try{if(navigator.userAgent.includes("Firefox/")||""===navigator.vendor||this.CSPIssue)i=document.createElement("script"),[...t.attributes].forEach(t=>{let e=t.nodeName;"type"!==e&&("data-rocket-type"===e&&(e="type"),"data-rocket-src"===e&&(e="src"),i.setAttribute(e,t.nodeValue))}),t.text&&(i.text=t.text),t.nonce&&(i.nonce=t.nonce),i.hasAttribute("src")?(i.addEventListener("load",o,{isRocket:!0}),i.addEventListener("error",()=>{i.setAttribute("data-rocket-status","failed-network"),e()},{isRocket:!0}),setTimeout(()=>{i.isConnected||e()},1)):(i.text=t.text,o()),i.isWPRocket=!0,t.parentNode.replaceChild(i,t);else{const i=t.getAttribute("data-rocket-type"),s=t.getAttribute("data-rocket-src");i?(t.type=i,t.removeAttribute("data-rocket-type")):t.removeAttribute("type"),t.addEventListener("load",o,{isRocket:!0}),t.addEventListener("error",i=>{this.CSPIssue&&i.target.src.startsWith("data:")?(console.log("WPRocket: CSP fallback activated"),t.removeAttribute("src"),this.G(t).then(e)):(t.setAttribute("data-rocket-status","failed-network"),e())},{isRocket:!0}),s?(t.fetchPriority="high",t.removeAttribute("data-rocket-src"),t.src=s):t.src="data:text/javascript;base64,"+window.btoa(unescape(encodeURIComponent(t.text)))}}catch(i){t.setAttribute("data-rocket-status","failed-transform"),e()}});t.setAttribute("data-rocket-status","skipped")}async C(t){const e=t.shift();return e?(e.isConnected&&await this.G(e),this.C(t)):Promise.resolve()}O(){this.Y([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}Y(t,e){this.trash=this.trash||[];let i=!0;var o=document.createDocumentFragment();t.forEach(t=>{const s=t.getAttribute&&t.getAttribute("data-rocket-src")||t.src;if(s&&!s.startsWith("data:")){const n=document.createElement("link");n.href=s,n.rel=e,"preconnect"!==e&&(n.as="script",n.fetchPriority=i?"high":"low"),t.getAttribute&&"module"===t.getAttribute("data-rocket-type")&&(n.crossOrigin=!0),t.crossOrigin&&(n.crossOrigin=t.crossOrigin),t.integrity&&(n.integrity=t.integrity),t.nonce&&(n.nonce=t.nonce),o.appendChild(n),this.trash.push(n),i=!1}}),document.head.appendChild(o)}W(){this.trash.forEach(t=>t.remove())}async T(){try{document.readyState="interactive"}catch(t){}this.fauxDomReadyFired=!0;try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(document,"DOMContentLoaded"),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this.K(),this.J(window,"DOMContentLoaded"),window.dispatchEvent(new Event("rocket-DOMContentLoaded"))}catch(t){console.error(t)}}async A(){try{document.readyState="complete"}catch(t){}try{await this.K(),this.J(document,"readystatechange"),document.dispatchEvent(new Event("rocket-readystatechange")),await this.K(),document.rocketonreadystatechange&&document.rocketonreadystatechange(),await this.K(),this.J(window,"load"),window.dispatchEvent(new Event("rocket-load")),await this.K(),window.rocketonload&&window.rocketonload(),await this.K(),this.allJQueries.forEach(t=>t(window).trigger("rocket-jquery-load")),await this.K(),this.J(window,"pageshow");const t=new Event("rocket-pageshow");t.persisted=this.persisted,window.dispatchEvent(t),await this.K(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}catch(t){console.error(t)}}async K(){Date.now()-this.lastBreath>45&&(await this.X(),this.lastBreath=Date.now())}async X(){return document.hidden?new Promise(t=>setTimeout(t)):new Promise(t=>requestAnimationFrame(t))}B(t,e=window){return e===document&&"readystatechange"===t||(e===document&&"DOMContentLoaded"===t||(e===window&&"DOMContentLoaded"===t||(e===window&&"load"===t||e===window&&"pageshow"===t)))}static run(){(new RocketLazyLoadScripts).t()}}RocketLazyLoadScripts.run()})();
+</script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" /><meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v28.8 - https://yoast.com/product/yoast-seo-wordpress/ -->
+	<title>About Us - Romark Engineering | 01375 673 447</title>
+<link data-rocket-prefetch href="https://www.google-analytics.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.googletagmanager.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.gstatic.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://fonts.googleapis.com" rel="dns-prefetch">
+<link data-rocket-prefetch href="https://www.google.com" rel="dns-prefetch">
+<link data-rocket-preload as="style" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A300%2C400%2C600%2C700%7CLato%3A400%2C700%2C900%7COrbitron%3A900%2C700%7CPlus%20Jakarta%20Sans%3A800&#038;subset=latin%2Clatin-ext,latin&#038;display=swap" rel="preload">
+<link href="https://fonts.googleapis.com/css?family=Open%20Sans%3A300%2C400%2C600%2C700%7CLato%3A400%2C700%2C900%7COrbitron%3A900%2C700%7CPlus%20Jakarta%20Sans%3A800&#038;subset=latin%2Clatin-ext,latin&#038;display=swap" media="print" onload="this.media=&#039;all&#039;" rel="stylesheet">
+<noscript data-wpr-hosted-gf-parameters=""><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open%20Sans%3A300%2C400%2C600%2C700%7CLato%3A400%2C700%2C900%7COrbitron%3A900%2C700%7CPlus%20Jakarta%20Sans%3A800&#038;subset=latin%2Clatin-ext,latin&#038;display=swap"></noscript><link rel="preload" data-rocket-preload as="image" href="https://engineeringessex.co.uk/wp-content/uploads/2023/04/logo-bank-gothic.png" fetchpriority="high">
+	<meta name="description" content="About Us | Romark offers a complete service for the design and manufacture of a large range of metal products" />
+	<link rel="canonical" href="https://engineeringessex.co.uk/about-us/" />
+	<meta property="og:locale" content="en_GB" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="About Us - Romark Engineering | 01375 673 447" />
+	<meta property="og:description" content="About Us | Romark offers a complete service for the design and manufacture of a large range of metal products" />
+	<meta property="og:url" content="https://engineeringessex.co.uk/about-us/" />
+	<meta property="og:site_name" content="Romark Engineering" />
+	<meta property="article:modified_time" content="2023-05-24T11:24:54+00:00" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Estimated reading time" />
+	<meta name="twitter:data1" content="6 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebPage","@id":"https:\/\/engineeringessex.co.uk\/about-us\/","url":"https:\/\/engineeringessex.co.uk\/about-us\/","name":"About Us - Romark Engineering | 01375 673 447","isPartOf":{"@id":"https:\/\/engineeringessex.co.uk\/#website"},"datePublished":"2023-05-05T07:07:56+00:00","dateModified":"2023-05-24T11:24:54+00:00","description":"About Us | Romark offers a complete service for the design and manufacture of a large range of metal products","breadcrumb":{"@id":"https:\/\/engineeringessex.co.uk\/about-us\/#breadcrumb"},"inLanguage":"en-GB","potentialAction":[{"@type":"ReadAction","target":["https:\/\/engineeringessex.co.uk\/about-us\/"]}]},{"@type":"BreadcrumbList","@id":"https:\/\/engineeringessex.co.uk\/about-us\/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https:\/\/engineeringessex.co.uk\/"},{"@type":"ListItem","position":2,"name":"About Us"}]},{"@type":"WebSite","@id":"https:\/\/engineeringessex.co.uk\/#website","url":"https:\/\/engineeringessex.co.uk\/","name":"Romark Engineering","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https:\/\/engineeringessex.co.uk\/?s={search_term_string}"},"query-input":{"@type":"PropertyValueSpecification","valueRequired":true,"valueName":"search_term_string"}}],"inLanguage":"en-GB"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Romark Engineering  &raquo; Feed" href="https://engineeringessex.co.uk/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Romark Engineering  &raquo; Comments Feed" href="https://engineeringessex.co.uk/comments/feed/" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://engineeringessex.co.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fengineeringessex.co.uk%2Fabout-us%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://engineeringessex.co.uk/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fengineeringessex.co.uk%2Fabout-us%2F&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-break:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style^=border-color],[style*=";border-color"],[style*="; border-color"]){border-style:solid}html :where([style^=border-top-color],[style*=";border-top-color"],[style*="; border-top-color"]){border-top-style:solid}html :where([style^=border-right-color],[style*=";border-right-color"],[style*="; border-right-color"]){border-right-style:solid}html :where([style^=border-bottom-color],[style*=";border-bottom-color"],[style*="; border-bottom-color"]){border-bottom-style:solid}html :where([style^=border-left-color],[style*=";border-left-color"],[style*="; border-left-color"]){border-left-style:solid}html :where([style^=border-width],[style*=";border-width"],[style*="; border-width"]){border-style:solid}html :where([style^=border-top-width],[style*=";border-top-width"],[style*="; border-top-width"]){border-top-style:solid}html :where([style^=border-right-width],[style*=";border-right-width"],[style*="; border-right-width"]){border-right-style:solid}html :where([style^=border-bottom-width],[style*=";border-bottom-width"],[style*="; border-bottom-width"]){border-bottom-style:solid}html :where([style^=border-left-width],[style*=";border-left-width"],[style*="; border-left-width"]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}.wp-block-button{--wp--preset--dimension--25: 25%;--wp--preset--dimension--50: 50%;--wp--preset--dimension--75: 75%;--wp--preset--dimension--100: 100%;}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link data-minify="1" rel='stylesheet' id='font-awesome-css' href='https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/themes/salient/css/font-awesome-legacy.min.css?ver=1782488858' media='all' />
+<link data-minify="1" rel='stylesheet' id='salient-grid-system-css' href='https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/themes/salient/css/build/grid-system.css?ver=1782488858' media='all' />
+<link data-minify="1" rel='stylesheet' id='main-styles-css' href='https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/themes/salient/css/build/style.css?ver=1782488859' media='all' />
+<style id="main-styles-inline-css">
+html body[data-header-resize="1"] .container-wrap, html body[data-header-format="left-header"][data-header-resize="0"] .container-wrap, html body[data-header-resize="0"] .container-wrap, body[data-header-format="left-header"][data-header-resize="0"] .container-wrap { padding-top: 0; } .main-content > .row > #breadcrumbs.yoast { padding: 20px 0; }
+/*# sourceURL=main-styles-inline-css */
+</style>
+<link data-minify="1" rel='stylesheet' id='nectar-header-layout-centered-menu-css' href='https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/themes/salient/css/build/header/header-layout-centered-menu.css?ver=1782488859' media='all' />
+<link data-minify="1" rel='stylesheet' id='nectar-element-icon-with-text-css' href='https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/themes/salient/css/build/elements/element-icon-with-text.css?ver=1782488859' media='all' />
+
+<link data-minify="1" rel='stylesheet' id='responsive-css' href='https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/themes/salient/css/build/responsive.css?ver=1782488859' media='all' />
+<link data-minify="1" rel='stylesheet' id='skin-material-css' href='https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/themes/salient/css/build/skin-material.css?ver=1782488859' media='all' />
+<link data-minify="1" rel='stylesheet' id='salient-wp-menu-dynamic-css' href='https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/uploads/salient/menu-dynamic.css?ver=1782488859' media='all' />
+<link data-minify="1" rel='stylesheet' id='js_composer_front-css' href='https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/plugins/js_composer_salient/assets/css/js_composer.min.css?ver=1782488859' media='all' />
+<link data-minify="1" rel='stylesheet' id='dynamic-css-css' href='https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/themes/salient/css/salient-dynamic-styles.css?ver=1782488861' media='all' />
+<style id="dynamic-css-inline-css">
+.no-rgba #header-space{display:none;}@media only screen and (max-width:999px){body #header-space[data-header-mobile-fixed="1"]{display:none;}#header-outer[data-mobile-fixed="false"]{position:absolute;}}@media only screen and (max-width:999px){body:not(.nectar-no-flex-height) #header-space[data-secondary-header-display="full"]:not([data-header-mobile-fixed="false"]){display:block!important;margin-bottom:-106px;}#header-space[data-secondary-header-display="full"][data-header-mobile-fixed="false"]{display:none;}}@media only screen and (min-width:1000px){#header-space{display:none;}.nectar-slider-wrap.first-section,.parallax_slider_outer.first-section,.full-width-content.first-section,.parallax_slider_outer.first-section .swiper-slide .content,.nectar-slider-wrap.first-section .swiper-slide .content,#page-header-bg,.nder-page-header,#page-header-wrap,.full-width-section.first-section{margin-top:0!important;}body #page-header-bg,body #page-header-wrap{height:140px;}body #search-outer{z-index:100000;}}@media only screen and (min-width:1000px){#page-header-wrap.fullscreen-header,#page-header-wrap.fullscreen-header #page-header-bg,html:not(.nectar-box-roll-loaded) .nectar-box-roll > #page-header-bg.fullscreen-header,.nectar_fullscreen_zoom_recent_projects,#nectar_fullscreen_rows:not(.afterLoaded) > div{height:100vh;}.wpb_row.vc_row-o-full-height.top-level,.wpb_row.vc_row-o-full-height.top-level > .col.span_12{min-height:100vh;}#page-header-bg[data-alignment-v="middle"] .span_6 .inner-wrap,#page-header-bg[data-alignment-v="top"] .span_6 .inner-wrap{padding-top:130px;}.nectar-slider-wrap[data-fullscreen="true"]:not(.loaded),.nectar-slider-wrap[data-fullscreen="true"]:not(.loaded) .swiper-container{height:calc(100vh + 2px)!important;}.admin-bar .nectar-slider-wrap[data-fullscreen="true"]:not(.loaded),.admin-bar .nectar-slider-wrap[data-fullscreen="true"]:not(.loaded) .swiper-container{height:calc(100vh - 30px)!important;}}@media only screen and (max-width:999px){#page-header-bg[data-alignment-v="middle"]:not(.fullscreen-header) .span_6 .inner-wrap,#page-header-bg[data-alignment-v="top"] .span_6 .inner-wrap{padding-top:90px;}.vc_row.top-level.full-width-section:not(.full-width-ns) > .span_12,#page-header-bg[data-alignment-v="bottom"] .span_6 .inner-wrap{padding-top:80px;}}@media only screen and (max-width:690px){.vc_row.top-level.full-width-section:not(.full-width-ns) > .span_12{padding-top:90px;}.vc_row.top-level.full-width-content .nectar-recent-posts-single_featured .recent-post-container > .inner-wrap{padding-top:80px;}}@media only screen and (max-width:999px){.full-width-ns .nectar-slider-wrap .swiper-slide[data-y-pos="middle"] .content,.full-width-ns .nectar-slider-wrap .swiper-slide[data-y-pos="top"] .content{padding-top:30px;}}@media only screen and (max-width:999px){.using-mobile-browser #nectar_fullscreen_rows:not(.afterLoaded):not([data-mobile-disable="on"]) > div{height:calc(100vh - 76px);}.using-mobile-browser .wpb_row.vc_row-o-full-height.top-level,.using-mobile-browser .wpb_row.vc_row-o-full-height.top-level > .col.span_12,[data-permanent-transparent="1"].using-mobile-browser .wpb_row.vc_row-o-full-height.top-level,[data-permanent-transparent="1"].using-mobile-browser .wpb_row.vc_row-o-full-height.top-level > .col.span_12{min-height:calc(100vh - 76px);}html:not(.nectar-box-roll-loaded) .nectar-box-roll > #page-header-bg.fullscreen-header,.nectar_fullscreen_zoom_recent_projects,.nectar-slider-wrap[data-fullscreen="true"]:not(.loaded),.nectar-slider-wrap[data-fullscreen="true"]:not(.loaded) .swiper-container,#nectar_fullscreen_rows:not(.afterLoaded):not([data-mobile-disable="on"]) > div{height:calc(100vh - 1px);}.wpb_row.vc_row-o-full-height.top-level,.wpb_row.vc_row-o-full-height.top-level > .col.span_12{min-height:calc(100vh - 1px);}body[data-transparent-header="false"] #ajax-content-wrap.no-scroll{min-height:calc(100vh - 1px);height:calc(100vh - 1px);}}#nectar_fullscreen_rows{background-color:transparent;}body .container-wrap .vc_row-fluid[data-column-margin="50px"] > .span_12,body .container-wrap .vc_row-fluid[data-column-margin="50px"] .full-page-inner > .container > .span_12,body .container-wrap .vc_row-fluid[data-column-margin="50px"] .full-page-inner > .span_12{margin-left:-25px;margin-right:-25px;}body .container-wrap .vc_row-fluid[data-column-margin="50px"] .wpb_column:not(.child_column),body .container-wrap .inner_row[data-column-margin="50px"] .child_column{padding-left:25px;padding-right:25px;}.container-wrap .vc_row-fluid[data-column-margin="50px"].full-width-content > .span_12,.container-wrap .vc_row-fluid[data-column-margin="50px"].full-width-content .full-page-inner > .span_12{margin-left:0;margin-right:0;padding-left:25px;padding-right:25px;}.single-portfolio #full_width_portfolio .vc_row-fluid[data-column-margin="50px"].full-width-content > .span_12{padding-right:25px;}@media only screen and (max-width:999px) and (min-width:690px){.vc_row-fluid[data-column-margin="50px"] > .span_12 > .one-fourths:not([class*="vc_col-xs-"]),.vc_row-fluid .vc_row-fluid.inner_row[data-column-margin="50px"] > .span_12 > .one-fourths:not([class*="vc_col-xs-"]){margin-bottom:50px;}}@media only screen and (max-width:999px){.nectar-cta.display_tablet_inherit{display:inherit;}}body .container-wrap .wpb_row[data-column-margin="none"]:not(.full-width-section):not(.full-width-content){margin-bottom:0;}body .container-wrap .vc_row-fluid[data-column-margin="none"] > .span_12,body .container-wrap .vc_row-fluid[data-column-margin="none"] .full-page-inner > .container > .span_12,body .container-wrap .vc_row-fluid[data-column-margin="none"] .full-page-inner > .span_12{margin-left:0;margin-right:0;}body .container-wrap .vc_row-fluid[data-column-margin="none"] .wpb_column:not(.child_column),body .container-wrap .inner_row[data-column-margin="none"] .child_column{padding-left:0;padding-right:0;}@media only screen and (max-width:690px){.nectar-cta.display_phone_inherit{display:inherit;}}@media only screen and (max-width:690px){.vc_row.bottom_padding_phone_50px{padding-bottom:50px!important;}}@media only screen and (max-width:690px){.vc_row.top_padding_phone_50px{padding-top:50px!important;}}.col.padding-4-percent > .vc_column-inner,.col.padding-4-percent > .n-sticky > .vc_column-inner{padding:calc(600px * 0.06);}@media only screen and (max-width:690px){.col.padding-4-percent > .vc_column-inner,.col.padding-4-percent > .n-sticky > .vc_column-inner{padding:calc(100vw * 0.06);}}@media only screen and (min-width:1000px){.col.padding-4-percent > .vc_column-inner,.col.padding-4-percent > .n-sticky > .vc_column-inner{padding:calc((100vw - 180px) * 0.04);}.column_container:not(.vc_col-sm-12) .col.padding-4-percent > .vc_column-inner{padding:calc((100vw - 180px) * 0.02);}}@media only screen and (min-width:1425px){.col.padding-4-percent > .vc_column-inner{padding:calc(1245px * 0.04);}.column_container:not(.vc_col-sm-12) .col.padding-4-percent > .vc_column-inner{padding:calc(1245px * 0.02);}}.full-width-content .col.padding-4-percent > .vc_column-inner{padding:calc(100vw * 0.04);}@media only screen and (max-width:999px){.full-width-content .col.padding-4-percent > .vc_column-inner{padding:calc(100vw * 0.06);}}@media only screen and (min-width:1000px){.full-width-content .column_container:not(.vc_col-sm-12) .col.padding-4-percent > .vc_column-inner{padding:calc(100vw * 0.02);}}body #ajax-content-wrap .col[data-padding-pos="left"] > .vc_column-inner,#ajax-content-wrap .col[data-padding-pos="left"] > .n-sticky > .vc_column-inner{padding-right:0;padding-top:0;padding-bottom:0}@media only screen and (max-width:999px){body .wpb_row .wpb_column.padding-2-percent_tablet > .vc_column-inner,body .wpb_row .wpb_column.padding-2-percent_tablet > .n-sticky > .vc_column-inner{padding:calc(999px * 0.02);}}@media only screen and (max-width:690px){html body .wpb_column.force-phone-text-align-left,html body .wpb_column.force-phone-text-align-left .col{text-align:left!important;}html body .wpb_column.force-phone-text-align-right,html body .wpb_column.force-phone-text-align-right .col{text-align:right!important;}html body .wpb_column.force-phone-text-align-center,html body .wpb_column.force-phone-text-align-center .col,html body .wpb_column.force-phone-text-align-center .vc_custom_heading,html body .wpb_column.force-phone-text-align-center .nectar-cta{text-align:center!important;}.wpb_column.force-phone-text-align-center .img-with-aniamtion-wrap img{display:inline-block;}}@media only screen and (max-width:690px){.vc_row.bottom_padding_phone_40px{padding-bottom:40px!important;}}@media only screen and (max-width:690px){.vc_row.top_padding_phone_40px{padding-top:40px!important;}}.screen-reader-text,.nectar-skip-to-content:not(:focus){border:0;clip:rect(1px,1px,1px,1px);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute!important;width:1px;word-wrap:normal!important;}.row .col img:not([srcset]){width:auto;}.row .col img.img-with-animation.nectar-lazy:not([srcset]){width:100%;}
+/*# sourceURL=dynamic-css-inline-css */
+</style>
+<link rel='stylesheet' id='salient-child-style-css' href='https://engineeringessex.co.uk/wp-content/themes/salient-child/style.css?ver=15.0.8' media='all' />
+
+<link data-minify="1" rel='stylesheet' id='moove_gdpr_frontend-css' href='https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/plugins/gdpr-cookie-compliance/dist/styles/gdpr-main.css?ver=1782488861' media='all' />
+<style id="moove_gdpr_frontend-inline-css">
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn {
+					background-color: transparent;
+					box-shadow: inset 0 0 0 1px currentColor;
+					opacity: .7;
+					color: #202020;
+				}
+
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn:hover,
+				#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
+					background-color: #202020;
+					box-shadow: none;
+					color: #fff;
+					opacity: 1;
+				}
+
+				#moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn, #moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn {
+					background-color: transparent;
+					box-shadow: inset 0 0 0 1px currentColor;
+					opacity: .7;
+					color: #fff;
+				}
+
+				#moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.moove-gdpr-infobar-settings-btn:hover, #moove_gdpr_cookie_info_bar:not(.gdpr-full-screen-infobar).moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.moove-gdpr-infobar-settings-btn:hover {
+					box-shadow: none;
+					opacity: 1;
+					color: #202020;
+					background-color: #fff;
+				}
+			#moove_gdpr_cookie_modal,#moove_gdpr_cookie_info_bar,.gdpr_cookie_settings_shortcode_content{font-family:&#039;Nunito&#039;,sans-serif}#moove_gdpr_save_popup_settings_button{background-color:#373737;color:#fff}#moove_gdpr_save_popup_settings_button:hover{background-color:#000}#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton,#moove_gdpr_cookie_info_bar .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton{background-color:#0C4DA2}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton,.gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green,.gdpr-blocked-recaptcha .gdpr-shr-button.button-green{background-color:#0C4DA2;border-color:#0C4DA2}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder a.mgbutton:hover,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-footer-content .moove-gdpr-button-holder button.mgbutton:hover,.gdpr_cookie_settings_shortcode_content .gdpr-shr-button.button-green:hover,.gdpr-blocked-recaptcha .gdpr-shr-button.button-green:hover{background-color:#fff;color:#0C4DA2}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon{background-color:#0C4DA2;border:1px solid #0C4DA2}#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-allow-all.focus-g,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-allow-all:focus,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-allow-all.focus-g,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-allow-all:focus,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-reject-btn.focus-g,#moove_gdpr_cookie_info_bar span.moove-gdpr-infobar-reject-btn:focus,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-reject-btn.focus-g,#moove_gdpr_cookie_info_bar button.moove-gdpr-infobar-reject-btn:focus,#moove_gdpr_cookie_info_bar span.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar span.change-settings-button:focus,#moove_gdpr_cookie_info_bar button.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar button.change-settings-button:focus{-webkit-box-shadow:0 0 1px 3px #0C4DA2;-moz-box-shadow:0 0 1px 3px #0C4DA2;box-shadow:0 0 1px 3px #0C4DA2}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close i:hover,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close span.gdpr-icon:hover,#moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button{color:#0C4DA2}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected a span.gdpr-icon,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li.menu-item-selected button span.gdpr-icon{color:inherit}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a span.gdpr-icon,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button span.gdpr-icon{color:inherit}#moove_gdpr_cookie_modal .gdpr-acc-link{line-height:0;font-size:0;color:transparent;position:absolute}#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-close:hover i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li button i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-modal-left-content #moove-gdpr-menu li a i,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .moove-gdpr-tab-main-content a:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.change-settings-button:hover,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button:hover,#moove_gdpr_cookie_info_bar span[data-href]>u.change-settings-button,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a.mgbutton:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button.mgbutton:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content a:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content button:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content span.change-settings-button.focus-g,span.change-settings-button:focus,button.change-settings-button.focus-g,button.change-settings-button:focus,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button.focus-g,#moove_gdpr_cookie_info_bar.moove-gdpr-dark-scheme .moove-gdpr-info-bar-container .moove-gdpr-info-bar-content u.change-settings-button:focus{color:#0C4DA2}#moove_gdpr_cookie_modal .moove-gdpr-branding.focus-g span,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main a.focus-g,#moove_gdpr_cookie_modal .moove-gdpr-modal-content .moove-gdpr-tab-main .gdpr-cd-details-toggle.focus-g{color:#0C4DA2}#moove_gdpr_cookie_modal.gdpr_lightbox-hide{display:none}
+/*# sourceURL=moove_gdpr_frontend-inline-css */
+</style>
+<style id="rocket-lazyload-inline-css">
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player:focus-within{outline: 2px solid currentColor;outline-offset: 5px;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:100%;width:100%;left:0;top:0;position:absolute;background:url(https://engineeringessex.co.uk/wp-content/plugins/wp-rocket/assets/img/youtube.png) no-repeat center;background-color: transparent !important;cursor:pointer;border:none;}
+/*# sourceURL=rocket-lazyload-inline-css */
+</style>
+<script type="text/rocketlazyloadscript" id="jquery-core-js" data-rocket-src="https://engineeringessex.co.uk/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="jquery-migrate-js" data-rocket-src="https://engineeringessex.co.uk/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" data-rocket-defer defer></script>
+<link rel="https://api.w.org/" href="https://engineeringessex.co.uk/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://engineeringessex.co.uk/wp-json/wp/v2/pages/423" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://engineeringessex.co.uk/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.1.4" />
+<link rel='shortlink' href='https://engineeringessex.co.uk/?p=423' />
+<meta name="google-site-verification" content="L4NxOlx6vjMerM8TWO6ykLMi3QrccZeTgEULFcYEwxM" />
+<!-- Google tag (gtag.js) -->
+<script type="text/rocketlazyloadscript" async data-rocket-src="https://www.googletagmanager.com/gtag/js?id=G-03F1L6VM3B"></script>
+<script type="text/rocketlazyloadscript">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-03F1L6VM3B');
+</script><script type="text/rocketlazyloadscript" data-rocket-type="text/javascript"> var root = document.getElementsByTagName( "html" )[0]; root.setAttribute( "class", "js" ); </script><meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+<noscript><style>.lazyload[data-src]{display:none !important;}</style></noscript><style>.lazyload{background-image:none !important;}.lazyload:before{background-image:none !important;}</style><link rel="icon" href="https://engineeringessex.co.uk/wp-content/uploads/2023/04/cropped-cogs-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://engineeringessex.co.uk/wp-content/uploads/2023/04/cropped-cogs-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://engineeringessex.co.uk/wp-content/uploads/2023/04/cropped-cogs-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://engineeringessex.co.uk/wp-content/uploads/2023/04/cropped-cogs-1-270x270.png" />
+<style id="wp-custom-css">
+
+.btn_a.menu-item a::before {
+    height: 45px !important;
+}
+h3{
+	color: #000;
+}
+
+/*-----banner----------*/
+
+.banner .swiper-slide .content p {
+    max-width: 600px;
+    margin: 0 auto;
+}
+/*-----banner----end----*/
+
+.li-des img.img-with-animation.skip-lazy {
+    border: 15px solid #fff;
+    box-shadow: 0 0 30px rgb(0 0 0 / 35%) !important;
+}
+.why-ch .vc_column-inner {
+    padding: 36px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgb(0 0 0 / 20%);
+    height: 100%;
+}
+.why-ch .vc_column-inner img {
+    margin: 0 auto -10px;
+}
+.scnd-icn-sec .vc_col-sm-4.wpb_column .vc_column-inner:hover {
+    top: -10px;
+}
+.scnd-icn-sec .vc_col-sm-4.wpb_column .vc_column-inner {
+    background: #20232c;
+    padding: 60px 30px;
+    top: 0;
+    transition: all ease-in-out 0.3s;
+    border-radius: 10px;
+    height: 100%;
+}
+.scnd-icn-sec .wpb_column .vc_column-inner img {
+    width: 60px !important;
+    margin: 0 !important;
+    filter: invert(100);
+}
+.scnd-icn-sec .wpb_column .vc_column-inner .iwt-text {
+    padding: 0 0 0 80px;
+}
+.scnd-icn-sec .wpb_column .vc_column-inner h3 {
+    color: #fff;
+    line-height: normal;
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin: 0;
+}
+.scnd-icn-sec .wpb_column .vc_column-inner .iwt-icon {
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 0;
+}
+
+/*-------------*/
+
+.hedd h5 {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 0 80px;
+    position: relative;
+}
+
+.dark h5 {
+    color: #0a71b3;
+}
+
+.hedd h5::before {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 1px;
+    background: #0a71b3;
+    left: 0;
+    top: 50%;
+}
+.hedd_a h5::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 1px;
+    background: #0a71b3;
+    right: 0;
+    top: 50%;
+}
+.dark h2 {
+    color: #000;
+}
+
+.back_a .row-bg.viewport-desktop.using-image {
+    background-attachment: fixed;
+}
+
+
+/*-------------*/
+
+
+/*-----Services-------*/
+
+
+.ser_box .nectar-fancy-box::after {
+    opacity: 0;
+}
+
+.ser_box .nectar-fancy-box .inner {
+    display: flex;
+    align-items: end;
+    padding: 0 0 10px;
+}
+
+.ser_box .nectar-fancy-box {
+    padding: 30px 20px;
+}
+
+/*-----Services-end------*/
+
+/*------CONTACT US ----*/
+
+.form_info form span textarea, .form_info form span input {
+    background: transparent;
+    border: 1px solid #909090 !important;
+    border-radius: 0;
+    margin-bottom: 10px;
+    padding: 18px 15px;
+}
+
+.form_info form span textarea {
+    height: 160px;
+    margin-bottom: 0;
+}
+
+
+.form_info form .flx p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form_info form .flx p span {
+    width: 49%;
+}
+
+.form_info span.wpcf7-list-item.first.last {
+    margin-left: 0;
+}
+
+
+
+span.wpcf7-not-valid-tip {
+    width: 100% !important;
+    color: #f00 !important;
+}
+
+
+/*-------------*/
+
+
+.details_info .vc_column-inner {
+    padding: 50px;
+    background: #0a71b3;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80%;
+    right: 0;
+  	border-radius: 10px;
+}
+.contact_sec .row_col_wrap_12.col::before {
+    content: "";
+    position: absolute;
+    width: 65%;
+    height: 100%;
+    background: #ffffff;
+    left: 0;
+    box-shadow: 0 0 20px rgb(0 0 0 / 12%);
+	 border-radius: 10px;
+}
+
+.form_info 
+ .vc_column-inner {
+    padding: 50px;
+}
+.details_info .vc_column-inner h2,
+.details_info .vc_column-inner .iwithtext a, 
+.details_info .vc_column-inner .iwithtext {
+    color: #fff;
+}
+
+.details_info .iwt-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: #005890;
+    border-radius: 100px;
+}
+
+.details_info .iwt-icon i.fa {
+    font-size: 22px;
+    top: 0;
+}
+
+
+.details_info .iwt-text {
+    padding-left: 80px;
+}
+
+.details_info .iwt-text strong {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.details_info .iwithtext {
+    margin-bottom: 40px;
+}
+
+
+
+/*----CONTACT US -end---*/
+
+
+
+/* Landing Page */
+.scnd-icn-sec .wpb_column .vc_column-inner .iwt-text {
+    padding: 0 0 0 80px;
+}
+.bac-fix .row-bg{
+	background-attachment: fixed;
+}
+
+.li-des ul{
+	margin: 0;
+}
+.li-des ul li{
+	display: block;
+	position: relative;
+	padding-left: 25px;
+	padding-bottom: 10px;
+}
+.li-des ul li:before{
+	position: absolute;
+	content: '✔';
+	color: #2d6f54;
+	top: 0;
+	left: 0;
+}
+.how-con .vc_column-inner {
+    background: #fff;
+    box-shadow: 0 0 25px rgb(0 0 0 / 10%);
+    padding: 40px 30px;
+    border-radius: 15px;
+    text-align: center;
+    height: 100%;
+}
+.how-con h4 {
+    display: flex;
+    width: 66px;
+    height: 66px;
+    background: #2d6f54;
+    color: #fff;
+    padding: 10px;
+    border-radius: 100%;
+    border: 10px solid #d3e4e2;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+.faqq a.toggle-heading {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.why-bxx .iwithtext .iwt-icon {
+    margin: 0 auto 25px;
+}
+.lst-pra p {
+    width: 70%;
+    margin: 0 auto;
+}
+span.wpcf7-list-item-label {
+    padding-left: 30px;
+    display: block;
+    padding-bottom: 20px;
+}
+.wpcf7-form p span {
+    color: #000;
+    line-height: normal;
+}
+.form_sec form span.wpcf7-list-item input {
+    width: auto;
+    margin: 0;
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+	#header-outer.small-nav #logo img, #header-outer.small-nav .logo-spacing img {
+    height: 49px !important
+}
+.ser_box .vc_column-inner .iwithtext .iwt-text h4 {
+    line-height: normal;
+}
+.la-bnrr h1 , .la-bnrr p, .la-bnrr h4{
+	color: #fff;
+}
+.la-bnrr h1 {
+    font-size: 50px;
+    line-height: 60px;
+		font-weight: 900;
+}
+.la-bnrr p a , .la-bnrr h4 a {
+		color: #fff;
+}
+.la-bnrr p a:hover , .la-bnrr h4 a:hover {
+		color: #2d6f54;
+}
+.li-des img.img-with-animation.skip-lazy {
+    border: 15px solid #fff;
+    box-shadow: 0 0 30px #00000059 !important;
+}
+.cnta-frm form.wpcf7-form {
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 20px;
+}
+.cnta-frm h3 {
+    font-size: 20px;
+    line-height: 25px;
+    padding-bottom: 25px;
+    text-align: center !important;
+    color: #000;
+}
+.cnta-frm form .frm p {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cnta-frm form .frm span {
+    width: 49%;
+}
+.cnta-frm input.wpcf7-form-control {
+    width: 100%;
+}
+.cnta-frm input.wpcf7-form-control.wpcf7-text {
+		padding: 15px;
+    width: 100%;
+    font-size: 18px;
+    border: 1px solid #fff;
+    color: #000;
+    margin-bottom: 13px;
+}
+.cnta-frm textarea.wpcf7-form-control.wpcf7-textarea {
+    height: 180px;
+		padding: 15px 20px;
+    width: 100%;
+    font-size: 18px;
+    border: 1px solid #fff;
+    color: #000;
+    margin-bottom: 13px;
+}
+.cnta-frm input[type="checkbox"], .form_info input[type="checkbox"] {
+		position: relative;
+    top: 20px;
+    vertical-align: middle;
+}
+.cnta-frm .wpcf7-list-item {
+		margin: 0;
+}
+
+/* Landing Page */
+
+/*----services----*/
+
+.ser_box .vc_column-inner {
+    background: #fff;
+    border-radius: 20px;
+    padding: 50px 22px 45px;
+    position: relative;
+    transition: .3s linear;
+    overflow: hidden;
+    box-shadow: 0px 0px 79px 0px rgba(0, 0, 0, 0.1);
+}
+.ser_box .vc_column-inner .iwithtext .iwt-text {
+    padding-left: 0;
+    z-index: 9999;
+    position: relative;
+    transition: all ease-in-out 0.2s;
+}
+.ser_box .iwithtext .iwt-icon {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    line-height: 0;
+    font-size: 36px;
+    margin-bottom: 25px;
+    transition: .3s linear;
+    background: #eef7ff;
+    z-index: 999999;
+    position: relative;
+}
+.ser_box .iwithtext .iwt-icon img {
+    width: 56px !important;
+    margin: 0;
+}
+.ser_box .vc_column-inner .iwithtext .iwt-text h4 {
+    line-height: normal;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/*----services-end---*/
+
+
+
+
+
+/* -------footer---- */
+
+.footer_main h4 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    padding-bottom: 15px;
+}
+.footer_main  ul {
+    margin: 0;
+}
+
+.footer_main ul li {
+    margin-bottom: 12px;
+    display: block;
+}
+
+.footer_main  a {
+    color: #fff !important;
+    opacity: 1 !important;
+}
+
+
+img.image_fff {
+    width: 200px !important;
+}
+
+.footer_main p {
+    padding-bottom: 10px;
+}
+div#copyright p {
+    font-size: 16px;
+}
+div#copyright {
+    padding: 25px 0 !important;
+    border-top: 1px solid #ffffff30 !important;
+}
+/* -------footer--end--- */
+
+.dis-blok ul{
+	margin-left: 0;
+}
+
+.dis-blok ul li{
+	display: block;
+	padding-left: 25px;
+	padding-bottom: 10px;
+	position: relative;
+}
+.dis-blok ul li:before{
+	position:absolute;
+	content: '▣';
+	color: #0A71B3;
+	top: 0;
+	left: 0;
+}
+
+.why-ch h3 {
+    color: #000;
+}
+.ser_box h4 {
+    color: #000;
+}
+
+/*------responsive------------*/
+
+@media(max-width: 1443px) and (min-width: 1000px) {
+	
+header#top .col_last nav ul.sf-menu .menu-item a span.menu-title-text {
+    font-size: 13px;
+	}
+	
+header#top .span_3 a img {
+    width: 170px !important;
+    height: 105px !important;
+}	
+	
+/* header#top .col_last nav ul.sf-menu {
+    justify-content: start !important;
+}	 */
+
+}
+@media(max-width: 999px) {
+	
+.contact_sec .row_col_wrap_12.col::before {
+    width: 100%;
+    height: 65%;
+}
+.details_info .vc_column-inner {
+    position: static;
+    transform: unset;
+	height: 100%;
+}
+
+.details_info .vc_column-inner .wpb_wrapper {
+    width: 100% !important;
+}
+
+.details_info {
+    width: 90%;
+}
+
+.contact_sec .row_col_wrap_12.col.span_12 {
+    justify-content: center;
+}	
+	
+}	
+
+@media (max-width: 690px) {
+	
+h2, .wpb_wrapper h2.vc_custom_heading {
+    font-size: 24px !important;
+    line-height: 37px !important;
+}
+.first-section .swiper-slide .container .content h2.ns-heading-el {
+    font-size: 22px !important;
+    line-height: 32px !important;
+}
+.nectar-button span {
+    font-size: 14px;
+}
+.first-section .swiper-slide .container .content {
+    padding-top: 90px !important;
+}
+.first-section .swiper-slide .container .content .button a.primary-color, a.nectar-button {
+    padding: 13px 24px !important;
+	font-size: 14px;
+}	
+.hedd_a h5::after {
+    right: 13px;
+}	
+.first-section .swiper-slide .container .content p span {
+    font-size: 14px;
+}
+	
+h3 {
+    font-size: 22px !important;
+}
+	h4 {
+    font-size: 16px !important;
+}
+	
+h5 {
+    font-size: 13px !important;
+	padding: 0 57px !important;
+}	
+	
+.form_info form .flx p {
+    display: grid;
+}
+
+.form_info form .flx p span {
+    width: 100%;
+}
+
+
+.hedd h5::before {
+    width: 50px;
+}	
+.details_info .iwt-icon {
+    height: 40px;
+    width: 40px;
+}
+
+.details_info .iwt-icon i.fa {
+    font-size: 15px;
+}
+
+.details_info .iwt-text {
+    padding-left: 50px;
+}
+
+
+.details_info .vc_column-inner {
+    padding: 20px;
+}	
+	
+div#footer-widgets {
+    display: none;
+}	
+div#copyright {
+    text-align: center;
+}
+
+div#copyright .col_last {
+    display: flex;justify-content: center;
+}	
+.one-fourths .vc_column-inner {
+    padding-left: 0 !important;
+	padding-right: 0 !important
+}
+	
+	
+.form_info .vc_column-inner {
+    padding: 20px;
+}
+div#slide-out-widget-area {
+    padding: 30px !important;
+}
+	.cnta-frm form .frm p {
+    display: block;
+}
+.cnta-frm form .frm span {
+    width: 100%;
+}
+	.cnta-frm form.wpcf7-form {
+    padding: 30px;
+}
+}
+
+@media (max-width: 479px) {
+.la-bnrr h1 {
+    font-size: 30px;
+    line-height: 40px;
+}
+.cnta-frm form.wpcf7-form {
+    padding: 20px;
+}
+.cnta-frm h3 {
+    font-size: 18px !important;
+}
+	
+}
+
+
+
+
+
+
+
+</style>
+<noscript><style> .wpb_animate_when_almost_visible { opacity: 1; }</style></noscript><noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><link data-minify="1" rel='stylesheet' id='cf7apps-honeypot-frontend-css' href='https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/plugins/contact-form-7-honeypot/legacy-honeypot/includes/css/honeypot-frontend.css?ver=1785557760' media='all' />
+<link data-minify="1" rel='stylesheet' id='contact-form-7-css' href='https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=1782488861' media='all' />
+<link data-minify="1" data-pagespeed-no-defer data-nowprocket data-wpacu-skip data-no-optimize data-noptimize rel='stylesheet' id='main-styles-non-critical-css' href='https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/themes/salient/css/build/style-non-critical.css?ver=1782488861' media='all' />
+<link data-minify="1" data-pagespeed-no-defer data-nowprocket data-wpacu-skip data-no-optimize data-noptimize rel='stylesheet' id='fancyBox-css' href='https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/themes/salient/css/build/plugins/jquery.fancybox.css?ver=1782488861' media='all' />
+<link data-minify="1" data-pagespeed-no-defer data-nowprocket data-wpacu-skip data-no-optimize data-noptimize rel='stylesheet' id='nectar-ocm-core-css' href='https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/themes/salient/css/build/off-canvas/core.css?ver=1782488861' media='all' />
+<link data-minify="1" data-pagespeed-no-defer data-nowprocket data-wpacu-skip data-no-optimize data-noptimize rel='stylesheet' id='nectar-ocm-slide-out-right-material-css' href='https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/themes/salient/css/build/off-canvas/slide-out-right-material.css?ver=1782488861' media='all' />
+
+<meta name="generator" content="WP Rocket 3.24" data-wpr-features="wpr_delay_js wpr_defer_js wpr_minify_js wpr_lazyload_images wpr_lazyload_iframes wpr_preconnect_external_domains wpr_oci wpr_minify_css wpr_cdn wpr_preload_links wpr_desktop" /></head><body class="wp-singular page-template-default page page-id-423 wp-theme-salient wp-child-theme-salient-child material wpb-js-composer js-comp-ver-6.9.1 vc_responsive" data-footer-reveal="false" data-footer-reveal-shadow="none" data-header-format="centered-menu" data-body-border="off" data-boxed-style="" data-header-breakpoint="1100" data-dropdown-style="minimal" data-cae="easeOutCubic" data-cad="750" data-megamenu-width="contained" data-aie="none" data-ls="fancybox" data-apte="standard" data-hhun="0" data-fancy-form-rcs="default" data-form-style="default" data-form-submit="regular" data-is="minimal" data-button-style="slightly_rounded_shadow" data-user-account-button="false" data-flex-cols="true" data-col-gap="default" data-header-inherit-rc="false" data-header-search="false" data-animated-anchors="true" data-ajax-transitions="false" data-full-width-header="false" data-slide-out-widget-area="true" data-slide-out-widget-area-style="slide-out-from-right" data-user-set-ocm="off" data-loading-animation="none" data-bg-header="true" data-responsive="1" data-ext-responsive="true" data-ext-padding="90" data-header-resize="1" data-header-color="custom" data-cart="false" data-remove-m-parallax="" data-remove-m-video-bgs="" data-m-animate="0" data-force-header-trans-color="light" data-smooth-scrolling="0" data-permanent-transparent="false" >
+	
+	<script type="text/rocketlazyloadscript" data-rocket-type="text/javascript">
+	 (function(window, document) {
+
+		 if(navigator.userAgent.match(/(Android|iPod|iPhone|iPad|BlackBerry|IEMobile|Opera Mini)/)) {
+			 document.body.className += " using-mobile-browser mobile ";
+		 }
+
+		 if( !("ontouchstart" in window) ) {
+
+			 var body = document.querySelector("body");
+			 var winW = window.innerWidth;
+			 var bodyW = body.clientWidth;
+
+			 if (winW > bodyW + 4) {
+				 body.setAttribute("style", "--scroll-bar-w: " + (winW - bodyW - 4) + "px");
+			 } else {
+				 body.setAttribute("style", "--scroll-bar-w: 0px");
+			 }
+		 }
+
+	 })(window, document);
+   </script><a href="#ajax-content-wrap" class="nectar-skip-to-content">Skip to main content</a><div  class="ocm-effect-wrap"><div  class="ocm-effect-wrap-inner">	
+	<div id="header-space"  data-header-mobile-fixed='1'></div> 
+	
+		<div  id="header-outer" data-has-menu="true" data-has-buttons="no" data-header-button_style="default" data-using-pr-menu="true" data-mobile-fixed="1" data-ptnm="false" data-lhe="animated_underline" data-user-set-bg="#20232c" data-format="centered-menu" data-permanent-transparent="false" data-megamenu-rt="0" data-remove-fixed="0" data-header-resize="1" data-cart="false" data-transparency-option="" data-box-shadow="large" data-shrink-num="6" data-using-secondary="0" data-using-logo="1" data-logo-height="120" data-m-logo-height="80" data-padding="10" data-full-width="false" data-condense="false" data-transparent-header="true" data-transparent-shadow-helper="false" data-remove-border="true" class="transparent">
+		
+<div id="search-outer" class="nectar">
+	<div id="search">
+		<div class="container">
+			 <div id="search-box">
+				 <div class="inner-wrap">
+					 <div class="col span_12">
+						  <form role="search" action="https://engineeringessex.co.uk/" method="GET">
+														 <input type="text" name="s" id="s" value="" aria-label="Search" placeholder="Search" />
+							 
+						<span>Hit enter to search or ESC to close</span>
+												</form>
+					</div><!--/span_12-->
+				</div><!--/inner-wrap-->
+			 </div><!--/search-box-->
+			 <div id="close"><a href="#"><span class="screen-reader-text">Close Search</span>
+				<span class="close-wrap"> <span class="close-line close-line1"></span> <span class="close-line close-line2"></span> </span>				 </a></div>
+		 </div><!--/container-->
+	</div><!--/search-->
+</div><!--/search-outer-->
+
+<header id="top">
+	<div class="container">
+		<div class="row">
+			<div class="col span_3">
+								<a id="logo" href="https://engineeringessex.co.uk" data-supplied-ml-starting-dark="false" data-supplied-ml-starting="false" data-supplied-ml="false" >
+					<img fetchpriority="high" class="stnd skip-lazy dark-version" width="811" height="427" alt="Romark Engineering " src="https://engineeringessex.co.uk/wp-content/uploads/2023/04/logo-bank-gothic.png"  /><img class="starting-logo skip-lazy" width="811" height="427" alt="Romark Engineering " src="https://engineeringessex.co.uk/wp-content/uploads/2023/04/logo-bank-gothic.png" srcset="https://engineeringessex.co.uk/wp-content/uploads/2023/04/logo-bank-gothic.png 1x, https://engineeringessex.co.uk/wp-content/uploads/2023/04/logo-bank-gothic.png 2x" />				</a>
+							</div><!--/span_3-->
+
+			<div class="col span_9 col_last">
+									<div class="nectar-mobile-only mobile-header"><div class="inner"></div></div>
+													<div class="slide-out-widget-area-toggle mobile-icon slide-out-from-right" data-custom-color="false" data-icon-animation="simple-transform">
+						<div> <a href="#sidewidgetarea" aria-label="Navigation Menu" aria-expanded="false" class="closed">
+							<span class="screen-reader-text">Menu</span><span aria-hidden="true"> <i class="lines-button x2"> <i class="lines"></i> </i> </span>
+						</a></div>
+					</div>
+				
+									<nav>
+													<ul class="sf-menu">
+								<li id="menu-item-10" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home nectar-regular-menu-item menu-item-10"><a href="https://engineeringessex.co.uk/"><span class="menu-title-text">Home</span></a></li>
+<li id="menu-item-425" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-423 current_page_item nectar-regular-menu-item menu-item-425"><a href="https://engineeringessex.co.uk/about-us/" aria-current="page"><span class="menu-title-text">About</span></a></li>
+<li id="menu-item-13" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children nectar-regular-menu-item menu-item-13"><a href="#"><span class="menu-title-text">Services</span></a>
+<ul class="sub-menu">
+	<li id="menu-item-315" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-315"><a href="https://engineeringessex.co.uk/cad/"><span class="menu-title-text">CAD</span></a></li>
+	<li id="menu-item-318" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nectar-regular-menu-item menu-item-318"><a href="https://engineeringessex.co.uk/cnc-machining/"><span class="menu-title-text">CNC Machining</span><span class="sf-sub-indicator"><i class="fa fa-angle-right icon-in-menu" aria-hidden="true"></i></span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-323" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-323"><a href="https://engineeringessex.co.uk/milling/"><span class="menu-title-text">Milling</span></a></li>
+		<li id="menu-item-329" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-329"><a href="https://engineeringessex.co.uk/turning/"><span class="menu-title-text">Turning</span></a></li>
+	</ul>
+</li>
+	<li id="menu-item-335" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nectar-regular-menu-item menu-item-335"><a href="https://engineeringessex.co.uk/sheetmetal-work/"><span class="menu-title-text">Sheetmetal Work</span><span class="sf-sub-indicator"><i class="fa fa-angle-right icon-in-menu" aria-hidden="true"></i></span></a>
+	<ul class="sub-menu">
+		<li id="menu-item-342" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children nectar-regular-menu-item menu-item-342"><a href="https://engineeringessex.co.uk/blank-development/"><span class="menu-title-text">Blank Development</span><span class="sf-sub-indicator"><i class="fa fa-angle-right icon-in-menu" aria-hidden="true"></i></span></a>
+		<ul class="sub-menu">
+			<li id="menu-item-374" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-374"><a href="https://engineeringessex.co.uk/laser-profiling/"><span class="menu-title-text">Laser Profiling</span></a></li>
+			<li id="menu-item-347" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-347"><a href="https://engineeringessex.co.uk/folding-pressing/"><span class="menu-title-text">Folding &#038; Pressing</span></a></li>
+			<li id="menu-item-352" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-352"><a href="https://engineeringessex.co.uk/sheet-metal-welding/"><span class="menu-title-text">Sheet Metal Welding</span></a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li id="menu-item-358" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-358"><a href="https://engineeringessex.co.uk/fabrication-and-welding/"><span class="menu-title-text">Fabrication and Welding</span></a></li>
+	<li id="menu-item-366" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-366"><a href="https://engineeringessex.co.uk/equipment/"><span class="menu-title-text">Equipment</span></a></li>
+	<li id="menu-item-25" class="menu-item menu-item-type-custom menu-item-object-custom nectar-regular-menu-item menu-item-25"><a href="#"><span class="menu-title-text">RJ Waller</span></a></li>
+</ul>
+</li>
+<li id="menu-item-861" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-861"><a href="https://engineeringessex.co.uk/gallery/"><span class="menu-title-text">Gallery</span></a></li>
+<li id="menu-item-421" class="menu-item menu-item-type-post_type menu-item-object-page nectar-regular-menu-item menu-item-421"><a href="https://engineeringessex.co.uk/contact-us/"><span class="menu-title-text">Contact Us</span></a></li>
+							</ul>
+													<ul class="buttons sf-menu" data-user-set-ocm="off">
+
+								<li id="menu-item-112" class="btn_a menu-item menu-item-type-custom menu-item-object-custom button_solid_color menu-item-112"><a href="https://engineeringessex.co.uk/contact-us/"><span class="menu-title-text">Request A Quote</span></a></li>
+
+							</ul>
+						
+					</nav>
+
+					<div class="logo-spacing" data-using-image="true"><img class="hidden-logo" alt="Romark Engineering " width="811" height="427" src="https://engineeringessex.co.uk/wp-content/uploads/2023/04/logo-bank-gothic.png" /></div>
+				</div><!--/span_9-->
+
+				
+			</div><!--/row-->
+					</div><!--/container-->
+	</header>		
+	</div>
+		<div  id="ajax-content-wrap">
+<div id="page-header-wrap" data-animate-in-effect="none" data-midnight="light" class="" style="height: 350px;"><div id="page-header-bg" class="not-loaded " data-padding-amt="normal" data-animate-in-effect="none" data-midnight="light" data-text-effect="none" data-bg-pos="center" data-alignment="center" data-alignment-v="middle" data-parallax="0" data-height="350"  style="height:350px;">					<div class="page-header-overlay-color" data-overlay-opacity="default" style="background-color: #303030;"></div>
+				
+				<div class="container">
+			<div class="row">
+				<div class="col span_6 ">
+					<div class="inner-wrap">
+						<h1>About Us</h1> 						<span class="subheader"></span>
+					</div>
+
+										</div>
+				</div>
+
+				
+
+
+			</div><div class="video-color-overlay" data-color=""></div><div class="mobile-video-image" style="background-image: url()"></div><div class="nectar-video-wrap" data-bg-alignment="center"><video class="nectar-video-bg" width="1800" height="700" preload="auto" loop autoplay muted playsinline><source type="video/webm" src="https://engineeringessex.co.uk/wp-content/uploads/2023/04/welding.mp4"></video></div>
+</div>
+
+</div><div class="container-wrap">
+	<div class="container main-content" role="main">
+		<div class="row">
+			
+		<div id="fws_6aeb611830254"  data-column-margin="default" data-midnight="dark"  class="wpb_row vc_row-fluid vc_row full-width-section abt top_padding_phone_50px bottom_padding_phone_50px"  style="padding-top: 90px; padding-bottom: 90px; "><div class="row-bg-wrap" data-bg-animation="none" data-bg-animation-delay="" data-bg-overlay="false"><div class="inner-wrap row-bg-layer" ><div class="row-bg viewport-desktop using-bg-color"  style="background-color: #f7f7f7; "></div></div></div><div class="row_col_wrap_12 col span_12 dark left">
+	<div  class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding inherit_tablet inherit_phone "  data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0" >
+		<div class="vc_column-inner" >
+			<div class="wpb_wrapper">
+				<div id="fws_6aeb61185c0dd" data-midnight="" data-column-margin="50px" class="wpb_row vc_row-fluid vc_row inner_row vc_row-o-equal-height vc_row-flex vc_row-o-content-middle"  style=""><div class="row-bg-wrap"> <div class="row-bg" ></div> </div><div class="row_col_wrap_12_inner col span_12  left">
+	<div  class="vc_col-sm-6 wpb_column column_container vc_column_container col child_column no-extra-padding inherit_tablet inherit_phone "   data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0" >
+		<div class="vc_column-inner" >
+		<div class="wpb_wrapper">
+			<div class="img-with-aniamtion-wrap " data-max-width="100%" data-max-width-mobile="default" data-shadow="none" data-animation="none" >
+      <div class="inner">
+        <div class="hover-wrap"> 
+          <div class="hover-wrap-inner">
+            <img fetchpriority="high" decoding="async" class="img-with-animation skip-lazy " data-delay="0" height="732" width="684" data-animation="none" src="https://engineeringessex.co.uk/wp-content/uploads/2023/04/about_a.png" alt="Romark Engineering" srcset="https://engineeringessex.co.uk/wp-content/uploads/2023/04/about_a.png 684w, https://engineeringessex.co.uk/wp-content/uploads/2023/04/about_a-280x300.png 280w" sizes="(max-width: 684px) 100vw, 684px" />
+          </div>
+        </div>
+      </div>
+    </div>
+		</div> 
+	</div>
+	</div> 
+
+	<div  class="vc_col-sm-6 wpb_column column_container vc_column_container col child_column no-extra-padding inherit_tablet inherit_phone "   data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0" >
+		<div class="vc_column-inner" >
+		<div class="wpb_wrapper">
+			
+<div class="wpb_text_column wpb_content_element  hedd" >
+	<div class="wpb_wrapper">
+		<h5>About Us</h5>
+<h2>Romark Engineering Ltd.</h2>
+	</div>
+</div>
+
+
+
+
+<div class="wpb_text_column wpb_content_element " >
+	<div class="wpb_wrapper">
+		<p>Romark Engineering Ltd is a bespoke metal work fabrication company based in an 8,000sq ft unit in Stanford-le-Hope, Essex. With a team of highly skilled and experienced engineers, Romark offers a complete service for the design and manufacture of a large range of metal products, from hand-made prototype parts to production and pre-production runs for a wide range of industries.</p>
+<p>With a reputation for meeting tight deadlines where a high-quality finished product is key, Romark Engineering Ltd deliver to your specifications.</p>
+	</div>
+</div>
+
+
+
+
+		</div> 
+	</div>
+	</div> 
+</div></div>
+			</div> 
+		</div>
+	</div> 
+</div></div>
+		<div id="fws_6aeb6118a3720"  data-column-margin="default" data-midnight="light"  class="wpb_row vc_row-fluid vc_row full-width-section back_a top_padding_phone_50px bottom_padding_phone_50px"  style="padding-top: 90px; padding-bottom: 90px; "><div class="row-bg-wrap" data-bg-animation="none" data-bg-animation-delay="" data-bg-overlay="true"><div class="inner-wrap row-bg-layer using-image" ><div data-bg="https://engineeringessex.co.uk/wp-content/uploads/2023/04/largebg.jpg" class="row-bg viewport-desktop using-image rocket-lazyload"  style=" background-position: center center; background-repeat: no-repeat; "></div></div><div class="row-bg-overlay row-bg-layer" style="background-color:#000000;  opacity: 0.8; "></div></div><div class="row_col_wrap_12 col span_12 light center">
+	<div  class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding inherit_tablet inherit_phone "  data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0" >
+		<div class="vc_column-inner" >
+			<div class="wpb_wrapper">
+				<div id="fws_6aeb6118b259b" data-midnight="" data-column-margin="default" class="wpb_row vc_row-fluid vc_row inner_row"  style=""><div class="row-bg-wrap"> <div class="row-bg" ></div> </div><div class="row_col_wrap_12_inner col span_12  left">
+	<div  class="vc_col-sm-12 wpb_column column_container vc_column_container col child_column no-extra-padding inherit_tablet inherit_phone "   data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0" >
+		<div class="vc_column-inner" >
+		<div class="wpb_wrapper">
+			<div class="nectar-cta  alignment_tablet_default alignment_phone_default display_tablet_inherit display_phone_inherit " data-color="default" data-using-bg="false" data-style="see-through" data-display="block" data-alignment="center" data-text-color="std" ><h2> <span class="text">Need a service &amp; ready to book? Call us </span><span class="link_wrap" ><a  class="link_text" href="tel:01375640037">01375 640 037<span class="arrow"></span></a></span></h2></div>
+		</div> 
+	</div>
+	</div> 
+</div></div>
+			</div> 
+		</div>
+	</div> 
+</div></div>
+		<div id="fws_6aeb6118ea771"  data-column-margin="default" data-midnight="dark"  class="wpb_row vc_row-fluid vc_row has-global-section"  style="padding-top: 0px; padding-bottom: 0px; "><div class="row-bg-wrap" data-bg-animation="none" data-bg-animation-delay="" data-bg-overlay="false"><div class="inner-wrap row-bg-layer" ><div class="row-bg viewport-desktop"  style=""></div></div></div><div class="row_col_wrap_12 col span_12 dark left">
+	<div  class="vc_col-sm-12 wpb_column column_container vc_column_container col no-extra-padding inherit_tablet inherit_phone "  data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0" >
+		<div class="vc_column-inner" >
+			<div class="wpb_wrapper">
+				
+		<div id="fws_6aeb61190fb08"  data-column-margin="none" data-midnight="dark"  class="wpb_row vc_row-fluid vc_row full-width-section vc_row-o-equal-height vc_row-flex vc_row-o-content-middle contact_sec top_padding_phone_50px bottom_padding_phone_50px"  style="padding-top: 90px; padding-bottom: 90px; "><div class="row-bg-wrap" data-bg-animation="none" data-bg-animation-delay="" data-bg-overlay="false"><div class="inner-wrap row-bg-layer" ><div class="row-bg viewport-desktop"  style=""></div></div></div><div class="row_col_wrap_12 col span_12 dark left">
+	<div  class="vc_col-sm-6 form_info wpb_column column_container vc_column_container col no-extra-padding inherit_tablet inherit_phone "  data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0" >
+		<div class="vc_column-inner" >
+			<div class="wpb_wrapper">
+				
+<div class="wpb_text_column wpb_content_element  hedd" >
+	<div class="wpb_wrapper">
+		<h5>Contact Us</h5>
+<h2>Get In Touch</h2>
+	</div>
+</div>
+
+
+
+
+<div class="wpcf7 no-js" id="wpcf7-f4-p423-o1" lang="en-GB" dir="ltr" data-wpcf7-id="4">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/about-us/#wpcf7-f4-p423-o1" method="post" class="wpcf7-form init" aria-label="Contact form" novalidate="novalidate" data-status="init">
+<fieldset class="hidden-fields-container"><input type="hidden" name="_wpcf7" value="4" /><input type="hidden" name="_wpcf7_version" value="6.1.7" /><input type="hidden" name="_wpcf7_locale" value="en_GB" /><input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f4-p423-o1" /><input type="hidden" name="_wpcf7_container_post" value="423" /><input type="hidden" name="_wpcf7_posted_data_hash" value="" /><input type="hidden" name="_wpcf7_recaptcha_response" value="" />
+</fieldset>
+<div class="flx">
+	<p><span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Name" value="" type="text" name="your-name" /></span><span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email" value="" type="email" name="your-email" /></span>
+	</p>
+</div>
+<p><span class="wpcf7-form-control-wrap" data-name="your-subject"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Subject" value="" type="text" name="your-subject" /></span><span class="wpcf7-form-control-wrap" data-name="your-message"><textarea cols="40" rows="10" maxlength="2000" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Message" name="your-message"></textarea></span><br />
+<span class="wpcf7-form-control-wrap" data-name="acceptance-374"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><label><input type="checkbox" name="acceptance-374" value="1" aria-invalid="false" /><span class="wpcf7-list-item-label">By using this form you agree with the storage and handling of your data by this website.</span></label></span></span></span><br />
+<input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Send" />
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+
+			</div> 
+		</div>
+	</div> 
+
+	<div  class="vc_col-sm-6 details_info wpb_column column_container vc_column_container col no-extra-padding inherit_tablet inherit_phone "  data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0" >
+		<div class="vc_column-inner" >
+			<div class="wpb_wrapper">
+				
+<div class="wpb_text_column wpb_content_element  hedd" >
+	<div class="wpb_wrapper">
+		<h2>Contact Info</h2>
+	</div>
+</div>
+
+
+
+<div class="iwithtext"><div class="iwt-icon"> <i class="icon-default-style fa fa-phone extra-color-2"></i> </div><div class="iwt-text"> <strong>Call us now</strong><br />
+<a href="tel:01375673447">01375 673 447</a> / <a href="tel:01375640037">01375 640 037</a> </div><div class="clear"></div></div><div class="iwithtext"><div class="iwt-icon"> <i class="icon-default-style fa fa-envelope extra-color-2"></i> </div><div class="iwt-text"> <strong>Email us:</strong><br />
+<a href="mailto:jobs@romarkengineering.com">jobs@romarkengineering.com</a> </div><div class="clear"></div></div><div class="iwithtext"><div class="iwt-icon"> <i class="icon-default-style fa fa-location-arrow extra-color-2"></i> </div><div class="iwt-text"> <strong>Address:</strong><br />
+Unit 8+9 Baryta Close,<br />
+Stanford-Le-Hope,<br />
+Essex, SS17 0JE </div><div class="clear"></div></div>
+			</div> 
+		</div>
+	</div> 
+</div></div>
+
+			</div> 
+		</div>
+	</div> 
+</div></div>
+		</div>
+	</div>
+	<div class="nectar-global-section before-footer"><div class="container normal-container row">
+		<div id="fws_6aeb61194252c"  data-column-margin="default" data-midnight="light"  class="wpb_row vc_row-fluid vc_row full-width-section footer_main top_padding_phone_40px bottom_padding_phone_40px"  style="padding-top: 90px; padding-bottom: 60px; "><div class="row-bg-wrap" data-bg-animation="none" data-bg-animation-delay="" data-bg-overlay="false"><div class="inner-wrap row-bg-layer" ><div class="row-bg viewport-desktop using-bg-color"  style="background-color: #005890; "></div></div></div><div class="row_col_wrap_12 col span_12 light left">
+	<div  class="vc_col-sm-3 wpb_column column_container vc_column_container col no-extra-padding force-phone-text-align-center inherit_tablet inherit_phone "  data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0" >
+		<div class="vc_column-inner" >
+			<div class="wpb_wrapper">
+				
+<div class="wpb_text_column wpb_content_element " >
+	<div class="wpb_wrapper">
+		<h4>About Us</h4>
+<p>Romark Engineering<br />
+Increase in capacity: We are now able to fold 4000mm on our new Amada 220 ton CNC press brake</p>
+<p>All quotes and estimates exclude VAT and delivery unless otherwise stated. Subject to standard terms and conditions. Quotes valid for 30 days.</p>
+	</div>
+</div>
+
+
+
+
+			</div> 
+		</div>
+	</div> 
+
+	<div  class="vc_col-sm-3 wpb_column column_container vc_column_container col padding-4-percent force-phone-text-align-center padding-2-percent_tablet inherit_phone "  data-padding-pos="left" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0" >
+		<div class="vc_column-inner" >
+			<div class="wpb_wrapper">
+				
+<div class="wpb_text_column wpb_content_element " >
+	<div class="wpb_wrapper">
+		<h4>Quick Links</h4>
+<ul>
+<li><a href="https://engineeringessex.co.uk/">Home</a></li>
+<li><a href="https://engineeringessex.co.uk/about-us/">About</a></li>
+<li><a href="#">Services</a></li>
+<li><a href="https://engineeringessex.co.uk/contact-us/">Contact</a></li>
+<li><a href="https://engineeringessex.co.uk/sitemap/">Sitemap</a></li>
+</ul>
+	</div>
+</div>
+
+
+
+
+			</div> 
+		</div>
+	</div> 
+
+	<div  class="vc_col-sm-3 wpb_column column_container vc_column_container col no-extra-padding force-phone-text-align-center inherit_tablet inherit_phone "  data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0" >
+		<div class="vc_column-inner" >
+			<div class="wpb_wrapper">
+				
+<div class="wpb_text_column wpb_content_element " >
+	<div class="wpb_wrapper">
+		<h4>Services</h4>
+<ul>
+<li><a href="https://engineeringessex.co.uk/cnc-machining/">Cnc Machining And Milling</a></li>
+<li><a href="https://engineeringessex.co.uk/sheetmetal-work/">Sheet Metalwork</a></li>
+<li><a href="https://engineeringessex.co.uk/fabrication-and-welding/">Fabrication And Welding</a></li>
+<li><a href="https://engineeringessex.co.uk/equipment/">Equipment</a></li>
+</ul>
+	</div>
+</div>
+
+
+
+
+			</div> 
+		</div>
+	</div> 
+
+	<div  class="vc_col-sm-3 wpb_column column_container vc_column_container col no-extra-padding force-phone-text-align-center padding-2-percent_tablet inherit_phone "  data-padding-pos="all" data-has-bg-color="false" data-bg-color="" data-bg-opacity="1" data-animation="" data-delay="0" >
+		<div class="vc_column-inner" >
+			<div class="wpb_wrapper">
+				
+<div class="wpb_text_column wpb_content_element " >
+	<div class="wpb_wrapper">
+		<h4>Address</h4>
+<p>Unit 8+9 Baryta Close,<br />
+Stanford-Le-Hope,<br />
+Essex, SS17 0JE</p>
+<p><strong>Accreditation</strong></p>
+	</div>
+</div>
+
+
+
+<div class="img-with-aniamtion-wrap " data-max-width="100%" data-max-width-mobile="default" data-shadow="none" data-animation="none" >
+      <div class="inner">
+        <div class="hover-wrap"> 
+          <div class="hover-wrap-inner">
+            <img class="img-with-animation skip-lazy image_fff" data-delay="0" height="68" width="262" data-animation="none" src="https://engineeringessex.co.uk/wp-content/uploads/2023/04/a.png" alt="Romark Engineering"  />
+          </div>
+        </div>
+      </div>
+    </div>
+			</div> 
+		</div>
+	</div> 
+</div></div>
+</div></div></div>
+<div id="safetech_seo" style="display:none;">
+  <div class="safetech_seo_wrap">
+    <div class="safetech_sem_column">
+      <ul>
+        <li><a href="https://engineeringessex.co.uk/sheet-metal-london/">Sheet Metal London</a></li>
+        <li><a href="https://engineeringessex.co.uk/aluminium-welding-london/">Aluminium Welding London</a></li>
+        <li><a href="https://engineeringessex.co.uk/cnc-machining-kent/">Cnc Machining Kent</a></li>
+        <li><a href="https://engineeringessex.co.uk/stainless-steel-essex/">Stainless Steel Essex</a></li>
+        <li><a href="https://engineeringessex.co.uk/sheet-metal-essex/">Sheet Metal Essex</a></li>
+        <li><a href="https://engineeringessex.co.uk/laser-cutting-essex/">Laser Cutting Essex</a></li>
+      </ul>
+    </div>
+    <div class="safetech_sem_column">
+      <ul>
+        <li><a href="https://engineeringessex.co.uk/precision-engineering-london/">Precision Engineering London</a></li>
+        <li><a href="https://engineeringessex.co.uk/machining-essex/">Machining Essex</a></li>
+        <li><a href="https://engineeringessex.co.uk/laser-cutting-basildon/">Laser Cutting Basildon</a></li>
+        <li><a href="https://engineeringessex.co.uk/cnc-milling-essex/">CNC Milling Essex</a></li>
+        <li><a href="https://engineeringessex.co.uk/prototype-engineering-london/">Prototype Engineering London</a></li>
+        <li><a href="https://engineeringessex.co.uk/prototype-engineering-services/">Prototype Engineering Services</a></li>
+      </ul>
+    </div>
+    <div class="safetech_sem_column">
+      <ul>
+        <li><a href="https://engineeringessex.co.uk/fabrication-contractors/">Fabrication Contractors</a></li>
+        <li><a href="https://engineeringessex.co.uk/sheet-metal-fabrication-essex/">Sheet Metal Fabrication Essex</a></li>
+        <li><a href="https://engineeringessex.co.uk/metal-fabrication-essex/">Metal Fabrication Essex</a></li>
+        <li><a href="https://engineeringessex.co.uk/precision-engineering-essex/">Precision Engineering Essex</a></li>
+        <li><a href="https://engineeringessex.co.uk/precision-engineering-kent/">Precision Engineering Kent</a></li>
+        <li><a href="https://engineeringessex.co.uk/precision-engineering-basildon/">Precision Engineering Basildon</a></li>
+      </ul>
+    </div>
+    <div class="safetech_sem_column">
+      <ul>
+        <li><a href="https://engineeringessex.co.uk/sheet-metal-fabrication-london/">Sheet Metal Fabrication London</a></li>
+        <li><a href="https://engineeringessex.co.uk/sheet-metal-london/">Sheet Metal London</a></li>
+        <li><a href="https://iwantalocal.co.uk/">I Want A Local</a></li>
+        <li><a href="https://safetech.co.uk/">Safetech LTD</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="footer-outer" data-midnight="light" data-cols="2" data-custom-color="true" data-disable-copyright="false" data-matching-section-color="true" data-copyright-line="false" data-using-bg-img="false" data-bg-img-overlay="0.8" data-full-width="false" data-using-widget-area="true" data-link-hover="underline">
+	
+		
+	<div id="footer-widgets" data-has-widgets="false" data-cols="2">
+		
+		<div class="container">
+			
+						
+			<div class="row">
+				
+								
+				<div class="col span_6">
+												<div class="widget">			
+							</div>
+											</div>
+					
+											
+						<div class="col span_6">
+																<div class="widget">			
+									</div>
+																
+							</div>
+							
+												
+						
+													
+															
+							</div>
+													</div><!--/container-->
+					</div><!--/footer-widgets-->
+					
+					
+  <div class="row" id="copyright" data-layout="default">
+	
+	<div class="container">
+	   
+				<div class="col span_5">
+		   
+			<p>© 2023 Romark Engineering. All Rights Reserved.  Website by <a href="http://safetech.co.uk/">Safetech</a>	</p>
+		</div><!--/span_5-->
+			   
+	  <div class="col span_7 col_last">
+      <ul class="social">
+        <li><a target="_blank" rel="noopener" href=""><span class="screen-reader-text">instagram</span><i class="fa fa-instagram" aria-hidden="true"></i></a></li>      </ul>
+	  </div><!--/span_7-->
+    
+	  	
+	</div><!--/container-->
+  </div><!--/row-->
+		
+</div><!--/footer-outer-->
+
+
+	<div id="slide-out-widget-area-bg" class="slide-out-from-right dark">
+				</div>
+
+		<div id="slide-out-widget-area" class="slide-out-from-right" data-dropdown-func="separate-dropdown-parent-link" data-back-txt="Back">
+
+			<div class="inner-wrap">
+			<div class="inner" data-prepend-menu-mobile="false">
+
+				<a class="slide_out_area_close" href="#"><span class="screen-reader-text">Close Menu</span>
+					<span class="close-wrap"> <span class="close-line close-line1"></span> <span class="close-line close-line2"></span> </span>				</a>
+
+
+									<div class="off-canvas-menu-container mobile-only" role="navigation">
+
+						
+						<ul class="menu">
+							<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-10"><a href="https://engineeringessex.co.uk/">Home</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-423 current_page_item menu-item-425"><a href="https://engineeringessex.co.uk/about-us/" aria-current="page">About</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-13"><a href="#">Services</a>
+<ul class="sub-menu">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-315"><a href="https://engineeringessex.co.uk/cad/">CAD</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-318"><a href="https://engineeringessex.co.uk/cnc-machining/">CNC Machining</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-323"><a href="https://engineeringessex.co.uk/milling/">Milling</a></li>
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-329"><a href="https://engineeringessex.co.uk/turning/">Turning</a></li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-335"><a href="https://engineeringessex.co.uk/sheetmetal-work/">Sheetmetal Work</a>
+	<ul class="sub-menu">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-342"><a href="https://engineeringessex.co.uk/blank-development/">Blank Development</a>
+		<ul class="sub-menu">
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-374"><a href="https://engineeringessex.co.uk/laser-profiling/">Laser Profiling</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-347"><a href="https://engineeringessex.co.uk/folding-pressing/">Folding &#038; Pressing</a></li>
+			<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-352"><a href="https://engineeringessex.co.uk/sheet-metal-welding/">Sheet Metal Welding</a></li>
+		</ul>
+</li>
+	</ul>
+</li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-358"><a href="https://engineeringessex.co.uk/fabrication-and-welding/">Fabrication and Welding</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-366"><a href="https://engineeringessex.co.uk/equipment/">Equipment</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-25"><a href="#">RJ Waller</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-861"><a href="https://engineeringessex.co.uk/gallery/">Gallery</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-421"><a href="https://engineeringessex.co.uk/contact-us/">Contact Us</a></li>
+<li class="btn_a menu-item menu-item-type-custom menu-item-object-custom menu-item-112"><a href="https://engineeringessex.co.uk/contact-us/">Request A Quote</a></li>
+
+						</ul>
+
+						<ul class="menu secondary-header-items">
+													</ul>
+					</div>
+					
+				</div>
+
+				<div class="bottom-meta-wrap"></div><!--/bottom-meta-wrap--></div> <!--/inner-wrap-->
+				</div>
+		
+</div> <!--/ajax-content-wrap-->
+
+	<a id="to-top" href="#" class="
+		"><i class="fa fa-angle-up"></i></a>
+	</div></div><!--/ocm-effect-wrap--><script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/salient-child/*","/wp-content/themes/salient/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+	<!--copyscapeskip-->
+	<aside id="moove_gdpr_cookie_info_bar" class="moove-gdpr-info-bar-hidden moove-gdpr-align-center moove-gdpr-dark-scheme gdpr_infobar_postion_bottom" aria-labelledby="moove_gdpr_cookie_info_bar_title" tabindex="-1" style="display: none;">
+	<div class="moove-gdpr-info-bar-container">
+				<div id="moove_gdpr_cookie_info_bar_title" class="gdpr-sr-only" role="heading" aria-level="2">GDPR Cookie Banner</div>
+		<div class="moove-gdpr-info-bar-content">
+		
+<div class="moove-gdpr-cookie-notice">
+  <p>We are using cookies to give you the best experience on our website.</p><p>You can find out more about which cookies we are using or switch them off in <button  aria-haspopup="dialog" data-href="#moove_gdpr_cookie_modal" class="change-settings-button gdpr-settings-btn-style-2">settings</button>.</p></div>
+<!--  .moove-gdpr-cookie-notice -->
+		
+<div class="moove-gdpr-button-holder">
+			<button class="mgbutton moove-gdpr-infobar-allow-all gdpr-fbo-0" aria-label="Accept" >Accept</button>
+		</div>
+<!--  .button-container -->
+		</div>
+		<!-- moove-gdpr-info-bar-content -->
+	</div>
+	<!-- moove-gdpr-info-bar-container -->
+	</aside>
+	<!-- #moove_gdpr_cookie_info_bar -->
+	<!--/copyscapeskip-->
+<script type="text/html" id="wpb-modifications"></script><script id="eio-lazy-load-js-before">
+const eio_lazy_vars = {"bg_min_dpr":1.1,"exactdn_domain":"","safe_paths":["\/wp-content\/plugins","\/wp-content\/themes","\/wp-includes\/"],"safe_domains":["engineeringessex.co.uk","www.engineeringessex.co.uk"],"skip_autoscale":0,"threshold":0,"use_dpr":1};Object.freeze(eio_lazy_vars);
+//# sourceURL=eio-lazy-load-js-before
+</script>
+<script async data-wp-strategy="async" id="eio-lazy-load-js" src="https://engineeringessex.co.uk/wp-content/plugins/ewww-image-optimizer/includes/lazysizes.min.js?ver=891"></script>
+<script type="text/rocketlazyloadscript" id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+//# sourceURL=rocket-browser-checker-js-after
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"/(?:.+/)?feed(?:/(?:.+/?)?)?$|/(?:.+/)?embed/|/(index.php/)?(.*)wp-json(/.*|$)|/refer/|/go/|/recommend/|/recommends/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https://engineeringessex.co.uk","onHoverDelay":"100","rateThrottle":"3"};
+//# sourceURL=rocket-preload-links-js-extra
+</script>
+<script type="text/rocketlazyloadscript" id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+
+//# sourceURL=rocket-preload-links-js-after
+</script>
+<script type="text/rocketlazyloadscript" id="jquery-easing-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/themes/salient/js/build/third-party/jquery.easing.min.js?ver=1.3" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="jquery-mousewheel-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/themes/salient/js/build/third-party/jquery.mousewheel.min.js?ver=3.1.13" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" data-minify="1" id="nectar_priority-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/themes/salient/js/build/priority.js?ver=1782488864" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="intersection-observer-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/themes/salient/js/build/third-party/intersection-observer.min.js?ver=2.6.2" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="nectar-transit-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/themes/salient/js/build/third-party/transit.min.js?ver=0.9.9" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" data-minify="1" id="nectar-waypoints-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/themes/salient/js/build/third-party/waypoints.js?ver=1782488865" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="imagesLoaded-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/plugins/salient-portfolio/js/third-party/imagesLoaded.min.js?ver=4.1.4" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="hoverintent-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/themes/salient/js/build/third-party/hoverintent.min.js?ver=1.9" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="fancyBox-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/themes/salient/js/build/third-party/jquery.fancybox.min.js?ver=3.3.8" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="anime-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/themes/salient/js/build/third-party/anime.min.js?ver=4.5.1" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" data-minify="1" id="superfish-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/themes/salient/js/build/third-party/superfish.js?ver=1782488865" data-rocket-defer defer></script>
+<script id="nectar-frontend-js-extra">
+var nectarLove = {"ajaxurl":"https://engineeringessex.co.uk/wp-admin/admin-ajax.php","postID":"423","rooturl":"https://engineeringessex.co.uk","disqusComments":"false","loveNonce":"c43f761359","mapApiKey":""};
+var nectarOptions = {"delay_js":"0","quick_search":"false","react_compat":"disabled","header_entrance":"false","mobile_header_format":"default","ocm_btn_position":"default","left_header_dropdown_func":"default","ajax_add_to_cart":"0","ocm_remove_ext_menu_items":"remove_images","woo_product_filter_toggle":"0","woo_sidebar_toggles":"true","woo_sticky_sidebar":"0","woo_minimal_product_hover":"default","woo_minimal_product_effect":"default","woo_related_upsell_carousel":"false","woo_product_variable_select":"default"};
+var nectar_front_i18n = {"next":"Next","previous":"Previous"};
+//# sourceURL=nectar-frontend-js-extra
+</script>
+<script type="text/rocketlazyloadscript" data-minify="1" id="nectar-frontend-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/themes/salient/js/build/init.js?ver=1782488866" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="touchswipe-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/plugins/salient-core/js/third-party/touchswipe.min.js?ver=1.0" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="google-recaptcha-js" data-rocket-src="https://www.google.com/recaptcha/api.js?render=6Lf7YjgmAAAAAHaTbm7RD7ofU_nSCk6E3iX438bS&#038;ver=3.0"></script>
+<script type="text/rocketlazyloadscript" id="wp-polyfill-js" data-rocket-src="https://engineeringessex.co.uk/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0"></script>
+<script type="text/rocketlazyloadscript" id="wpcf7-recaptcha-js-before">
+var wpcf7_recaptcha = {
+    "sitekey": "6Lf7YjgmAAAAAHaTbm7RD7ofU_nSCk6E3iX438bS",
+    "actions": {
+        "homepage": "homepage",
+        "contactform": "contactform"
+    }
+};
+//# sourceURL=wpcf7-recaptcha-js-before
+</script>
+<script type="text/rocketlazyloadscript" data-minify="1" id="wpcf7-recaptcha-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/plugins/contact-form-7/modules/recaptcha/index.js?ver=1782488866" data-rocket-defer defer></script>
+<script id="moove_gdpr_frontend-js-extra">
+var moove_frontend_gdpr_scripts = {"ajaxurl":"https://engineeringessex.co.uk/wp-admin/admin-ajax.php","post_id":"423","plugin_dir":"https://engineeringessex.co.uk/wp-content/plugins/gdpr-cookie-compliance","show_icons":"all","is_page":"1","ajax_cookie_removal":"false","strict_init":"2","enabled_default":{"strict":1,"third_party":0,"advanced":0,"performance":0,"preference":0},"geo_location":"false","force_reload":"false","is_single":"","hide_save_btn":"false","current_user":"0","cookie_expiration":"365","script_delay":"2000","close_btn_action":"1","close_btn_rdr":"","scripts_defined":"{\"cache\":true,\"header\":\"\",\"body\":\"\",\"footer\":\"\",\"thirdparty\":{\"header\":\"\",\"body\":\"\",\"footer\":\"\"},\"strict\":{\"header\":\"\",\"body\":\"\",\"footer\":\"\"},\"advanced\":{\"header\":\"\",\"body\":\"\",\"footer\":\"\"}}","gdpr_scor":"true","wp_lang":"","parent_domain_cookies":["_ga","_fbp","_gid","_gat","__utma","__utmb","__utmc","__utmt","__utmz","_gcl_","_gac_","_fbc"],"wp_consent_api":"false","gdpr_nonce":"97cb889ff3","gdpr_focus_cb":"false","gdpr_a11y_strict_first":"Turn on %s first to change this setting."};
+//# sourceURL=moove_gdpr_frontend-js-extra
+</script>
+<script type="text/rocketlazyloadscript" data-minify="1" id="moove_gdpr_frontend-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/plugins/gdpr-cookie-compliance/dist/scripts/main.js?ver=1782488866" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="moove_gdpr_frontend-js-after">
+var gdpr_c=document.cookie.match(/(?:^|;\s*)moove_gdpr_popup=([^;]*)/);var gdpr_d=gdpr_c?JSON.parse(decodeURIComponent(gdpr_c[1])):{};var gdpr_consent__strict=gdpr_d.strict==="1"?"true":"false";var gdpr_consent__thirdparty=gdpr_d.thirdparty==="1"?"true":"false";var gdpr_consent__advanced=gdpr_d.advanced==="1"?"true":"false";var gdpr_consent__performance=gdpr_d.performance==="1"?"true":"false";var gdpr_consent__preference=gdpr_d.preference==="1"?"true":"false";var _cc=[];if(gdpr_d.strict==="1")_cc.push("strict");if(gdpr_d.thirdparty==="1")_cc.push("thirdparty");if(gdpr_d.advanced==="1")_cc.push("advanced");if(gdpr_d.performance==="1")_cc.push("performance");if(gdpr_d.preference==="1")_cc.push("preference");var gdpr_consent__cookies=_cc.join("|");
+//# sourceURL=moove_gdpr_frontend-js-after
+</script>
+<script id="wpb_composer_front_js-js-extra">
+var vcData = {"currentTheme":{"slug":"salient"}};
+//# sourceURL=wpb_composer_front_js-js-extra
+</script>
+<script type="text/rocketlazyloadscript" id="wpb_composer_front_js-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/plugins/js_composer_salient/assets/js/dist/js_composer_front.min.js?ver=6.9.1" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="wp-hooks-js" data-rocket-src="https://engineeringessex.co.uk/wp-includes/js/dist/hooks.min.js?ver=f0f188028580e8dc1255"></script>
+<script type="text/rocketlazyloadscript" id="wp-i18n-js" data-rocket-src="https://engineeringessex.co.uk/wp-includes/js/dist/i18n.min.js?ver=1dfe7db3940c23ea9216"></script>
+<script type="text/rocketlazyloadscript" id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+//# sourceURL=wp-i18n-js-after
+</script>
+<script type="text/rocketlazyloadscript" data-minify="1" id="swv-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=1782488866" data-rocket-defer defer></script>
+<script type="text/rocketlazyloadscript" id="contact-form-7-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "contact-form-7", {"translation-revision-date":"2026-05-05 18:32:38+0000","generator":"GlotPress\/4.0.3","domain":"messages","locale_data":{"messages":{"":{"domain":"messages","plural-forms":"nplurals=2; plural=n != 1;","lang":"en_GB"},"This contact form is placed in the wrong place.":["This contact form is placed in the wrong place."],"Error:":["Error:"]}},"comment":{"reference":"includes\/js\/index.js"}} );
+//# sourceURL=contact-form-7-js-translations
+</script>
+<script type="text/rocketlazyloadscript" id="contact-form-7-js-before">
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/engineeringessex.co.uk\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    },
+    "cached": 1
+};
+//# sourceURL=contact-form-7-js-before
+</script>
+<script type="text/rocketlazyloadscript" data-minify="1" id="contact-form-7-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/plugins/contact-form-7/includes/js/index.js?ver=1782488866" data-rocket-defer defer></script>
+<script id="cf7apps-honeypot-refill-js-extra">
+var cf7appsHoneypotRefill = {"forceRefillOnInit":"1"};
+//# sourceURL=cf7apps-honeypot-refill-js-extra
+</script>
+<script type="text/rocketlazyloadscript" data-minify="1" id="cf7apps-honeypot-refill-js" data-rocket-src="https://engineeringessex.co.uk/wp-content/cache/min/1/wp-content/plugins/contact-form-7-honeypot/legacy-honeypot/includes/js/honeypot-refill.js?ver=1785275551" data-rocket-defer defer></script>
+
+    
+	<!--copyscapeskip-->
+	<!-- V1 -->
+			<dialog id="moove_gdpr_cookie_modal" class="gdpr_lightbox-hide" open tabindex="-1" aria-modal="true" aria-label="GDPR Settings Screen">
+	<div class="moove-gdpr-modal-content moove-clearfix logo-position-left moove_gdpr_modal_theme_v1">
+				<button class="moove-gdpr-modal-close" aria-label="Close GDPR Cookie Settings">
+			<span class="gdpr-sr-only">Close GDPR Cookie Settings</span>
+			<span class="gdpr-icon moovegdpr-arrow-close"></span>
+		</button>
+				<div class="moove-gdpr-modal-left-content">
+		
+<div class="moove-gdpr-company-logo-holder">
+	<img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20350%20233'%3E%3C/svg%3E" alt="Romark Engineering "   width="350"  height="233"  class="img-responsive" data-lazy-src="https://engineeringessex.co.uk/wp-content/plugins/gdpr-cookie-compliance/dist/images/gdpr-logo.png" /><noscript><img src="https://engineeringessex.co.uk/wp-content/plugins/gdpr-cookie-compliance/dist/images/gdpr-logo.png" alt="Romark Engineering "   width="350"  height="233"  class="img-responsive" /></noscript>
+</div>
+<!--  .moove-gdpr-company-logo-holder -->
+		<ul id="moove-gdpr-menu" role="tablist" aria-label="Cookie categories">
+			
+<li class="menu-item-on menu-item-privacy_overview menu-item-selected" role="presentation">
+	<button data-href="#privacy_overview" id="gdpr-tab-privacy_overview" class="moove-gdpr-tab-nav" role="tab" aria-selected="true" aria-controls="privacy_overview" aria-label="Privacy Overview">
+	<span class="gdpr-nav-tab-title">Privacy Overview</span>
+	</button>
+</li>
+
+	<li class="menu-item-strict-necessary-cookies menu-item-off" role="presentation">
+	<button data-href="#strict-necessary-cookies" id="gdpr-tab-strict-necessary-cookies" class="moove-gdpr-tab-nav" role="tab" aria-selected="false" aria-controls="strict-necessary-cookies" tabindex="-1" aria-label="Strictly Necessary Cookies">
+		<span class="gdpr-nav-tab-title">Strictly Necessary Cookies</span>
+	</button>
+	</li>
+
+
+
+
+
+		</ul>
+		
+<div class="moove-gdpr-branding-cnt">
+			<a href="https://wordpress.org/plugins/gdpr-cookie-compliance/" rel="noopener noreferrer" target="_blank" class='moove-gdpr-branding'>Powered by&nbsp; <span>GDPR Cookie Compliance</span><span class="gdpr-sr-only"> (opens in a new tab)</span></a>
+		</div>
+<!--  .moove-gdpr-branding -->
+		</div>
+		<!--  .moove-gdpr-modal-left-content -->
+		<div class="moove-gdpr-modal-right-content">
+		<div class="moove-gdpr-modal-title">
+			 
+		</div>
+		<!-- .moove-gdpr-modal-ritle -->
+		<div class="main-modal-content">
+
+			<div class="moove-gdpr-tab-content">
+			
+<div id="privacy_overview" class="moove-gdpr-tab-main">
+			<div class="tab-title" role="heading" aria-level="2"><span class="gdpr-tab-title-text">Privacy Overview</span></div>
+		<div class="moove-gdpr-tab-main-content">
+	<p>This website uses cookies so that we can provide you with the best user experience possible. Cookie information is stored in your browser and performs functions such as recognising you when you return to our website and helping our team to understand which sections of the website you find most interesting and useful.</p>
+		</div>
+	<!--  .moove-gdpr-tab-main-content -->
+
+</div>
+<!-- #privacy_overview -->
+			
+  <div id="strict-necessary-cookies" class="moove-gdpr-tab-main" style="display:none">
+        <div class="tab-title" role="heading" aria-level="2"><span class="gdpr-tab-title-text">Strictly Necessary Cookies</span></div>
+    <div class="moove-gdpr-tab-main-content">
+      <p>Strictly Necessary Cookie should be enabled at all times so that we can save your preferences for cookie settings.</p>
+      <div class="moove-gdpr-status-bar ">
+        <div class="gdpr-cc-form-wrap">
+          <div class="gdpr-cc-form-fieldset">
+            <label class="cookie-switch" for="moove_gdpr_strict_cookies">    
+              <input type="checkbox" aria-label="Strictly Necessary Cookies"  value="check" name="moove_gdpr_strict_cookies" id="moove_gdpr_strict_cookies">
+              <span class="cookie-slider cookie-round gdpr-sr" aria-hidden="true" data-text-enable="Enabled" data-text-disabled="Disabled">
+                <span class="gdpr-sr-label">
+                  <span class="gdpr-sr-enable">Enabled</span>
+                  <span class="gdpr-sr-disable">Disabled</span>
+                </span>
+              </span>
+            </label>
+          </div>
+          <!-- .gdpr-cc-form-fieldset -->
+        </div>
+        <!-- .gdpr-cc-form-wrap -->
+      </div>
+      <!-- .moove-gdpr-status-bar -->
+                                              
+    </div>
+    <!--  .moove-gdpr-tab-main-content -->
+  </div>
+  <!-- #strict-necesarry-cookies -->
+			
+			
+									
+			</div>
+			<!--  .moove-gdpr-tab-content -->
+		</div>
+		<!--  .main-modal-content -->
+		<div class="moove-gdpr-modal-footer-content">
+			<div class="moove-gdpr-button-holder">
+						<button class="mgbutton moove-gdpr-modal-allow-all button-visible" aria-label="Enable All">Enable All</button>
+								<button class="mgbutton moove-gdpr-modal-save-settings button-visible" aria-label="Save Settings">Save Settings</button>
+				</div>
+<!--  .moove-gdpr-button-holder -->
+		</div>
+		<!--  .moove-gdpr-modal-footer-content -->
+		</div>
+		<!--  .moove-gdpr-modal-right-content -->
+
+		<div class="moove-clearfix"></div>
+
+	</div>
+	<!--  .moove-gdpr-modal-content -->
+	</dialog>
+	<!-- #moove_gdpr_cookie_modal -->
+	<!--/copyscapeskip-->
+<script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://engineeringessex.co.uk/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadImg(id,l){var s='https://i.ytimg.com/vi/ID/hqdefault.jpg'.replace("ID",id),img=document.createElement("img");if(true&&!l&&false){img.setAttribute("loading","lazy");img.setAttribute("src",s);}else if(true&&!l&&!false){img.setAttribute("data-lazy-src",s);}else{img.setAttribute("src",s);}img.setAttribute("width","480");img.setAttribute("height","360");return img;}function lazyLoadThumb(id,alt,l){if(!/^[A-Za-z0-9_-]{11}$/.test(id)){return null;}var frag=document.createDocumentFragment(),img=lazyLoadImg(id,l);img.setAttribute("alt",alt);frag.appendChild(img);var btn=document.createElement("button");btn.setAttribute("class","play");btn.setAttribute("aria-label","Play Youtube video");frag.appendChild(btn);return frag;}function lazyLoadYoutubeIframe(){var src=this.parentNode.dataset.src,url;try{url=new URL(src,"https://www.youtube.com");}catch(err){return;}if("https:"!==url.protocol&&"http:"!==url.protocol){return;}if(["youtube.com","www.youtube.com","youtube-nocookie.com","www.youtube-nocookie.com"].indexOf(url.hostname)===-1){return;}if(url.username||url.password||url.port){return;}if(!/^\/embed\/[A-Za-z0-9_-]{11}\/?$/.test(url.pathname)){return;}url=new URL("https://"+url.hostname+url.pathname.replace(/\/$/,""));var query=this.parentNode.dataset.query||"";new URLSearchParams(query).forEach(function(v,k){url.searchParams.set(k,v);});url.searchParams.set("autoplay","1");var e=document.createElement("iframe");e.setAttribute("src",url.href);e.setAttribute("frameborder","0");e.setAttribute("allowfullscreen","1");e.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture");this.parentNode.parentNode.replaceChild(e,this.parentNode);}document.addEventListener("DOMContentLoaded",function(){var exclusions=[];var e,t,frag,u,l,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++){u='https://i.ytimg.com/vi/ID/hqdefault.jpg'.replace("ID",a[t].dataset.id);l=exclusions.some(function(exclusion){return u.indexOf(exclusion)!==-1;});e=document.createElement("div");e.setAttribute("data-id",a[t].dataset.id);e.setAttribute("data-query",a[t].dataset.query);e.setAttribute("data-src",a[t].dataset.src);frag=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt,l);if(!frag){continue;}e.appendChild(frag);a[t].appendChild(e);e.querySelector(".play").onclick=lazyLoadYoutubeIframe;}});</script></body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1793810718 -->

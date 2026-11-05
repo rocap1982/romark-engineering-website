@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-04-11
+last_updated: 2026-11-04
 active_sprint: none
 stage: idle
 ---
@@ -22,7 +22,7 @@ idle
 - [ ] Source missing service images (5 of 9 services)
 - [ ] Rate limiting for contact form API
 - [ ] Deployment to Railway / Cloudflare Pages
-- [ ] Domain migration (engineeringessex.co.uk -> romarkengineering.co.uk) with 301 redirects
+- [ ] Domain migration — Safetech confirmed 04/11/2026 they keep engineeringessex.co.uk and will run NO 301; old URL list in `archive/engineeringessex-2026-11-04/redirect-map.csv` is only usable if Rob's £150 domain offer is accepted
 
 ## Blockers
 
@@ -32,6 +32,7 @@ None.
 
 | Work | Date | Notes |
 |------|------|-------|
+| Old WordPress site archived | 2026-11-04 | 35 pages + 112 images under `archive/engineeringessex-2026-11-04/`; `report.md` has filler-vs-real evidence (53 Shutterstock files incl. 3 watermarked, injected Safetech link block on every page) |
 | Equipment specs corrected site-wide | 2026-04-11 | Laser: 12mm/12mm/10mm (5000×1500). HFE 220-4 (4m). Added Barnes + Ward Forsythe hydraulic presses. Replaced CNC fleet with XYZ 710/510 + Bridgeport/XYZ manual mills + Harrison lathe. New "Metal Finishing" category. Updated across equipment.json, services.json, seo-pages.json, index.astro, about-us.astro, equipment.astro |
 | New media assets integrated | 2026-04-11 | Banner video on homepage hero, workshop clip on About, warehouse photos on About/Equipment/Gallery, 4 product shots added to gallery. Hero.astro gained `backgroundVideo` + `posterImage` props |
 | SPRINT-003 SEO Landing Pages completed | 2026-03-16 | 20 location-targeted pages, FAQ accordion, Service+FAQPage JSON-LD, Footer "Areas We Serve" |
