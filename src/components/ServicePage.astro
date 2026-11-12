@@ -9,6 +9,7 @@ interface Props {
   equipment: string[];
   image: string;
   shortDescription?: string;
+  gallery?: { src: string; alt: string }[];
 }
 
 const {
@@ -19,6 +20,7 @@ const {
   equipment,
   image,
   shortDescription,
+  gallery = [],
 } = Astro.props;
 ---
 
@@ -114,6 +116,37 @@ const {
             </svg>
             <span class="font-heading font-semibold text-white">{item}</span>
           </div>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<!-- Gallery -->
+{gallery.length > 0 && (
+  <section class="py-(--spacing-section) bg-romark-light">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-14">
+        <div class="w-16 h-1 bg-romark-orange mx-auto mb-4"></div>
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-romark-blue-dark mb-4">
+          Recent {name} Work
+        </h2>
+        <p class="text-romark-gray-500 max-w-2xl mx-auto text-lg">
+          Parts machined in our Stanford-le-Hope workshop.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {gallery.map((photo) => (
+          <figure class="overflow-hidden rounded-lg bg-white shadow-sm">
+            <img
+              src={photo.src}
+              alt={photo.alt}
+              loading="lazy"
+              decoding="async"
+              class="w-full aspect-square object-cover"
+            />
+          </figure>
         ))}
       </div>
     </div>

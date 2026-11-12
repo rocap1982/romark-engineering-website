@@ -29,6 +29,7 @@ interface ServiceData {
   equipment: string[];
   industries: string[];
   image: string;
+  gallery?: { src: string; alt: string }[];
   metaTitle: string;
   metaDescription: string;
   order: number;
@@ -133,6 +134,7 @@ const description = type === 'service' && service ? service.metaDescription : se
       materials={service.materials}
       equipment={service.equipment}
       image={service.image}
+      gallery={service.gallery}
       shortDescription={service.shortDescription}
     />
   ) : seoPage ? (
