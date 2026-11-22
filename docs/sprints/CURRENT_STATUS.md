@@ -17,7 +17,8 @@ idle
 ## This Week's Priorities
 
 - [ ] Optimise new media (warehouse jpgs 5–8MB each, banner video 7.6MB) — run through sharp/ffmpeg for WebP + compressed MP4
-- [ ] Verify with client: XYZ 710/510 VMC specs + Harrison lathe details for equipment table
+- [ ] Verify with client: XYZ 710/510 VMC specs + Harrison lathe details for equipment table (old site said "Harrison M300 600mm with DRO")
+- [ ] Verify with client: are these still on the shop floor? On the old site, missing from `equipment.json`: Trumpf TruShear 3000mm × 6mm guillotine, Hypertherm hand plasma, aqua blasting cabinet, Bianco 300mm band saw, sheet & plate power rollers (to 6mm), Arboga linishers, OneCNC CAM (named in services text, not in the equipment list)
 - [ ] Verify with client: do they have waterjet capability (claims removed from SEO pages this session)
 - [ ] Source missing service images (5 of 9 services)
 - [ ] Rate limiting for contact form API
