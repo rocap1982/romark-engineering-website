@@ -249,7 +249,15 @@
     "gallery": [
       {
         "src": "/images/machining/milled-bored-blocks-profiled-plate.jpg",
-        "alt": "CNC milled bored blocks and profiled plate on the inspection surface plate"
+        "alt": "Stainless steel bored blocks and profiled plate milled on our XYZ 710"
+      },
+      {
+        "src": "/images/machining/milled-stainless-slotted-blocks.jpg",
+        "alt": "Pair of stainless steel blocks milled on our XYZ 710, with bores and slots"
+      },
+      {
+        "src": "/images/machining/milled-stainless-parts-inspection.jpg",
+        "alt": "Stainless steel parts milled on our XYZ 710, on the granite inspection table"
       }
     ]
   },
