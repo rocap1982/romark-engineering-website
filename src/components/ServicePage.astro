@@ -12,6 +12,7 @@ interface Props {
   gallery?: { src: string; alt: string }[];
   parent?: { slug: string; name: string };
   subServices?: { slug: string; name: string; shortDescription: string }[];
+  partner?: { name: string; url: string; email: string; text: string };
 }
 
 const {
@@ -25,6 +26,7 @@ const {
   gallery = [],
   parent,
   subServices = [],
+  partner,
 } = Astro.props;
 ---
 
@@ -67,6 +69,26 @@ const {
   </div>
 </section>
 
+<!-- Sister company (e.g. Turning → RJ Waller Engineering) -->
+{partner && (
+  <section class="pb-(--spacing-section) bg-romark-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="p-6 md:p-8 bg-romark-blue-dark text-white rounded-lg md:flex md:items-center md:justify-between gap-8">
+        <div>
+          <p class="text-romark-orange text-sm font-semibold uppercase tracking-wider mb-2">Our sister company</p>
+          <h2 class="font-heading font-bold text-2xl text-white mb-2">{partner.name}</h2>
+          <p class="text-romark-gray-300 leading-relaxed max-w-2xl">{partner.text}</p>
+        </div>
+        <div class="mt-6 md:mt-0 flex flex-col gap-3 shrink-0">
+          <a href="/contact-us/" class="inline-flex items-center justify-center px-6 py-3 bg-romark-orange text-white font-semibold rounded hover:bg-romark-orange-dark transition-colors">Quote through Romark</a>
+          <a href={partner.url} class="inline-flex items-center justify-center px-6 py-3 border-2 border-white/40 text-white font-semibold rounded hover:border-romark-orange hover:text-romark-orange transition-colors">Visit {partner.name}</a>
+          <a href={`mailto:${partner.email}`} class="text-center text-sm text-romark-gray-300 hover:text-romark-orange">{partner.email}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+)}
+
 <!-- Sub-services (e.g. CNC Machining → Milling, Turning) -->
 {subServices.length > 0 && (
   <section class="pb-(--spacing-section) bg-romark-white">
@@ -78,7 +100,7 @@ const {
             class="group block p-6 bg-romark-light rounded-lg border border-romark-gray-100 hover:border-romark-orange/30 hover:shadow-lg transition-all duration-300"
           >
             <h2 class="font-heading font-bold text-2xl text-romark-blue-dark mb-2 group-hover:text-romark-orange transition-colors">
-              CNC {s.name}
+              {s.name.startsWith('CNC') ? s.name : `CNC ${s.name}`}
             </h2>
             <p class="text-romark-gray-500 leading-relaxed">{s.shortDescription}</p>
             <span class="inline-flex items-center mt-4 text-sm font-semibold text-romark-orange">
