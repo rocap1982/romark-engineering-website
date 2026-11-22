@@ -392,15 +392,17 @@
   },
   {
     "slug": "cad",
-    "name": "CAD Design",
-    "shortDescription": "Full CAD capabilities with Solidworks, AutoCAD, and Rhino3D for 2D and 3D design.",
-    "description": "Our in-house CAD department provides full design capabilities using Solidworks, AutoCAD, and Rhino3D. Whether you need a concept developed from a sketch, an existing design modified, or full production drawings created, our designers work closely with our workshop to ensure every design is optimised for manufacture. We can work from your files, sketches, or even sample components. We also develop accurate flat patterns (blanks) for sheet metal parts from your 3D models, calculating bend allowances so blanks fold to your finished dimensions first time and waste less material.",
+    "name": "CAD Design & 3D Scanning",
+    "shortDescription": "CAD design in Solidworks, AutoCAD and Rhino3D, plus 3D scanning to reverse engineer parts into CAD.",
+    "description": "Our in-house CAD department provides full design capabilities using Solidworks, AutoCAD, and Rhino3D. Whether you need a concept developed from a sketch, an existing design modified, or full production drawings created, our designers work closely with our workshop to ensure every design is optimised for manufacture. We can work from your files, sketches, or even sample components. With our in-house 3D scanner we capture existing parts, assemblies and hard-to-measure shapes, clean up the scan data and rebuild it as an accurate CAD model ready for manufacture. We also develop accurate flat patterns (blanks) for sheet metal parts from your 3D models, calculating bend allowances so blanks fold to your finished dimensions first time and waste less material.",
     "capabilities": [
       "3D solid modelling (Solidworks)",
       "2D drafting and detailing (AutoCAD)",
       "Complex surface modelling (Rhino3D)",
       "Design for manufacture (DFM)",
-      "Reverse engineering from samples",
+      "3D scanning of parts, assemblies and existing structures",
+      "Reverse engineering from 3D scans and samples",
+      "Scan-to-CAD modelling for manufacture",
       "Assembly modelling and simulation",
       "Production drawing packages",
       "Flat pattern (blank) development from 3D models",
@@ -418,7 +420,9 @@
     "equipment": [
       "Solidworks",
       "AutoCAD",
-      "Rhino3D"
+      "Rhino3D",
+      "3DeVOK MT 3D scanner",
+      "Geomagic"
     ],
     "industries": [
       "automotive",
@@ -426,8 +430,8 @@
       "architectural"
     ],
     "image": "/images/work/cad-3d-model-fabricated-assembly.jpg",
-    "metaTitle": "CAD Design & Blank Development | Romark Engineering Essex",
-    "metaDescription": "In-house CAD design and sheet metal blank development in Essex. Solidworks, AutoCAD, Rhino3D. Flat patterns, bend allowances, DFM. Get a free quote.",
+    "metaTitle": "CAD Design & 3D Scanning | Romark Engineering Essex",
+    "metaDescription": "In-house CAD design and 3D scanning in Essex. Solidworks, AutoCAD, Rhino3D. Reverse engineering, scan-to-CAD, flat patterns, DFM. Get a free quote.",
     "order": 7,
     "imageAlt": "3D CAD model of a fabricated assembly on screen"
   }
