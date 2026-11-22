@@ -112,7 +112,7 @@
     "slug": "cnc-machining",
     "name": "CNC Machining",
     "shortDescription": "Computer-controlled precision machining from prototype to full production runs.",
-    "description": "Our CNC machining department provides precision computer-controlled manufacturing for components requiring tight tolerances and excellent surface finishes. Using our XYZ 710 and XYZ 560 vertical machining centres together with our Harrison lathe, we machine components from a wide range of materials including steel, stainless steel, aluminium, brass, and engineering plastics. From single prototypes to production batches.",
+    "description": "Our CNC machining department provides precision computer-controlled manufacturing for components requiring tight tolerances and excellent surface finishes. We mill on our XYZ 710 and XYZ 560 vertical machining centres and DMG Mori Milltap 700, and CNC turning is carried out by our sister company RJ Waller Engineering on seven CNC lathes in Stanford-le-Hope. We machine steel, stainless steel, aluminium, brass and engineering plastics, from single prototypes to production batches.",
     "capabilities": [
       "3-axis CNC milling on XYZ 710 and XYZ 560 VMCs",
       "Precision turning",
@@ -132,7 +132,7 @@
       "XYZ 710 CNC Vertical Machining Centre",
       "XYZ 560 CNC Vertical Machining Centre",
       "DMG Mori Milltap 700 5-Axis Machining Centre",
-      "Harrison Lathe"
+      "CNC lathes at RJ Waller Engineering"
     ],
     "industries": [
       "automotive",
@@ -141,7 +141,7 @@
     ],
     "image": "/images/services/cnc-machining.jpg",
     "metaTitle": "CNC Machining Services | Romark Engineering Essex",
-    "metaDescription": "Precision CNC machining services in Essex. 3-axis milling, CNC turning. Tight tolerances. Prototypes to production. ISO 9001 certified. Get a free quote.",
+    "metaDescription": "Precision CNC machining in Essex: CNC milling on XYZ and DMG Mori machining centres, CNC turning through our sister company RJ Waller. Free quotes.",
     "order": 4,
     "gallery": [
       {
@@ -268,15 +268,17 @@
   },
   {
     "slug": "turning",
-    "name": "Turning",
-    "shortDescription": "Precision turning on our Harrison lathe for cylindrical components.",
-    "description": "Our turning department provides lathe work for cylindrical components of all sizes. Using our Harrison lathe, we produce shafts, bushes, spacers, and bespoke turned components to tight tolerances. Whether you need a single replacement part or a production batch, our experienced turners deliver precision results.",
+    "name": "CNC Turning",
+    "shortDescription": "CNC turning on seven CNC lathes, including sliding-head work, through our sister company RJ Waller Engineering in Stanford-le-Hope.",
+    "description": "CNC turning for Romark customers is carried out by our sister company, RJ Waller Engineering, a CNC machine shop also based in Stanford-le-Hope. Its seven CNC lathes cover everything from simple bushes and spacers to complex turned-and-milled parts: a Star SR-32J sliding-head lathe for small, precise parts in volume, a Doosan Lynx with Y axis and sub-spindle, an Emco with driven tooling, and further 2-axis CNC lathes. Send your turned parts with the rest of your job and we will manage it as one order, or contact RJ Waller directly.",
     "capabilities": [
-      "Precision turning on Harrison lathe",
+      "Seven CNC lathes",
+      "Sliding-head (Swiss-type) turning on a Star SR-32J",
+      "Y-axis and sub-spindle turning on a Doosan Lynx",
+      "Turn-mill work with driven tooling",
       "Internal and external threading",
-      "Boring and facing",
-      "Knurling and grooving",
-      "Tight tolerances",
+      "Boring, grooving and knurling",
+      "Shafts, bushes, spacers and pins",
       "Prototype to production volumes"
     ],
     "materials": [
@@ -288,7 +290,12 @@
       "engineering plastics"
     ],
     "equipment": [
-      "Harrison Lathe"
+      "Star SR-32J Sliding-Head Lathe",
+      "Doosan Lynx CNC Lathe (Y axis, sub-spindle)",
+      "Emco CNC Lathe with Driven Tooling",
+      "Goodway GA-2000 CNC Lathe",
+      "Dugard CNC Lathe",
+      "Emco 2-Axis CNC Lathes"
     ],
     "industries": [
       "automotive",
@@ -296,10 +303,16 @@
       "architectural"
     ],
     "image": "/images/services/turning.jpg",
-    "metaTitle": "Turning Services | Romark Engineering Essex",
-    "metaDescription": "Precision turning services in Essex on our Harrison lathe. Tight tolerances. ISO 9001 certified. Get a free quote.",
+    "metaTitle": "CNC Turning Services Essex | Romark & RJ Waller Engineering",
+    "metaDescription": "CNC turning in Essex through our sister company RJ Waller Engineering: seven CNC lathes including a Star sliding-head. Prototypes to production.",
     "order": 6,
-    "parent": "cnc-machining"
+    "parent": "cnc-machining",
+    "partner": {
+      "name": "RJ Waller Engineering",
+      "url": "https://rjwaller.co.uk",
+      "email": "sales@rjwaller.co.uk",
+      "text": "RJ Waller Engineering is Romark's sister company: a CNC milling and turning shop in Stanford-le-Hope. Quote your turned parts through us with the rest of your job, or go to RJ Waller directly."
+    }
   },
   {
     "slug": "cad",

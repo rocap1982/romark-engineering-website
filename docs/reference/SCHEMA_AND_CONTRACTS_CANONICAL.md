@@ -35,6 +35,7 @@ Array of service objects. Each service has:
 | metaDescription   | string     | yes      | SEO meta description               |
 | order             | number     | yes      | Display order (1-based, unique)    |
 | gallery           | {src, alt}[] | no     | Work photos; see `.claude/rules/seo.md` for naming |
+| partner           | {name, url, email, text} | no | Sister company that delivers the service (Turning → RJ Waller Engineering, Rob 22/11/2026) |
 | parent            | string     | no       | Slug of the parent service (PLAN-004): `milling`, `turning` → `cnc-machining` |
 
 **Primary key**: `slug`
