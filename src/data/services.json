@@ -433,6 +433,16 @@
     "metaTitle": "CAD Design & 3D Scanning | Romark Engineering Essex",
     "metaDescription": "In-house CAD design and 3D scanning in Essex. Solidworks, AutoCAD, Rhino3D. Reverse engineering, scan-to-CAD, flat patterns, DFM. Get a free quote.",
     "order": 7,
-    "imageAlt": "3D CAD model of a fabricated assembly on screen"
+    "imageAlt": "3D CAD model of a fabricated assembly on screen",
+    "gallery": [
+      {
+        "src": "/images/work/3d-scan-vs-cad-model-deviation-map.jpg",
+        "alt": "3D scan of a fabricated vessel compared against its CAD model, coloured by deviation"
+      },
+      {
+        "src": "/images/work/cad-3d-model-fabricated-assembly.jpg",
+        "alt": "3D CAD model of a fabricated assembly on screen"
+      }
+    ]
   }
 ]
