@@ -21,6 +21,18 @@ const jsonLd = {
     );
   })(),
 };
+
+// Work photos shown under a category's table (Rob, 22/11/2026: stainless, milled on the XYZ 710)
+const categoryPhotos: Record<string, { caption: string; photos: { src: string; alt: string }[] }> = {
+  'CNC & Machining': {
+    caption: 'Stainless steel parts milled on our XYZ 710',
+    photos: [
+      { src: '/images/machining/milled-stainless-slotted-blocks.jpg', alt: 'Pair of stainless steel blocks milled on our XYZ 710, with bores and slots' },
+      { src: '/images/machining/milled-stainless-blocks-and-plate.jpg', alt: 'Milled stainless steel blocks and plate from our XYZ 710' },
+      { src: '/images/machining/milled-stainless-parts-inspection.jpg', alt: 'Stainless steel parts milled on our XYZ 710, on the granite inspection table' },
+    ],
+  },
+};
 ---
 
 <Layout
@@ -95,6 +107,25 @@ const jsonLd = {
                 </div>
               ))}
             </div>
+
+            {categoryPhotos[category.category] && (
+              <div class="mt-6">
+                <p class="text-romark-gray-500 text-sm font-semibold mb-3">{categoryPhotos[category.category].caption}</p>
+                <div class="grid grid-cols-3 gap-2 md:gap-4">
+                  {categoryPhotos[category.category].photos.map((photo) => (
+                    <figure class="overflow-hidden rounded-lg bg-white shadow-sm">
+                      <img
+                        src={photo.src}
+                        alt={photo.alt}
+                        loading="lazy"
+                        decoding="async"
+                        class="w-full aspect-square object-cover"
+                      />
+                    </figure>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         ))}
       </div>
