@@ -8,6 +8,7 @@ interface Props {
   materials: string[];
   equipment: string[];
   image: string;
+  imageAlt?: string;
   shortDescription?: string;
   gallery?: { src: string; alt: string }[];
   parent?: { slug: string; name: string };
@@ -22,6 +23,7 @@ const {
   materials,
   equipment,
   image,
+  imageAlt,
   shortDescription,
   gallery = [],
   parent,
@@ -57,7 +59,7 @@ const {
         <div class="aspect-[4/3] rounded-lg overflow-hidden bg-romark-gray-100">
           <img
             src={image}
-            alt={`${name} service at Romark Engineering`}
+            alt={imageAlt ?? `${name} service at Romark Engineering`}
             class="w-full h-full object-cover"
             loading="lazy"
           />
@@ -183,7 +185,7 @@ const {
           Recent {name} Work
         </h2>
         <p class="text-romark-gray-500 max-w-2xl mx-auto text-lg">
-          Parts machined in our Stanford-le-Hope workshop.
+          Work from our Stanford-le-Hope workshop.
         </p>
       </div>
 
