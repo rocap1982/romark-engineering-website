@@ -12,7 +12,7 @@
         "name": "Trumpf TruShear",
         "type": "Guillotine",
         "specs": "3000mm cutting length, up to 6mm",
-        "relatedServices": ["sheet-metal-welding", "blank-development"]
+        "relatedServices": ["fabrication-and-welding", "cad"]
       },
       {
         "name": "Hypertherm",
@@ -111,19 +111,19 @@
         "name": "TIG Welders",
         "type": "AC/DC TIG",
         "specs": "For stainless steel, aluminium, and mild steel",
-        "relatedServices": ["fabrication-and-welding", "sheet-metal-welding"]
+        "relatedServices": ["fabrication-and-welding"]
       },
       {
         "name": "MIG Welders",
         "type": "MIG/MAG",
         "specs": "For mild steel and aluminium",
-        "relatedServices": ["fabrication-and-welding", "sheet-metal-welding"]
+        "relatedServices": ["fabrication-and-welding"]
       },
       {
         "name": "Spot Welders",
         "type": "Resistance Spot",
         "specs": "For sheet metal assemblies",
-        "relatedServices": ["sheet-metal-welding"]
+        "relatedServices": ["fabrication-and-welding"]
       }
     ]
   },

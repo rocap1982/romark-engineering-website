@@ -74,7 +74,7 @@
     "slug": "fabrication-and-welding",
     "name": "Fabrication & Welding",
     "shortDescription": "Bespoke sheet metal fabrication with TIG and MIG welding for all metals.",
-    "description": "From bespoke one-off fabrications to repeat production assemblies, our fabrication and welding department delivers high-quality metalwork across all common materials. Our coded welders are experienced in TIG and MIG welding of mild steel, stainless steel, and aluminium. We fabricate everything from small brackets and enclosures to large structural assemblies, all under one roof.",
+    "description": "From bespoke one-off fabrications to repeat production assemblies, our fabrication and welding department delivers high-quality metalwork across all common materials. Our coded welders are experienced in TIG and MIG welding of mild steel, stainless steel, and aluminium. We fabricate everything from small brackets and enclosures to large structural assemblies, all under one roof. That includes specialist sheet metal welding, from thin gauge stainless steel enclosures to heavy gauge mild steel structures, using TIG, MIG or spot welding to suit the material and application.",
     "capabilities": [
       "TIG welding (AC/DC)",
       "MIG/MAG welding",
@@ -82,7 +82,11 @@
       "Mild steel, stainless steel, and aluminium",
       "Bespoke fabrications and assemblies",
       "Structural steelwork (BS EN 1090)",
-      "Prototype to production volumes"
+      "Prototype to production volumes",
+      "TIG welding of thin gauge sheet",
+      "Enclosures and housings",
+      "Brackets and mounting assemblies",
+      "Coded welders available"
     ],
     "materials": [
       "mild steel",
@@ -100,8 +104,8 @@
       "architectural"
     ],
     "image": "/images/services/fabrication-and-welding.jpg",
-    "metaTitle": "Fabrication & Welding Services | Romark Engineering Essex",
-    "metaDescription": "Expert fabrication and welding services in Essex. TIG, MIG, and spot welding. Steel, stainless, aluminium. BS EN 1090 certified. Get a free quote.",
+    "metaTitle": "Fabrication & Sheet Metal Welding | Romark Engineering Essex",
+    "metaDescription": "Fabrication and sheet metal welding in Essex. TIG, MIG and spot welding of steel, stainless and aluminium. BS EN 1090 certified. Get a free quote.",
     "order": 3
   },
   {
@@ -259,7 +263,8 @@
         "src": "/images/machining/milled-stainless-parts-inspection.jpg",
         "alt": "Stainless steel parts milled on our XYZ 710, on the granite inspection table"
       }
-    ]
+    ],
+    "parent": "cnc-machining"
   },
   {
     "slug": "turning",
@@ -293,55 +298,26 @@
     "image": "/images/services/turning.jpg",
     "metaTitle": "Turning Services | Romark Engineering Essex",
     "metaDescription": "Precision turning services in Essex on our Harrison lathe. Tight tolerances. ISO 9001 certified. Get a free quote.",
-    "order": 6
+    "order": 6,
+    "parent": "cnc-machining"
   },
   {
-    "slug": "sheet-metal-welding",
-    "name": "Sheet Metal Welding",
-    "shortDescription": "Specialist welding for sheet metal assemblies in steel, stainless, and aluminium.",
-    "description": "Our specialist sheet metal welding service covers all common materials and thicknesses. From thin gauge stainless steel enclosures to heavy gauge mild steel structures, our welders have the skills and equipment to deliver clean, strong welds every time. We use TIG, MIG, and spot welding techniques depending on the material and application requirements.",
+    "slug": "cad",
+    "name": "CAD Design",
+    "shortDescription": "Full CAD capabilities with Solidworks, AutoCAD, and Rhino3D for 2D and 3D design.",
+    "description": "Our in-house CAD department provides full design capabilities using Solidworks, AutoCAD, and Rhino3D. Whether you need a concept developed from a sketch, an existing design modified, or full production drawings created, our designers work closely with our workshop to ensure every design is optimised for manufacture. We can work from your files, sketches, or even sample components. We also develop accurate flat patterns (blanks) for sheet metal parts from your 3D models, calculating bend allowances so blanks fold to your finished dimensions first time and waste less material.",
     "capabilities": [
-      "TIG welding for thin gauge materials",
-      "MIG welding for heavier sections",
-      "Spot welding for sheet metal assemblies",
-      "Stainless steel, mild steel, and aluminium",
-      "Enclosures and housings",
-      "Brackets and mounting assemblies",
-      "Coded welders available"
-    ],
-    "materials": [
-      "mild steel",
-      "stainless steel",
-      "aluminium"
-    ],
-    "equipment": [
-      "TIG Welders (AC/DC)",
-      "MIG Welders",
-      "Spot Welders"
-    ],
-    "industries": [
-      "automotive",
-      "power generation",
-      "architectural"
-    ],
-    "image": "/images/services/sheet-metal-welding.jpg",
-    "metaTitle": "Sheet Metal Welding Services | Romark Engineering Essex",
-    "metaDescription": "Specialist sheet metal welding services in Essex. TIG, MIG, and spot welding. Steel, stainless, aluminium. ISO 9001 certified. Get a free quote.",
-    "order": 7
-  },
-  {
-    "slug": "blank-development",
-    "name": "Blank Development",
-    "shortDescription": "Flat pattern development and blank cutting for complex formed parts.",
-    "description": "Our blank development service takes your 3D designs and develops accurate flat patterns for sheet metal components. Using our CAD systems, we calculate bend allowances and develop blanks that fold precisely to your finished dimensions. This ensures first-time accuracy and reduces material waste, saving both time and cost on your project.",
-    "capabilities": [
-      "Flat pattern development from 3D models",
+      "3D solid modelling (Solidworks)",
+      "2D drafting and detailing (AutoCAD)",
+      "Complex surface modelling (Rhino3D)",
+      "Design for manufacture (DFM)",
+      "Reverse engineering from samples",
+      "Assembly modelling and simulation",
+      "Production drawing packages",
+      "Flat pattern (blank) development from 3D models",
       "Bend allowance calculation",
       "Material optimisation and nesting",
-      "DXF output for laser cutting",
-      "Complex multi-bend blank development",
-      "Sheet metal design for manufacture (DFM)",
-      "Prototype verification"
+      "DXF output for laser cutting"
     ],
     "materials": [
       "mild steel",
@@ -350,35 +326,6 @@
       "copper",
       "brass"
     ],
-    "equipment": [
-      "Solidworks",
-      "AutoCAD"
-    ],
-    "industries": [
-      "automotive",
-      "power generation",
-      "architectural"
-    ],
-    "image": "/images/services/blank-development.jpg",
-    "metaTitle": "Blank Development Services | Romark Engineering Essex",
-    "metaDescription": "Flat pattern and blank development services in Essex. 3D to flat pattern conversion. Bend allowance calculation. ISO 9001 certified. Get a free quote.",
-    "order": 8
-  },
-  {
-    "slug": "cad",
-    "name": "CAD Design",
-    "shortDescription": "Full CAD capabilities with Solidworks, AutoCAD, and Rhino3D for 2D and 3D design.",
-    "description": "Our in-house CAD department provides full design capabilities using Solidworks, AutoCAD, and Rhino3D. Whether you need a concept developed from a sketch, an existing design modified, or full production drawings created, our designers work closely with our workshop to ensure every design is optimised for manufacture. We can work from your files, sketches, or even sample components.",
-    "capabilities": [
-      "3D solid modelling (Solidworks)",
-      "2D drafting and detailing (AutoCAD)",
-      "Complex surface modelling (Rhino3D)",
-      "Design for manufacture (DFM)",
-      "Reverse engineering from samples",
-      "Assembly modelling and simulation",
-      "Production drawing packages"
-    ],
-    "materials": [],
     "equipment": [
       "Solidworks",
       "AutoCAD",
@@ -390,8 +337,8 @@
       "architectural"
     ],
     "image": "/images/services/cad.jpg",
-    "metaTitle": "CAD Design Services | Romark Engineering Essex",
-    "metaDescription": "In-house CAD design services in Essex. Solidworks, AutoCAD, Rhino3D. 2D and 3D design. Design for manufacture. Get a free quote.",
-    "order": 9
+    "metaTitle": "CAD Design & Blank Development | Romark Engineering Essex",
+    "metaDescription": "In-house CAD design and sheet metal blank development in Essex. Solidworks, AutoCAD, Rhino3D. Flat patterns, bend allowances, DFM. Get a free quote.",
+    "order": 7
   }
 ]

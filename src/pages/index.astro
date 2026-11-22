@@ -19,43 +19,23 @@ const services = [
   {
     name: 'Fabrication & Welding',
     href: '/fabrication-and-welding/',
-    description: 'Bespoke sheet metal fabrication with TIG and MIG welding for all metals.',
+    description: 'Bespoke fabrication and sheet metal welding: TIG, MIG and spot welding in steel, stainless and aluminium.',
     icon: 'weld',
   },
   {
     name: 'CNC Machining',
     href: '/cnc-machining/',
-    description: 'Computer-controlled precision machining from prototype to full production runs.',
+    description: 'CNC milling and turning in steel, stainless and aluminium, from one-off prototypes to production runs.',
     icon: 'cnc',
-  },
-  {
-    name: 'Milling',
-    href: '/milling/',
-    description: 'CNC and manual milling on XYZ VMCs, Bridgeport and XYZ manual mills.',
-    icon: 'mill',
-  },
-  {
-    name: 'Turning',
-    href: '/turning/',
-    description: 'Precision turning on our Harrison lathe for cylindrical components.',
-    icon: 'turn',
-  },
-  {
-    name: 'Sheet Metal Welding',
-    href: '/sheet-metal-welding/',
-    description: 'Specialist welding for sheet metal assemblies in steel, stainless, and aluminium.',
-    icon: 'sheet',
-  },
-  {
-    name: 'Blank Development',
-    href: '/blank-development/',
-    description: 'Flat pattern development and blank cutting for complex formed parts.',
-    icon: 'blank',
+    children: [
+      { name: 'Milling', href: '/milling/' },
+      { name: 'Turning', href: '/turning/' },
+    ],
   },
   {
     name: 'CAD Design',
     href: '/cad/',
-    description: 'Full CAD capabilities with Solidworks, AutoCAD, and Rhino3D for 2D and 3D design.',
+    description: 'Solidworks, AutoCAD and Rhino3D design, plus sheet metal blank development: flat patterns and bend allowances.',
     icon: 'cad',
   },
 ];
@@ -141,6 +121,11 @@ const strengths = [
             <p class="text-romark-gray-500 text-sm leading-relaxed">
               {service.description}
             </p>
+            {service.children && (
+              <p class="mt-3 text-sm text-romark-blue-dark font-semibold">
+                Includes: {service.children.map((c) => c.name).join(' and ')}
+              </p>
+            )}
             <span class="inline-flex items-center mt-4 text-sm font-semibold text-romark-orange group-hover:translate-x-1 transition-transform">
               Learn more
               <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>

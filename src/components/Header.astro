@@ -1,15 +1,5 @@
 ---
-const services = [
-  { name: 'Laser Profiling', href: '/laser-profiling/' },
-  { name: 'Folding & Pressing', href: '/folding-pressing/' },
-  { name: 'Fabrication & Welding', href: '/fabrication-and-welding/' },
-  { name: 'CNC Machining', href: '/cnc-machining/' },
-  { name: 'Milling', href: '/milling/' },
-  { name: 'Turning', href: '/turning/' },
-  { name: 'Sheet Metal Welding', href: '/sheet-metal-welding/' },
-  { name: 'Blank Development', href: '/blank-development/' },
-  { name: 'CAD Design', href: '/cad/' },
-];
+import { serviceMenu, allServiceLinks } from '../data/service-menu';
 
 const navLinks = [
   { name: 'Home', href: '/' },
@@ -71,7 +61,7 @@ const currentPath = Astro.url.pathname;
           <button
             class:list={[
               'px-3 py-2 text-sm font-medium rounded transition-colors flex items-center gap-1',
-              currentPath.includes('/laser-profiling') || currentPath.includes('/fabrication') || currentPath.includes('/cnc') || currentPath.includes('/milling') || currentPath.includes('/turning') || currentPath.includes('/sheet-metal') || currentPath.includes('/blank') || currentPath.includes('/cad') || currentPath.includes('/folding')
+              allServiceLinks.some((s) => currentPath.startsWith(s.href))
                 ? 'text-romark-orange'
                 : 'text-romark-gray-700 hover:text-romark-orange',
             ]}
@@ -82,18 +72,38 @@ const currentPath = Astro.url.pathname;
             <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
           </button>
           <div class="absolute top-full left-0 mt-0 w-64 bg-white shadow-xl rounded-b-lg border border-romark-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-            {services.map((service) => (
-              <a
-                href={service.href}
-                class:list={[
-                  'block px-4 py-2.5 text-sm transition-colors border-b border-romark-gray-100 last:border-0',
-                  currentPath === service.href
-                    ? 'text-romark-orange bg-romark-light'
-                    : 'text-romark-gray-700 hover:text-romark-orange hover:bg-romark-light',
-                ]}
-              >
-                {service.name}
-              </a>
+            {serviceMenu.map((group) => (
+              <div class="py-2 border-b border-romark-gray-100 last:border-0">
+                <p class="px-4 pt-1 pb-1 text-[11px] font-semibold uppercase tracking-wider text-romark-orange">{group.heading}</p>
+                {group.links.map((link) => (
+                  <>
+                    <a
+                      href={link.href}
+                      class:list={[
+                        'block px-4 py-2 text-sm transition-colors',
+                        currentPath === link.href
+                          ? 'text-romark-orange bg-romark-light'
+                          : 'text-romark-gray-700 hover:text-romark-orange hover:bg-romark-light',
+                      ]}
+                    >
+                      {link.name}
+                    </a>
+                    {link.children?.map((child) => (
+                      <a
+                        href={child.href}
+                        class:list={[
+                          'block pl-8 pr-4 py-1.5 text-sm transition-colors',
+                          currentPath === child.href
+                            ? 'text-romark-orange bg-romark-light'
+                            : 'text-romark-gray-500 hover:text-romark-orange hover:bg-romark-light',
+                        ]}
+                      >
+                        {child.name}
+                      </a>
+                    ))}
+                  </>
+                ))}
+              </div>
             ))}
           </div>
         </div>
@@ -145,10 +155,22 @@ const currentPath = Astro.url.pathname;
           <svg id="mobile-services-chevron" class="w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <div id="mobile-services-list" class="hidden pl-4 space-y-1">
-          {services.map((service) => (
-            <a href={service.href} class="block px-3 py-2 text-sm text-romark-gray-500 hover:text-romark-orange">
-              {service.name}
-            </a>
+          {serviceMenu.map((group) => (
+            <div class="pt-2">
+              <p class="px-3 pb-1 text-[11px] font-semibold uppercase tracking-wider text-romark-orange">{group.heading}</p>
+              {group.links.map((link) => (
+                <>
+                  <a href={link.href} class="block px-3 py-2 text-sm text-romark-gray-500 hover:text-romark-orange">
+                    {link.name}
+                  </a>
+                  {link.children?.map((child) => (
+                    <a href={child.href} class="block pl-7 pr-3 py-1.5 text-sm text-romark-gray-500 hover:text-romark-orange">
+                      {child.name}
+                    </a>
+                  ))}
+                </>
+              ))}
+            </div>
           ))}
         </div>
       </div>
