@@ -34,10 +34,12 @@ Array of service objects. Each service has:
 | metaTitle         | string     | yes      | SEO page title                     |
 | metaDescription   | string     | yes      | SEO meta description               |
 | order             | number     | yes      | Display order (1-based, unique)    |
+| gallery           | {src, alt}[] | no     | Work photos; see `.claude/rules/seo.md` for naming |
+| parent            | string     | no       | Slug of the parent service (PLAN-004): `milling`, `turning` → `cnc-machining` |
 
 **Primary key**: `slug`
 
-**Current count**: 9 services.
+**Current count**: 7 services (PLAN-004, 22/11/2026: `sheet-metal-welding` merged into `fabrication-and-welding`, `blank-development` into `cad`; both old URLs 301 via on-demand routes in `src/pages/`). Menu grouping lives in `src/data/service-menu.ts`.
 
 ### Entity: Equipment (`src/data/equipment.json`)
 

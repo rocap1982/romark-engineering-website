@@ -10,6 +10,8 @@ interface Props {
   image: string;
   shortDescription?: string;
   gallery?: { src: string; alt: string }[];
+  parent?: { slug: string; name: string };
+  subServices?: { slug: string; name: string; shortDescription: string }[];
 }
 
 const {
@@ -21,6 +23,8 @@ const {
   image,
   shortDescription,
   gallery = [],
+  parent,
+  subServices = [],
 } = Astro.props;
 ---
 
@@ -30,8 +34,8 @@ const {
   subtitle={shortDescription}
   ctaText="Get a Quote"
   ctaHref="/contact-us/"
-  secondaryCtaText="All Services"
-  secondaryCtaHref="/#services"
+  secondaryCtaText={parent ? parent.name : 'All Services'}
+  secondaryCtaHref={parent ? `/${parent.slug}/` : '/#services'}
 />
 
 <!-- Description -->
@@ -62,6 +66,31 @@ const {
     </div>
   </div>
 </section>
+
+<!-- Sub-services (e.g. CNC Machining → Milling, Turning) -->
+{subServices.length > 0 && (
+  <section class="pb-(--spacing-section) bg-romark-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {subServices.map((s) => (
+          <a
+            href={`/${s.slug}/`}
+            class="group block p-6 bg-romark-light rounded-lg border border-romark-gray-100 hover:border-romark-orange/30 hover:shadow-lg transition-all duration-300"
+          >
+            <h2 class="font-heading font-bold text-2xl text-romark-blue-dark mb-2 group-hover:text-romark-orange transition-colors">
+              CNC {s.name}
+            </h2>
+            <p class="text-romark-gray-500 leading-relaxed">{s.shortDescription}</p>
+            <span class="inline-flex items-center mt-4 text-sm font-semibold text-romark-orange">
+              {s.name} services
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
 
 <!-- Capabilities -->
 {capabilities.length > 0 && (

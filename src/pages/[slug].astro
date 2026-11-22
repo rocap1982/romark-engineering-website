@@ -33,6 +33,7 @@ interface ServiceData {
   metaTitle: string;
   metaDescription: string;
   order: number;
+  parent?: string;
 }
 
 interface SeoPageData {
@@ -136,6 +137,8 @@ const description = type === 'service' && service ? service.metaDescription : se
       image={service.image}
       gallery={service.gallery}
       shortDescription={service.shortDescription}
+      parent={service.parent ? services.find((s) => s.slug === service.parent) : undefined}
+      subServices={services.filter((s) => (s as ServiceData).parent === service.slug)}
     />
   ) : seoPage ? (
     <SeoLandingPage

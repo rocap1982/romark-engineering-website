@@ -32,6 +32,7 @@ None.
 
 | Work | Date | Notes |
 |------|------|-------|
+| PLAN-004 service restructure | 2026-11-22 | 9 service pages → 7, menu grouped Sheet Metal / Machining (CNC → Milling, Turning) / Design; two retired URLs 301. SEO rule added: `.claude/rules/seo.md` |
 | Equipment list completed | 2026-11-22 | Rob confirmed TruShear, Hypertherm plasma, aqua blaster, Bianco saw, plate rollers, Arboga linishers, OneCNC; DMG Mori Milltap 700 added (collection 24/11/2026, run 3+2). "XYZ 510" corrected to XYZ 560 site-wide (there is no 510 — Rob, 15/11/2026) |
 | Old WordPress site archived | 2026-11-04 | 35 pages + 112 images under `archive/engineeringessex-2026-11-04/`; `report.md` has filler-vs-real evidence (53 Shutterstock files incl. 3 watermarked, injected Safetech link block on every page) |
 | Equipment specs corrected site-wide | 2026-04-11 | Laser: 12mm/12mm/10mm (5000×1500). HFE 220-4 (4m). Added Barnes + Ward Forsythe hydraulic presses. Replaced CNC fleet with XYZ 710/510 + Bridgeport/XYZ manual mills + Harrison lathe. New "Metal Finishing" category. Updated across equipment.json, services.json, seo-pages.json, index.astro, about-us.astro, equipment.astro |
