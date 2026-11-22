@@ -29,6 +29,7 @@ interface ServiceData {
   equipment: string[];
   industries: string[];
   image: string;
+  imageAlt?: string;
   gallery?: { src: string; alt: string }[];
   metaTitle: string;
   metaDescription: string;
@@ -136,6 +137,7 @@ const description = type === 'service' && service ? service.metaDescription : se
       materials={service.materials}
       equipment={service.equipment}
       image={service.image}
+      imageAlt={service.imageAlt}
       gallery={service.gallery}
       shortDescription={service.shortDescription}
       parent={service.parent ? services.find((s) => s.slug === service.parent) : undefined}

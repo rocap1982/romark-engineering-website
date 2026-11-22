@@ -29,10 +29,25 @@
       "power generation",
       "architectural"
     ],
-    "image": "/images/services/laser-profiling.jpg",
+    "image": "/images/work/roam-systems-cut-engraved-plaques.jpg",
     "metaTitle": "Laser Profiling & Cutting Services | Romark Engineering Essex",
     "metaDescription": "Precision laser cutting in Essex. 5000x1500mm bed, 12mm steel, 12mm stainless, 10mm aluminium. +/- 0.1mm tolerances. ISO 9001 certified.",
-    "order": 1
+    "order": 1,
+    "imageAlt": "ROAM Systems cut and engraved metal plaques",
+    "gallery": [
+      {
+        "src": "/images/work/roam-systems-cut-engraved-plaques.jpg",
+        "alt": "ROAM Systems cut and engraved metal plaques"
+      },
+      {
+        "src": "/images/work/slotted-interlocking-sheet-metal-fin-assembly.jpg",
+        "alt": "Slotted interlocking sheet metal fin assembly"
+      },
+      {
+        "src": "/images/work/slotted-interlocking-sheet-metal-fin-assembly-side-view.jpg",
+        "alt": "Side view of a slotted interlocking sheet metal fin assembly"
+      }
+    ]
   },
   {
     "slug": "folding-pressing",
@@ -65,10 +80,29 @@
       "power generation",
       "architectural"
     ],
-    "image": "/images/services/folding-pressing.jpg",
+    "image": "/images/work/folded-tapered-angle-section.jpg",
     "metaTitle": "Folding & Pressing Services | Romark Engineering Essex",
     "metaDescription": "CNC press brake folding and pressing services in Essex. Up to 220 ton capacity, 4m folding lengths. ISO 9001 certified. Get a free quote.",
-    "order": 2
+    "order": 2,
+    "imageAlt": "Long tapered folded angle section with a copper-coloured finish",
+    "gallery": [
+      {
+        "src": "/images/work/folded-tapered-angle-section.jpg",
+        "alt": "Long tapered folded angle section with a copper-coloured finish"
+      },
+      {
+        "src": "/images/work/folded-tapered-angle-section-end-view.jpg",
+        "alt": "End view of a long tapered folded angle section"
+      },
+      {
+        "src": "/images/work/folded-sheet-metal-brackets-hole-pattern.jpg",
+        "alt": "Folded sheet metal brackets with punched hole patterns"
+      },
+      {
+        "src": "/images/work/folded-sheet-metal-channel-brackets.jpg",
+        "alt": "Folded sheet metal channel brackets on a pallet"
+      }
+    ]
   },
   {
     "slug": "fabrication-and-welding",
@@ -106,7 +140,53 @@
     "image": "/images/services/fabrication-and-welding.jpg",
     "metaTitle": "Fabrication & Sheet Metal Welding | Romark Engineering Essex",
     "metaDescription": "Fabrication and sheet metal welding in Essex. TIG, MIG and spot welding of steel, stainless and aluminium. BS EN 1090 certified. Get a free quote.",
-    "order": 3
+    "order": 3,
+    "gallery": [
+      {
+        "src": "/images/work/fabricated-long-folded-sheet-metal-covers.jpg",
+        "alt": "Long folded sheet metal covers assembled on the welding table"
+      },
+      {
+        "src": "/images/work/fabricated-folded-sheet-metal-cover-end-view.jpg",
+        "alt": "End view of a long folded sheet metal cover on the welding table"
+      },
+      {
+        "src": "/images/work/fabricated-sheet-metal-tray-corner-detail.jpg",
+        "alt": "Corner detail of a fabricated sheet metal tray"
+      },
+      {
+        "src": "/images/work/welded-enclosure-flanged-opening-brushed-finish.jpg",
+        "alt": "Welded sheet metal enclosure with a flanged opening and brushed finish"
+      },
+      {
+        "src": "/images/work/welded-enclosure-brushed-finish-side-view.jpg",
+        "alt": "Side view of a welded sheet metal enclosure with a brushed finish"
+      },
+      {
+        "src": "/images/work/fabricated-curved-counter-unit-brushed-finish.jpg",
+        "alt": "Fabricated curved counter unit with a brushed finish"
+      },
+      {
+        "src": "/images/work/fabricated-curved-counter-unit-front-view.jpg",
+        "alt": "Front view of a fabricated curved counter unit with shelving"
+      },
+      {
+        "src": "/images/work/powder-coated-vent-cowl-mesh-sides.jpg",
+        "alt": "Powder-coated vent cowl with mesh sides"
+      },
+      {
+        "src": "/images/work/powder-coated-vent-cowl-in-workshop.jpg",
+        "alt": "Powder-coated vent cowl ready for dispatch in the workshop"
+      },
+      {
+        "src": "/images/work/fabricated-louvre-panels-stacked.jpg",
+        "alt": "Fabricated louvre panels stacked on a pallet"
+      },
+      {
+        "src": "/images/work/fabricated-louvre-panel.jpg",
+        "alt": "Fabricated louvre panel with angled blades"
+      }
+    ]
   },
   {
     "slug": "cnc-machining",
@@ -349,9 +429,10 @@
       "power generation",
       "architectural"
     ],
-    "image": "/images/services/cad.jpg",
+    "image": "/images/work/cad-3d-model-fabricated-assembly.jpg",
     "metaTitle": "CAD Design & Blank Development | Romark Engineering Essex",
     "metaDescription": "In-house CAD design and sheet metal blank development in Essex. Solidworks, AutoCAD, Rhino3D. Flat patterns, bend allowances, DFM. Get a free quote.",
-    "order": 7
+    "order": 7,
+    "imageAlt": "3D CAD model of a fabricated assembly on screen"
   }
 ]
