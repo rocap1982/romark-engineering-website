@@ -108,9 +108,9 @@
     "slug": "cnc-machining",
     "name": "CNC Machining",
     "shortDescription": "Computer-controlled precision machining from prototype to full production runs.",
-    "description": "Our CNC machining department provides precision computer-controlled manufacturing for components requiring tight tolerances and excellent surface finishes. Using our XYZ 710 and XYZ 510 vertical machining centres together with our Harrison lathe, we machine components from a wide range of materials including steel, stainless steel, aluminium, brass, and engineering plastics. From single prototypes to production batches.",
+    "description": "Our CNC machining department provides precision computer-controlled manufacturing for components requiring tight tolerances and excellent surface finishes. Using our XYZ 710 and XYZ 560 vertical machining centres together with our Harrison lathe, we machine components from a wide range of materials including steel, stainless steel, aluminium, brass, and engineering plastics. From single prototypes to production batches.",
     "capabilities": [
-      "3-axis CNC milling on XYZ 710 and XYZ 510 VMCs",
+      "3-axis CNC milling on XYZ 710 and XYZ 560 VMCs",
       "Precision turning",
       "Tight tolerances to +/- 0.01mm",
       "Complex 3D profiling",
@@ -126,7 +126,8 @@
     ],
     "equipment": [
       "XYZ 710 CNC Vertical Machining Centre",
-      "XYZ 510 CNC Vertical Machining Centre",
+      "XYZ 560 CNC Vertical Machining Centre",
+      "DMG Mori Milltap 700 5-Axis Machining Centre",
       "Harrison Lathe"
     ],
     "industries": [
@@ -201,9 +202,9 @@
     "slug": "milling",
     "name": "Milling",
     "shortDescription": "CNC and manual milling on XYZ VMCs, Bridgeport and XYZ manual mills.",
-    "description": "Our milling department offers both CNC and manual milling capabilities. Our XYZ 710 and XYZ 510 vertical machining centres handle complex CNC work, while Bridgeport and XYZ manual mills cover versatile conventional operations. Our experienced machinists produce precision components for all industries, whether you need a single prototype or a production run.",
+    "description": "Our milling department offers both CNC and manual milling capabilities. Our XYZ 710 and XYZ 560 vertical machining centres handle complex CNC work, while Bridgeport and XYZ manual mills cover versatile conventional operations. Our experienced machinists produce precision components for all industries, whether you need a single prototype or a production run.",
     "capabilities": [
-      "3-axis CNC milling on XYZ 710 and XYZ 510 VMCs",
+      "3-axis CNC milling on XYZ 710 and XYZ 560 VMCs",
       "Manual milling on Bridgeport and XYZ mills",
       "Face milling, slot milling, pocket milling",
       "Drilling and boring",
@@ -219,7 +220,8 @@
     ],
     "equipment": [
       "XYZ 710 CNC Vertical Machining Centre",
-      "XYZ 510 CNC Vertical Machining Centre",
+      "XYZ 560 CNC Vertical Machining Centre",
+      "DMG Mori Milltap 700 5-Axis Machining Centre",
       "Bridgeport Manual Mill",
       "XYZ Manual Mill"
     ],
