@@ -21,7 +21,7 @@ idle
 - [ ] Verify with client: do they have waterjet capability (claims removed from SEO pages this session)
 - [ ] Source missing service images (5 of 9 services)
 - [ ] Rate limiting for contact form API
-- [ ] Deployment to Railway / Cloudflare Pages
+- [x] Deployment to Railway — LIVE at romarkengineering.co.uk, main auto-deploys (verified 22/11/2026)
 - [ ] Domain migration — Safetech confirmed 04/11/2026 they keep engineeringessex.co.uk and will run NO 301; old URL list in `archive/engineeringessex-2026-11-04/redirect-map.csv` is only usable if Rob's £150 domain offer is accepted
 
 ## Blockers
@@ -49,4 +49,4 @@ None.
 - Skipped `.mov` variant (2.1GB — not web-suitable)
 - Warehouse jpgs are 7–8MB raw — acceptable for dev but must be optimised before production deploy
 - Equipment data now reflects current shop floor (per client's 2026-04-11 update); old `.claude/launch.json` port 4321 changed to 4329 (stale process was holding 4321)
-- Site ready for deployment pending: media optimisation, service images, rate limiting, Railway setup, domain migration
+- Site is LIVE on Railway (romarkengineering.co.uk). Still open: service images, rate limiting, redirects from engineeringessex.co.uk
