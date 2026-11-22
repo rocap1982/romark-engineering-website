@@ -233,7 +233,13 @@
     "image": "/images/services/milling.jpg",
     "metaTitle": "Milling Services | Romark Engineering Essex",
     "metaDescription": "Precision milling services in Essex. CNC and manual milling on XYZ VMCs and Bridgeport mills. ISO 9001 certified. Get a free quote.",
-    "order": 5
+    "order": 5,
+    "gallery": [
+      {
+        "src": "/images/machining/milled-bored-blocks-profiled-plate.jpg",
+        "alt": "CNC milled bored blocks and profiled plate on the inspection surface plate"
+      }
+    ]
   },
   {
     "slug": "turning",
