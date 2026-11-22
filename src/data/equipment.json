@@ -188,6 +188,18 @@
         "type": "CAD/CAM Software",
         "specs": "CNC toolpath programming and nesting",
         "relatedServices": ["cad", "cnc-machining", "milling"]
+      },
+      {
+        "name": "3DeVOK MT",
+        "type": "3D Scanner",
+        "specs": "3D scanning of parts and assemblies for reverse engineering",
+        "relatedServices": ["cad"]
+      },
+      {
+        "name": "Geomagic Essentials",
+        "type": "Scan Processing Software",
+        "specs": "Cleaning up 3D scan data for CAD modelling",
+        "relatedServices": ["cad"]
       }
     ]
   }

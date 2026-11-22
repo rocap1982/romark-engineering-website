@@ -36,7 +36,7 @@ export const serviceMenu: MenuGroup[] = [
   },
   {
     heading: 'Design',
-    links: [{ name: 'CAD Design', href: '/cad/' }],
+    links: [{ name: 'CAD Design & 3D Scanning', href: '/cad/' }],
   },
 ];
 
