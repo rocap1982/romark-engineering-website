@@ -145,7 +145,7 @@
     "order": 4,
     "gallery": [
       {
-        "src": "/images/machining/turned-stainless-clevis-studs.jpg",
+        "src": "/images/machining/turned-stainless-steel-clevis-studs.jpg",
         "alt": "CNC turned stainless steel clevis forks, sleeve and threaded studs"
       },
       {
@@ -157,59 +157,59 @@
         "alt": "CNC turned aluminium flanged boss with milled slot"
       },
       {
-        "src": "/images/machining/milled-stainless-slotted-blocks.jpg",
-        "alt": "Pair of stainless steel blocks milled on our XYZ 710, with bores and slots"
+        "src": "/images/machining/cnc-milled-stainless-steel-slotted-blocks.jpg",
+        "alt": "CNC milled stainless steel blocks with bores and slots, machined on our XYZ 710"
       },
       {
-        "src": "/images/machining/milled-stainless-blocks-and-plate.jpg",
-        "alt": "Milled stainless steel blocks and plate from our XYZ 710"
+        "src": "/images/machining/cnc-milled-stainless-steel-blocks-and-plate.jpg",
+        "alt": "CNC milled stainless steel blocks and profiled plate, machined on our XYZ 710"
       },
       {
-        "src": "/images/machining/milled-stainless-parts-inspection.jpg",
-        "alt": "Stainless steel parts milled on our XYZ 710, on the granite inspection table"
+        "src": "/images/machining/cnc-milled-stainless-steel-parts-inspection.jpg",
+        "alt": "CNC milled stainless steel parts on the granite inspection table after machining on our XYZ 710"
       },
       {
-        "src": "/images/machining/milled-aluminium-clevis-brackets.jpg",
+        "src": "/images/machining/cnc-milled-aluminium-clevis-brackets.jpg",
         "alt": "Pair of CNC milled aluminium clevis brackets"
       },
       {
-        "src": "/images/machining/milled-aluminium-pivot-block.jpg",
+        "src": "/images/machining/cnc-milled-aluminium-pivot-block.jpg",
         "alt": "CNC milled aluminium pivot block with counterbored holes and pocket"
       },
       {
-        "src": "/images/machining/milled-aluminium-angled-block.jpg",
+        "src": "/images/machining/cnc-milled-aluminium-angled-block.jpg",
         "alt": "CNC milled aluminium angled mounting block with two reamed bores"
       },
       {
-        "src": "/images/machining/milled-aluminium-manifold-block.jpg",
+        "src": "/images/machining/cnc-milled-aluminium-manifold-block.jpg",
         "alt": "CNC milled aluminium manifold block with tapped holes and stepped bore"
       },
       {
-        "src": "/images/machining/milled-aluminium-pivot-blocks-pair.jpg",
+        "src": "/images/machining/cnc-milled-aluminium-pivot-blocks-pair.jpg",
         "alt": "Two CNC milled aluminium pivot blocks with counterbores"
       },
       {
-        "src": "/images/machining/milled-aluminium-bearing-housings.jpg",
+        "src": "/images/machining/cnc-milled-aluminium-bearing-housings.jpg",
         "alt": "Set of four CNC milled aluminium bearing housings"
       },
       {
-        "src": "/images/machining/milled-aluminium-clamp-block.jpg",
+        "src": "/images/machining/cnc-milled-aluminium-clamp-block.jpg",
         "alt": "CNC milled aluminium clamp block with bored and counterbored holes"
       },
       {
-        "src": "/images/machining/milled-aluminium-brackets-plates.jpg",
+        "src": "/images/machining/cnc-milled-aluminium-brackets-plates.jpg",
         "alt": "CNC milled aluminium angle brackets after deburring"
       },
       {
-        "src": "/images/machining/milled-aluminium-plates-brackets-set.jpg",
+        "src": "/images/machining/cnc-milled-aluminium-plates-brackets-set.jpg",
         "alt": "CNC milled aluminium mounting plates and angle brackets ready for inspection"
       },
       {
-        "src": "/images/machining/milled-block-inspection-fixture.jpg",
+        "src": "/images/machining/cnc-milled-aluminium-block-in-fixture.jpg",
         "alt": "Milled aluminium block clamped in a bolted fixture plate"
       },
       {
-        "src": "/images/machining/milled-aluminium-housing-large.jpg",
+        "src": "/images/machining/cnc-milled-aluminium-housing-large.jpg",
         "alt": "Large CNC milled aluminium housing with bored centre and pocketed top"
       }
     ]
@@ -252,16 +252,16 @@
     "order": 5,
     "gallery": [
       {
-        "src": "/images/machining/milled-bored-blocks-profiled-plate.jpg",
-        "alt": "Stainless steel bored blocks and profiled plate milled on our XYZ 710"
+        "src": "/images/machining/cnc-milled-stainless-steel-bored-blocks-profiled-plate.jpg",
+        "alt": "CNC milled stainless steel bored blocks and profiled plate from our XYZ 710"
       },
       {
-        "src": "/images/machining/milled-stainless-slotted-blocks.jpg",
-        "alt": "Pair of stainless steel blocks milled on our XYZ 710, with bores and slots"
+        "src": "/images/machining/cnc-milled-stainless-steel-slotted-blocks.jpg",
+        "alt": "CNC milled stainless steel blocks with bores and slots, machined on our XYZ 710"
       },
       {
-        "src": "/images/machining/milled-stainless-parts-inspection.jpg",
-        "alt": "Stainless steel parts milled on our XYZ 710, on the granite inspection table"
+        "src": "/images/machining/cnc-milled-stainless-steel-parts-inspection.jpg",
+        "alt": "CNC milled stainless steel parts on the granite inspection table after machining on our XYZ 710"
       }
     ],
     "parent": "cnc-machining"
