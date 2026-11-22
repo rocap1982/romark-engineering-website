@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-11-04
+last_updated: 2026-11-22
 active_sprint: none
 stage: idle
 ---
@@ -17,8 +17,7 @@ idle
 ## This Week's Priorities
 
 - [ ] Optimise new media (warehouse jpgs 5–8MB each, banner video 7.6MB) — run through sharp/ffmpeg for WebP + compressed MP4
-- [ ] Verify with client: XYZ 710/510 VMC specs + Harrison lathe details for equipment table (old site said "Harrison M300 600mm with DRO")
-- [ ] Verify with client: are these still on the shop floor? On the old site, missing from `equipment.json`: Trumpf TruShear 3000mm × 6mm guillotine, Hypertherm hand plasma, aqua blasting cabinet, Bianco 300mm band saw, sheet & plate power rollers (to 6mm), Arboga linishers, OneCNC CAM (named in services text, not in the equipment list)
+- [ ] Verify with client: XYZ 710/560 VMC specs + Harrison lathe details for equipment table (old site said "Harrison M300 600mm with DRO")
 - [ ] Verify with client: do they have waterjet capability (claims removed from SEO pages this session)
 - [ ] Source missing service images (5 of 9 services)
 - [ ] Rate limiting for contact form API
@@ -33,6 +32,7 @@ None.
 
 | Work | Date | Notes |
 |------|------|-------|
+| Equipment list completed | 2026-11-22 | Rob confirmed TruShear, Hypertherm plasma, aqua blaster, Bianco saw, plate rollers, Arboga linishers, OneCNC; DMG Mori Milltap 700 added (collection 24/11/2026, run 3+2). "XYZ 510" corrected to XYZ 560 site-wide (there is no 510 — Rob, 15/11/2026) |
 | Old WordPress site archived | 2026-11-04 | 35 pages + 112 images under `archive/engineeringessex-2026-11-04/`; `report.md` has filler-vs-real evidence (53 Shutterstock files incl. 3 watermarked, injected Safetech link block on every page) |
 | Equipment specs corrected site-wide | 2026-04-11 | Laser: 12mm/12mm/10mm (5000×1500). HFE 220-4 (4m). Added Barnes + Ward Forsythe hydraulic presses. Replaced CNC fleet with XYZ 710/510 + Bridgeport/XYZ manual mills + Harrison lathe. New "Metal Finishing" category. Updated across equipment.json, services.json, seo-pages.json, index.astro, about-us.astro, equipment.astro |
 | New media assets integrated | 2026-04-11 | Banner video on homepage hero, workshop clip on About, warehouse photos on About/Equipment/Gallery, 4 product shots added to gallery. Hero.astro gained `backgroundVideo` + `posterImage` props |

@@ -7,6 +7,24 @@
         "type": "4Kw CO2 Laser",
         "specs": "Cuts up to 5000 x 1500mm: 12mm mild steel, 12mm stainless, 10mm aluminium",
         "relatedServices": ["laser-profiling"]
+      },
+      {
+        "name": "Trumpf TruShear",
+        "type": "Guillotine",
+        "specs": "3000mm cutting length, up to 6mm",
+        "relatedServices": ["sheet-metal-welding", "blank-development"]
+      },
+      {
+        "name": "Hypertherm",
+        "type": "Hand Plasma Cutter",
+        "specs": "Hand-held plasma cutting",
+        "relatedServices": ["fabrication-and-welding"]
+      },
+      {
+        "name": "Bianco",
+        "type": "Band Saw",
+        "specs": "Vertical semi-automatic, 300mm",
+        "relatedServices": ["fabrication-and-welding", "cnc-machining"]
       }
     ]
   },
@@ -36,6 +54,12 @@
         "type": "Hydraulic Press",
         "specs": "50 ton capacity",
         "relatedServices": ["folding-pressing"]
+      },
+      {
+        "name": "Sheet & Plate Power Rollers",
+        "type": "Plate Rolls",
+        "specs": "Rolling up to 6mm steel",
+        "relatedServices": ["folding-pressing", "fabrication-and-welding"]
       }
     ]
   },
@@ -49,9 +73,15 @@
         "relatedServices": ["cnc-machining", "milling"]
       },
       {
-        "name": "XYZ 510 VMC",
+        "name": "XYZ 560 VMC",
         "type": "CNC Vertical Machining Centre",
         "specs": "3-axis CNC milling",
+        "relatedServices": ["cnc-machining", "milling"]
+      },
+      {
+        "name": "DMG Mori Milltap 700",
+        "type": "5-Axis Machining Centre",
+        "specs": "Siemens 840D sl, 24,000 rpm, 700 x 420 x 380mm travels, 3+2 indexed machining",
         "relatedServices": ["cnc-machining", "milling"]
       },
       {
@@ -107,9 +137,21 @@
         "relatedServices": ["fabrication-and-welding"]
       },
       {
+        "name": "Arboga",
+        "type": "Linishers",
+        "specs": "2000 x 150mm and 2000 x 50mm belts",
+        "relatedServices": ["fabrication-and-welding"]
+      },
+      {
         "name": "Rosler Rumbler",
         "type": "Vibratory Finisher",
         "specs": "Mass finishing for deburring and edge smoothing",
+        "relatedServices": ["fabrication-and-welding"]
+      },
+      {
+        "name": "Aqua Blasting Cabinet",
+        "type": "Wet Blasting",
+        "specs": "Surface finishing and cleaning",
         "relatedServices": ["fabrication-and-welding"]
       },
       {
@@ -140,6 +182,12 @@
         "type": "3D Modelling Software",
         "specs": "Complex surface modelling",
         "relatedServices": ["cad"]
+      },
+      {
+        "name": "OneCNC",
+        "type": "CAD/CAM Software",
+        "specs": "CNC toolpath programming and nesting",
+        "relatedServices": ["cad", "cnc-machining", "milling"]
       }
     ]
   }
